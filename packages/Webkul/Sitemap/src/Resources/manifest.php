@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'name' => 'Webkul Bagisto Sitemap',
+    'name' => 'Ocom Sitemap',
     'version' => core()->version(),
 ];

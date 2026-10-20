@@ -118,3 +118,13 @@ it('should not offer sections in the sidebar', function () {
 
     expect($keys)->not->toContain('appearance.sections');
 });
+
+it('should nest the theme editor under appearance', function () {
+    $keys = collect(config('menu.admin'))->pluck('key');
+
+    expect($keys)->toContain('appearance.theme_editor');
+
+    expect($keys)->not->toContain('bagisto_visual');
+
+    expect($keys)->not->toContain('bagisto_visual.themes');
+});

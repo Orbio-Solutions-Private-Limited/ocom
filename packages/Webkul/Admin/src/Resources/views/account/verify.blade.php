@@ -3,7 +3,7 @@
         @lang('admin::app.users.verify.title')
     </x-slot>
 
-    <div class="flex h-screen items-center justify-center px-4">
+    <div class="flex min-h-screen items-center justify-center px-4 py-8">
         <div class="flex w-full max-w-105 flex-col items-center gap-6">
             <!-- Logo -->
             @if ($logo = core()->getConfigData('general.design.admin_logo.logo_image'))
@@ -21,7 +21,7 @@
             @endif
 
             <!-- Card -->
-            <div class="box-shadow w-full overflow-hidden rounded-xl bg-white dark:bg-gray-900">
+            <div class="auth-card w-full overflow-hidden">
                 <!-- Header -->
                 <div class="flex flex-col items-center gap-2 px-8 pt-8 text-center">
                     <!-- Lock Badge -->
@@ -83,7 +83,7 @@
                         <!-- Verify Button -->
                         <button
                             type="submit"
-                            class="primary-button mt-2 w-full justify-center! py-2.5! text-base"
+                            class="primary-button mt-2 w-full justify-center"
                             aria-label="@lang('admin::app.users.verify.verify-code')"
                         >
                             @lang('admin::app.users.verify.verify-code')
@@ -111,11 +111,8 @@
             </div>
 
             <!-- Powered By -->
-            <div class="text-sm font-normal">
-                @lang('admin::app.users.sessions.powered-by-description', [
-                    'bagisto' => '<a class="text-blue-600 hover:underline" href="https://bagisto.com/en/">Bagisto</a>',
-                    'webkul' => '<a class="text-blue-600 hover:underline" href="https://webkul.com/">Webkul</a>',
-                ])
+            <div class="text-sm font-normal text-brand-muted">
+                @lang('admin::app.users.sessions.powered-by-description')
             </div>
         </div>
     </div>

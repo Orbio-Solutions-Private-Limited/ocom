@@ -1,17 +1,13 @@
 # Reporting Security Issues
 
-Bagisto values the contributions of the security research community and appreciates your efforts to help keep Bagisto and its merchants secure.
+Orbio Solutions values responsible disclosure from the security research community.
 
 ## Where Should I Report Security Issues?
 
-If you believe you have discovered a security vulnerability in Bagisto, **please do not** use the public issue tracker and **do not** disclose it publicly.
+If you believe you have discovered a security vulnerability, **please do not** use a public issue tracker and **do not** disclose it publicly.
 
-Instead, you may report security issues through **either** of the following responsible disclosure channels:
+Report security issues through our website:
 
-- **Email:** Send detailed information to **support@bagisto.com**
+- **Website:** [https://www.orbiosolutions.com/](https://www.orbiosolutions.com/)
 
-- **Support Ticket:** Create a ticket at **[Bagisto Support](https://bagisto.uvdesk.com/en/)**
-
-Both channels ensure that security issues are reviewed promptly and handled responsibly before any public disclosure.
-
-We appreciate your cooperation in helping us maintain a secure ecosystem for all Bagisto users.
+We appreciate your cooperation in helping us maintain a secure platform for our customers.

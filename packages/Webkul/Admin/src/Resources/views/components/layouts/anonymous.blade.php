@@ -29,7 +29,7 @@
     >
     <meta 
         name="generator" 
-        content="Bagisto"
+        content="Ocom"
     >
 
     @stack('meta')
@@ -71,18 +71,31 @@
     {!! view_render_event('bagisto.admin.layout.head') !!}
 </head>
 
-<body>
+<body class="admin-auth">
     {!! view_render_event('bagisto.admin.layout.body.before') !!}
 
-    <!-- Built With Bagisto -->
+    <!-- Ocom -->
     <div id="app">
         <!-- Flash Message Blade Component -->
         <x-admin::flash-group />
 
         {!! view_render_event('bagisto.admin.layout.content.before') !!}
 
-        <!-- Page Content Blade Component -->
-        {{ $slot }}
+        <div class="admin-auth-shell">
+            <div
+                class="admin-auth-blur admin-auth-blur--a"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="admin-auth-blur admin-auth-blur--b"
+                aria-hidden="true"
+            ></div>
+
+            <div class="relative z-10">
+                {{ $slot }}
+            </div>
+        </div>
 
         {!! view_render_event('bagisto.admin.layout.content.after') !!}
     </div>

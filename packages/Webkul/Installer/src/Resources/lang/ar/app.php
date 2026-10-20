@@ -807,7 +807,7 @@ return [
         'index' => [
             'create-administrator' => [
                 'admin' => 'مدير',
-                'bagisto' => 'Bagisto',
+                'bagisto' => 'Ocom',
                 'confirm-password' => 'تأكيد كلمة المرور',
                 'email' => 'البريد الإلكتروني',
                 'email-address' => 'admin@example.com',
@@ -822,7 +822,7 @@ return [
                 'application-name' => 'اسم التطبيق',
                 'argentine-peso' => 'البيزو الأرجنتيني (ARS)',
                 'australian-dollar' => 'الدولار الأسترالي (AUD)',
-                'bagisto' => 'Bagisto',
+                'bagisto' => 'Ocom',
                 'bangladeshi-taka' => 'التاكا البنغلاديشي (BDT)',
                 'bahraini-dinar' => 'دينار بحريني (BHD)',
                 'brazilian-real' => 'الريال البرازيلي (BRL)',
@@ -917,25 +917,25 @@ return [
             ],
 
             'installation-processing' => [
-                'bagisto' => 'تثبيت Bagisto',
+                'bagisto' => 'تثبيت Ocom',
                 'bagisto-info' => 'إنشاء جداول قاعدة البيانات، وقد يستغرق ذلك بضع دقائق',
                 'title' => 'التثبيت',
             ],
 
             'installation-completed' => [
                 'admin-panel' => 'لوحة المشرف',
-                'bagisto-forums' => 'منتديات Bagisto',
+                'bagisto-forums' => 'منتديات Ocom',
                 'customer-panel' => 'لوحة العميل',
-                'explore-bagisto-extensions' => 'استكشاف امتدادات Bagisto',
+                'explore-bagisto-extensions' => 'استكشاف امتدادات Ocom',
                 'title' => 'اكتمال التثبيت',
-                'title-info' => 'تم تثبيت Bagisto بنجاح على نظامك.',
+                'title-info' => 'تم تثبيت Ocom بنجاح على نظامك.',
             ],
 
             'ready-for-installation' => [
                 'create-database-tables' => 'إنشاء جداول قاعدة البيا',
                 'drop-existing-tables' => 'حذف أي جداول موجودة',
                 'install' => 'التثبيت',
-                'install-info' => 'Bagisto للتثبيت',
+                'install-info' => 'Ocom للتثبيت',
                 'install-info-button' => 'انقر على الزر أدناه ل',
                 'populate-database-tables' => 'ملء جداول قاعدة البيانات',
                 'start-installation' => 'بدء التثبيت',
@@ -947,8 +947,8 @@ return [
                 'locale' => 'اللغة',
                 'main' => 'بداية',
                 'select-locale' => 'اختر اللغة',
-                'title' => 'تثبيت Bagisto الخاص بك',
-                'welcome-title' => 'مرحبًا بك في Bagisto',
+                'title' => 'تثبيت Ocom الخاص بك',
+                'welcome-title' => 'مرحبًا بك في Ocom',
             ],
 
             'server-requirements' => [
@@ -976,9 +976,9 @@ return [
 
             'arabic' => 'العربية',
             'back' => 'رجوع',
-            'bagisto' => 'Bagisto',
+            'bagisto' => 'Ocom',
             'bagisto-info' => 'مشروع مجتمعي من قبل',
-            'bagisto-logo' => 'شعار Bagisto',
+            'bagisto-logo' => 'شعار Ocom',
             'bengali' => 'البنغالية',
             'catalan' => 'الكاتالونية',
             'chinese' => 'الصينية',
@@ -990,7 +990,7 @@ return [
             'hebrew' => 'العبرية',
             'hindi' => 'الهندية',
             'indonesian' => 'الإندونيسية',
-            'installation-description' => 'عادة ما تتضمن عملية تثبيت Bagisto عدة خطوات. إليك نظرة عامة عامة على عملية التثبيت لBagisto',
+            'installation-description' => 'عادة ما تتضمن عملية تثبيت Ocom عدة خطوات. إليك نظرة عامة عامة على عملية التثبيت لOcom',
             'installation-info' => 'نحن سعداء برؤيتك هنا!',
             'installation-title' => 'مرحبًا بك في التثبيت',
             'italian' => 'الإيطالية',
@@ -1003,10 +1003,10 @@ return [
             'sinhala' => 'السنهالية',
             'spanish' => 'الإسبانية',
             'swahili' => 'السواحيلية',
-            'title' => 'مثبت Bagisto',
+            'title' => 'مثبت Ocom',
             'turkish' => 'التركية',
             'ukrainian' => 'الأوكرانية',
-            'webkul' => 'Webkul',
+            'webkul' => 'Orbio Solutions',
         ],
     ],
 ];

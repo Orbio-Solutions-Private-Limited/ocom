@@ -807,7 +807,7 @@ return [
         'index' => [
             'create-administrator' => [
                 'admin' => 'Administrator',
-                'bagisto' => 'Bagisto',
+                'bagisto' => 'Ocom',
                 'confirm-password' => 'Confirmați parola',
                 'email' => 'E-mail',
                 'email-address' => 'admin@example.com',
@@ -822,7 +822,7 @@ return [
                 'application-name' => 'Numele aplicației',
                 'argentine-peso' => 'Peso argentinian (ARS)',
                 'australian-dollar' => 'Dolar australian (AUD)',
-                'bagisto' => 'Bagisto',
+                'bagisto' => 'Ocom',
                 'bangladeshi-taka' => 'Taka din Bangladesh (BDT)',
                 'bahraini-dinar' => 'Dinar din Bahrain (BHD)',
                 'brazilian-real' => 'Real brazilian (BRL)',
@@ -917,25 +917,25 @@ return [
             ],
 
             'installation-processing' => [
-                'bagisto' => 'Instalare Bagisto',
+                'bagisto' => 'Instalare Ocom',
                 'bagisto-info' => 'Se creează tabelele bazei de date, acest lucru poate dura câteva momente',
                 'title' => 'Instalare',
             ],
 
             'installation-completed' => [
                 'admin-panel' => 'Panou de administrare',
-                'bagisto-forums' => 'Forum Bagisto',
+                'bagisto-forums' => 'Forum Ocom',
                 'customer-panel' => 'Panou client',
-                'explore-bagisto-extensions' => 'Explorați extensiile Bagisto',
+                'explore-bagisto-extensions' => 'Explorați extensiile Ocom',
                 'title' => 'Instalare finalizată',
-                'title-info' => 'Bagisto a fost instalat cu succes pe sistemul dumneavoastră.',
+                'title-info' => 'Ocom a fost instalat cu succes pe sistemul dumneavoastră.',
             ],
 
             'ready-for-installation' => [
                 'create-database-tables' => 'Create the database tables',
                 'drop-existing-tables' => 'Drop any existing tables present',
                 'install' => 'Instalare',
-                'install-info' => 'Bagisto pentru instalare',
+                'install-info' => 'Ocom pentru instalare',
                 'install-info-button' => 'Faceți clic pe butonul de mai jos pentru a',
                 'populate-database-tables' => 'Populate the database tables',
                 'start-installation' => 'Începeți instalarea',
@@ -947,8 +947,8 @@ return [
                 'locale' => 'Limbă',
                 'main' => 'Început',
                 'select-locale' => 'Selectați limba',
-                'title' => 'Instalarea Bagisto',
-                'welcome-title' => 'Bun venit la Bagisto',
+                'title' => 'Instalarea Ocom',
+                'welcome-title' => 'Bun venit la Ocom',
             ],
 
             'server-requirements' => [
@@ -976,9 +976,9 @@ return [
 
             'arabic' => 'Arabă',
             'back' => 'Înapoi',
-            'bagisto' => 'Bagisto',
+            'bagisto' => 'Ocom',
             'bagisto-info' => 'un proiect comunitar realizat de',
-            'bagisto-logo' => 'Logo Bagisto',
+            'bagisto-logo' => 'Logo Ocom',
             'bengali' => 'Bengali',
             'catalan' => 'Catalană',
             'chinese' => 'Chineză',
@@ -990,7 +990,7 @@ return [
             'hebrew' => 'Ebraică',
             'hindi' => 'Hindi',
             'indonesian' => 'Indoneziană',
-            'installation-description' => 'Instalarea Bagisto implică de obicei mai mulți pași. Iată o prezentare generală a procesului de instalare pentru Bagisto',
+            'installation-description' => 'Instalarea Ocom implică de obicei mai mulți pași. Iată o prezentare generală a procesului de instalare pentru Ocom',
             'installation-info' => 'Suntem bucuroși să vă vedem aici!',
             'installation-title' => 'Bun venit la instalare',
             'italian' => 'Italiană',
@@ -1003,10 +1003,10 @@ return [
             'sinhala' => 'Singhaleză',
             'spanish' => 'Spaniolă',
             'swahili' => 'Swahili',
-            'title' => 'Instalator Bagisto',
+            'title' => 'Instalator Ocom',
             'turkish' => 'Turcă',
             'ukrainian' => 'Ucraineană',
-            'webkul' => 'Webkul',
+            'webkul' => 'Orbio Solutions',
         ],
     ],
 ];

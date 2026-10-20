@@ -635,7 +635,7 @@
                                                         >
                                                             <button
                                                                 type="button"
-                                                                class="absolute top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-md border border-blue-700 bg-blue-600 text-gray-50 transition-all hover:opacity-90 ltr:right-1.5 rtl:left-1.5"
+                                                                class="primary-button absolute top-1/2 flex h-7 min-h-7 w-7 -translate-y-1/2 items-center justify-center p-0 ltr:right-1.5 rtl:left-1.5"
                                                                 v-show="filterValue[column.index]"
                                                                 :aria-label="'@lang('admin::app.components.datagrid.toolbar.filter.apply-filters-btn')'"
                                                                 @click="applyNumericFilter(column)"
@@ -813,7 +813,7 @@
                                                         >
                                                             <button
                                                                 type="button"
-                                                                class="absolute top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-md border border-blue-700 bg-blue-600 text-gray-50 transition-all hover:opacity-90 ltr:right-1.5 rtl:left-1.5"
+                                                                class="primary-button absolute top-1/2 flex h-7 min-h-7 w-7 -translate-y-1/2 items-center justify-center p-0 ltr:right-1.5 rtl:left-1.5"
                                                                 v-show="filterValue[column.index]"
                                                                 :aria-label="'@lang('admin::app.components.datagrid.toolbar.filter.apply-filters-btn')'"
                                                                 @click="applyTextFilter(column)"

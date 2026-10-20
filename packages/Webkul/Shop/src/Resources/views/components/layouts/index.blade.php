@@ -39,9 +39,9 @@
             name="currency"
             content="{{ core()->getCurrentCurrency()->toJson() }}"
         >
-        <meta 
-            name="generator" 
-            content="Bagisto"
+        <meta
+            name="generator"
+            content="Ocom"
         >
 
         @stack('meta')
@@ -102,7 +102,7 @@
             Skip to main content
         </a>
 
-        <!-- Built With Bagisto -->
+        <!-- Ocom -->
         <div id="app">
             <!-- Flash Message Blade Component -->
             <x-shop::flash-group />

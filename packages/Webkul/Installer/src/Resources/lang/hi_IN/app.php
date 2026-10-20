@@ -924,9 +924,9 @@ return [
 
             'installation-completed' => [
                 'admin-panel' => 'व्यवस्थापक पैनल',
-                'bagisto-forums' => 'Bagisto फ़ोरम',
+                'bagisto-forums' => 'Ocom फ़ोरम',
                 'customer-panel' => 'ग्राहक पैनल',
-                'explore-bagisto-extensions' => 'Bagisto एक्सटेंशन अन्वेषण करें',
+                'explore-bagisto-extensions' => 'Ocom एक्सटेंशन अन्वेषण करें',
                 'title' => 'स्थापना पूर्ण',
                 'title-info' => 'बैगिस्टो को आपके सिस्टम पर सफलतापूर्वक स्थापित किया गया है।',
             ],
@@ -935,7 +935,7 @@ return [
                 'create-database-tables' => 'डेटाबेस तालिकाएँ बनाएँ',
                 'drop-existing-tables' => 'मौजूदा किसी भी त को हटाएं',
                 'install' => 'स्थापना',
-                'install-info' => 'स्थापना के लिए Bagisto',
+                'install-info' => 'स्थापना के लिए Ocom',
                 'install-info-button' => 'नीचे दिए गए बटन पर क्लिक करें',
                 'populate-database-tables' => 'डेटाबेस तालिकाओं को पॉप्युलेट करें',
                 'start-installation' => 'स्थापना शुरू करें',
@@ -947,8 +947,8 @@ return [
                 'locale' => 'स्थान',
                 'main' => 'शुरू',
                 'select-locale' => 'स्थान चुनें',
-                'title' => 'आपका Bagisto स्थापित करें',
-                'welcome-title' => 'Bagisto में आपका स्वागत है।',
+                'title' => 'आपका Ocom स्थापित करें',
+                'welcome-title' => 'Ocom में आपका स्वागत है।',
             ],
 
             'server-requirements' => [
@@ -978,7 +978,7 @@ return [
             'back' => 'वापस',
             'bagisto' => 'बैगिस्टो',
             'bagisto-info' => 'एक सामुदायिक परियोजना द्वारा',
-            'bagisto-logo' => 'बैगिस्टो लोगो',
+            'bagisto-logo' => 'Ocom Logo',
             'bengali' => 'बंगाली',
             'catalan' => 'कातालान',
             'chinese' => 'चीनी',
@@ -1006,7 +1006,7 @@ return [
             'title' => 'बैगिस्टो स्थापक',
             'turkish' => 'तुर्की',
             'ukrainian' => 'यूक्रेनी',
-            'webkul' => 'वेबकुल',
+            'webkul' => 'Orbio Solutions',
         ],
     ],
 ];

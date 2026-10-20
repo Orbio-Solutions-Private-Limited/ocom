@@ -5,10 +5,10 @@ return [
         'forgot-password' => [
             'already-sent' => 'Mail de réinitialisation de mot de passe déjà envoyé.',
             'back' => 'Retour à la connexion ?',
-            'bagisto' => 'Bagisto',
+            'bagisto' => 'Ocom',
             'email' => 'E-mail',
             'email-not-exist' => 'Nous ne pouvons pas trouver d\'utilisateur avec cette adresse e-mail',
-            'footer' => '© Droits d’auteur 2010 - :current_year, Webkul Software (enregistré en Inde). Tous droits réservés.',
+            'footer' => '© Copyright :current_year, Orbio Solutions. All rights reserved.',
             'forgot-password-text' => 'Si vous avez oublié votre mot de passe, récupérez-le en entrant votre adresse e-mail.',
             'page-title' => 'Vous avez oublié votre mot de passe ?',
             'reset-link-sent' => 'Si cette adresse e-mail est enregistrée, un lien de réinitialisation du mot de passe lui a été envoyé.',
@@ -20,21 +20,21 @@ return [
 
         'reset-password' => [
             'back-link-title' => 'Retour à la connexion',
-            'bagisto' => 'Bagisto',
+            'bagisto' => 'Ocom',
             'confirm-password' => 'Confirmer le mot de passe',
             'email' => 'E-mail enregistré',
-            'footer' => '© Droits d’auteur 2010 - :current_year, Webkul Software (enregistré en Inde). Tous droits réservés.',
+            'footer' => '© Copyright :current_year, Orbio Solutions. All rights reserved.',
             'password' => 'Mot de passe',
             'submit-btn-title' => 'Réinitialiser le mot de passe',
             'title' => 'Réinitialiser le mot de passe',
         ],
 
         'login-form' => [
-            'bagisto' => 'Bagisto',
+            'bagisto' => 'Ocom',
             'button-title' => 'Se connecter',
             'create-your-account' => 'Créez votre compte',
             'email' => 'E-mail',
-            'footer' => '© Droits d’auteur 2010 - :current_year, Webkul Software (enregistré en Inde). Tous droits réservés.',
+            'footer' => '© Copyright :current_year, Orbio Solutions. All rights reserved.',
             'forgot-pass' => 'Mot de passe oublié ?',
             'form-login-text' => 'Si vous avez un compte, connectez-vous avec votre adresse e-mail.',
             'invalid-credentials' => "Veuillez vérifier vos informations d'identification et réessayer.",
@@ -50,13 +50,13 @@ return [
 
         'signup-form' => [
             'account-exists' => 'Vous avez déjà un compte ?',
-            'bagisto' => 'Bagisto',
+            'bagisto' => 'Ocom',
             'button-title' => 'S\'inscrire',
             'click-here' => 'Cliquez ici',
             'confirm-pass' => 'Confirmer le mot de passe',
             'email' => 'E-mail',
             'first-name' => 'Prénom',
-            'footer' => '© Droits d’auteur 2010 - :current_year, Webkul Software (enregistré en Inde). Tous droits réservés.',
+            'footer' => '© Copyright :current_year, Orbio Solutions. All rights reserved.',
             'form-signup-text' => 'Si vous êtes nouveau dans notre magasin, nous sommes ravis de vous avoir comme membre.',
             'last-name' => 'Nom de famille',
             'page-title' => 'Devenir utilisateur',
@@ -583,7 +583,7 @@ return [
                     'bottom' => [
                         'all' => 'Tout',
                         'back-button' => 'Retour au menu principal',
-                        'bagisto' => 'Bagisto',
+                        'bagisto' => 'Ocom',
                         'categories' => 'Catégories',
                         'compare' => 'Comparer',
                         'dropdown-text' => 'Gérer le panier, les commandes et la liste de souhaits',
@@ -604,7 +604,7 @@ return [
                 'mobile' => [
                     'account' => 'Compte',
                     'back-button' => 'Retour au menu principal',
-                    'bagisto' => 'Bagisto',
+                    'bagisto' => 'Ocom',
                     'compare' => 'Comparer',
                     'currencies' => 'Devises',
                     'dropdown-text' => 'Gérer le panier, les commandes et la liste de souhaits',
@@ -644,7 +644,7 @@ return [
                 'customer-service' => 'Service client',
                 'email' => 'E-mail',
                 'footer-content' => 'Contenu du pied de page',
-                'footer-text' => '© Copyright 2010 - :current_year, Webkul Software (enregistré en Inde). Tous droits réservés.',
+                'footer-text' => '© Copyright :current_year, Orbio Solutions. All rights reserved.',
                 'locale' => 'Langue',
                 'newsletter-text' => 'Préparez-vous pour notre newsletter amusante !',
                 'order-return' => 'Commande et retours',
@@ -1113,7 +1113,7 @@ return [
             'suspended-account-message' => 'Votre compte a été suspendu.',
 
             'index' => [
-                'bagisto' => 'Bagisto',
+                'bagisto' => 'Ocom',
                 'cart' => 'Panier',
                 'continue-shopping' => 'Continuer vos achats',
                 'empty-product' => 'Vous n\'avez pas de produit dans votre panier.',

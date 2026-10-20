@@ -6,7 +6,7 @@ return [
             'email' => 'Adresse e-mail',
             'forget-password-link' => 'Mot de passe oublié ?',
             'password' => 'Mot de passe',
-            'powered-by-description' => 'Propulsé par :bagisto, un projet open-source par :webkul.',
+            'powered-by-description' => 'Powered by Orbio Solutions.',
             'submit-btn' => 'Se connecter',
             'title' => 'Se connecter',
         ],
@@ -16,7 +16,7 @@ return [
                 'email' => 'Adresse e-mail enregistrée',
                 'email-not-exist' => 'L\'adresse e-mail n\'existe pas',
                 'page-title' => 'Mot de passe oublié',
-                'powered-by-description' => 'Propulsé par :bagisto, un projet open-source par :webkul.',
+                'powered-by-description' => 'Powered by Orbio Solutions.',
                 'reset-link-sent' => 'Lien de réinitialisation du mot de passe envoyé',
                 'reset-link-failed' => 'Impossible d\'envoyer le lien de réinitialisation du mot de passe. Veuillez réessayer plus tard.',
                 'sign-in-link' => 'Retour à la connexion ?',
@@ -30,7 +30,7 @@ return [
             'confirm-password' => 'Confirmer le mot de passe',
             'email' => 'Adresse e-mail enregistrée',
             'password' => 'Mot de passe',
-            'powered-by-description' => 'Propulsé par :bagisto, un projet open-source par :webkul.',
+            'powered-by-description' => 'Powered by Orbio Solutions.',
             'submit-btn' => 'Réinitialiser le mot de passe',
             'title' => 'Réinitialiser le mot de passe',
         ],
@@ -125,13 +125,13 @@ return [
     'help' => [
         'index' => [
             'title' => 'Aide et ressources',
-            'description' => 'Tout ce dont vous avez besoin pour tirer le meilleur parti de Bagisto — hébergement, support et services professionnels, ainsi que des extensions et la documentation pour développeurs.',
+            'description' => 'Tout ce dont vous avez besoin pour tirer le meilleur parti de Ocom — hébergement, support et services professionnels, ainsi que des extensions et la documentation pour développeurs.',
 
             'services-title' => 'Services',
             'resources-title' => 'Ressources et documentation',
 
             'cloud-hosting' => 'Hébergement cloud',
-            'cloud-hosting-info' => 'Hébergement cloud géré et économique — lancez votre boutique Bagisto sur le cloud en quelques minutes, entièrement optimisée et évolutive.',
+            'cloud-hosting-info' => 'Hébergement cloud géré et économique — lancez votre boutique Ocom sur le cloud en quelques minutes, entièrement optimisée et évolutive.',
 
             'support' => 'Support et maintenance',
             'support-info' => 'Support technique dédié et forfaits de maintenance continue pour garder votre boutique sécurisée, à jour et fonctionnant sans accroc.',
@@ -140,22 +140,22 @@ return [
             'paid-services-info' => 'Aide d\'experts pour l\'intégration de modules, la personnalisation, la migration de données, les mises à niveau de version et le développement sur mesure.',
 
             'extensions' => 'Extensions',
-            'extensions-info' => 'Parcourez les modules complémentaires officiels et communautaires pour étendre Bagisto avec de nouveaux connecteurs, canaux et fonctionnalités.',
+            'extensions-info' => 'Parcourez les modules complémentaires officiels et communautaires pour étendre Ocom avec de nouveaux connecteurs, canaux et fonctionnalités.',
 
             'docs' => 'Documentation dev et blogs',
             'docs-info' => 'Guides pour développeurs, tutoriels et derniers articles pour vous aider à créer, configurer et rester à jour.',
 
             'api-docs' => 'Documentation API',
-            'api-docs-info' => 'Référence complète des API REST et GraphQL avec points de terminaison, authentification et exemples pour intégrer Bagisto à votre stack.',
+            'api-docs-info' => 'Référence complète des API REST et GraphQL avec points de terminaison, authentification et exemples pour intégrer Ocom à votre stack.',
 
             'community' => 'Forum communautaire',
-            'community-info' => 'Posez des questions, partagez des idées et connectez-vous avec des milliers de développeurs et de marchands Bagisto dans le monde entier.',
+            'community-info' => 'Posez des questions, partagez des idées et connectez-vous avec des milliers de développeurs et de marchands Ocom dans le monde entier.',
 
             'video-tutorials' => 'Tutoriels vidéo',
             'video-tutorials-info' => 'Tutoriels vidéo pas à pas couvrant l\'installation, la configuration et la gestion quotidienne de la boutique.',
 
             'cta-title' => 'Vous avez encore besoin d\'aide ?',
-            'cta-description' => 'Discutez avec l\'équipe Bagisto de l\'hébergement, du développement personnalisé ou de tout autre sujet.',
+            'cta-description' => 'Discutez avec l\'équipe Ocom de l\'hébergement, du développement personnalisé ou de tout autre sujet.',
             'cta-btn' => 'Contactez-nous',
         ],
     ],
@@ -4399,7 +4399,7 @@ return [
                     'title' => 'Général',
 
                     'sections' => [
-                        'bagisto' => 'Bagisto',
+                        'bagisto' => 'Ocom',
                         'cache' => 'En cache',
                         'database' => 'Base de données',
                         'drivers' => 'Pilotes',
@@ -5881,6 +5881,7 @@ return [
                 'gdpr-data-requests' => 'Demandes de données GDPR',
                 'groups' => 'Groupes',
                 'help' => 'Aide et ressources',
+                'powered-by' => 'Powered by Orbio Solutions',
                 'imports' => 'Importations',
                 'inventory-sources' => 'Sources de l\'inventaire',
                 'invoices' => 'Factures',
@@ -5917,7 +5918,7 @@ return [
             ],
 
             'powered-by' => [
-                'description' => 'Propulsé par :bagisto, un projet open-source par :webkul.',
+                'description' => 'Powered by Orbio Solutions.',
             ],
         ],
 
@@ -6308,7 +6309,7 @@ return [
     ],
 
     'footer' => [
-        'copy-right' => 'Propulsé par <a href="https://bagisto.com/" target="_blank">Bagisto</a>, un projet communautaire par <a href="https://webkul.com/" target="_blank">Webkul</a>',
+        'copy-right' => 'Powered by <a href="https://www.orbiosolutions.com/" target="_blank">Ocom</a>, a product of <a href="https://www.orbiosolutions.com/" target="_blank">Orbio Solutions</a>',
     ],
 
     'emails' => [
@@ -6511,7 +6512,7 @@ return [
             'refunded-at' => 'Remboursée le',
 
             'actions' => 'Actions',
-            'actions-note' => 'Les remboursements sont traités manuellement via les outils existants de Bagisto (commande / remboursement / RMA). Utilisez ces actions pour enregistrer le résultat sur la preuve de rétractation.',
+            'actions-note' => 'Les remboursements sont traités manuellement via les outils existants de Ocom (commande / remboursement / RMA). Utilisez ces actions pour enregistrer le résultat sur la preuve de rétractation.',
             'resend-confirmation' => 'Renvoyer l’e-mail de confirmation',
             'mark-refunded' => 'Marquer comme remboursée',
             'refund-note-label' => 'Référence du remboursement (facultatif)',

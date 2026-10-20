@@ -35,7 +35,7 @@
                         <button
                             class="icon-calendar flex h-8 w-9 items-center justify-center rounded-md text-xl transition-all duration-200"
                             :class="viewType === 'calendar'
-                                ? 'bg-blue-600 text-white shadow-sm'
+                                ? 'brand-selected shadow-sm'
                                 : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200'"
                             @click="viewType = 'calendar'"
                         ></button>
@@ -44,7 +44,7 @@
                         <button
                             class="icon-list flex h-8 w-9 items-center justify-center rounded-md text-xl transition-all duration-200"
                             :class="viewType === 'table'
-                                ? 'bg-blue-600 text-white shadow-sm'
+                                ? 'brand-selected shadow-sm'
                                 : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200'"
                             @click="viewType = 'table'"
                         ></button>

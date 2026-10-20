@@ -807,7 +807,7 @@ return [
         'index' => [
             'create-administrator' => [
                 'admin' => 'مدیر',
-                'bagisto' => 'Bagisto',
+                'bagisto' => 'Ocom',
                 'confirm-password' => 'تأیید رمز عبور',
                 'email' => 'ایمیل',
                 'email-address' => 'admin@example.com',
@@ -822,7 +822,7 @@ return [
                 'application-name' => 'نام برنامه',
                 'argentine-peso' => 'پزوی آرژانتین (ARS)',
                 'australian-dollar' => 'دلار استرالیا (AUD)',
-                'bagisto' => 'Bagisto',
+                'bagisto' => 'Ocom',
                 'bangladeshi-taka' => 'تاکای بنگلادش (BDT)',
                 'bahraini-dinar' => 'دینار بحرین (BHD)',
                 'brazilian-real' => 'رئال برزیل (BRL)',
@@ -917,25 +917,25 @@ return [
             ],
 
             'installation-processing' => [
-                'bagisto' => 'نصب Bagisto',
+                'bagisto' => 'نصب Ocom',
                 'bagisto-info' => 'ایجاد جداول پایگاه داده، این ممکن است چند لحظه طول بکشد',
                 'title' => 'نصب',
             ],
 
             'installation-completed' => [
                 'admin-panel' => 'پنل مدیریت',
-                'bagisto-forums' => 'انجمن Bagisto',
+                'bagisto-forums' => 'انجمن Ocom',
                 'customer-panel' => 'پنل مشتریان',
-                'explore-bagisto-extensions' => 'کاوش در افزونه‌های Bagisto',
+                'explore-bagisto-extensions' => 'کاوش در افزونه‌های Ocom',
                 'title' => 'نصب با موفقیت انجام شد',
-                'title-info' => 'Bagisto با موفقیت بر روی سیستم شما نصب شده است.',
+                'title-info' => 'Ocom با موفقیت بر روی سیستم شما نصب شده است.',
             ],
 
             'ready-for-installation' => [
                 'create-database-tables' => 'ایجاد جداول پایگاه د',
                 'drop-existing-tables' => 'حذف جداول موجود',
                 'install' => 'نصب',
-                'install-info' => 'Bagisto برای نصب',
+                'install-info' => 'Ocom برای نصب',
                 'install-info-button' => 'برای شروع کلیک کنید',
                 'populate-database-tables' => 'پر کردن جدول‌های پایگاه‌داده',
                 'start-installation' => 'شروع نصب',
@@ -947,8 +947,8 @@ return [
                 'locale' => 'محلی',
                 'main' => 'شروع',
                 'select-locale' => 'انتخاب محلی',
-                'title' => 'نصب Bagisto شما',
-                'welcome-title' => 'خوش آمدید به Bagisto',
+                'title' => 'نصب Ocom شما',
+                'welcome-title' => 'خوش آمدید به Ocom',
             ],
 
             'server-requirements' => [
@@ -976,9 +976,9 @@ return [
 
             'arabic' => 'عربی',
             'back' => 'بازگشت',
-            'bagisto' => 'Bagisto',
+            'bagisto' => 'Ocom',
             'bagisto-info' => 'یک پروژه جامعه‌ای توسط',
-            'bagisto-logo' => 'لوگوی Bagisto',
+            'bagisto-logo' => 'لوگوی Ocom',
             'bengali' => 'بنگالی',
             'catalan' => 'کاتالان',
             'chinese' => 'چینی',
@@ -990,9 +990,9 @@ return [
             'hebrew' => 'عبری',
             'hindi' => 'هندی',
             'indonesian' => 'اندونزیایی',
-            'installation-description' => 'نصب Bagisto معمولاً شامل چندین مرحله است. در اینجا یک نمای کلی از فرآیند نصب برای Bagisto آورده شده است',
+            'installation-description' => 'نصب Ocom معمولاً شامل چندین مرحله است. در اینجا یک نمای کلی از فرآیند نصب برای Ocom آورده شده است',
             'installation-info' => 'خوشحالیم که شما را اینجا می‌بینیم!',
-            'installation-title' => 'به نصب Bagisto خوش آمدید',
+            'installation-title' => 'به نصب Ocom خوش آمدید',
             'italian' => 'ایتالیایی',
             'japanese' => 'ژاپنی',
             'persian' => 'فارسی',
@@ -1003,10 +1003,10 @@ return [
             'sinhala' => 'سینهالا',
             'spanish' => 'اسپانیایی',
             'swahili' => 'سواحیلی',
-            'title' => 'نصب‌کننده Bagisto',
+            'title' => 'نصب‌کننده Ocom',
             'turkish' => 'ترکی',
             'ukrainian' => 'اوکراینی',
-            'webkul' => 'Webkul',
+            'webkul' => 'Orbio Solutions',
         ],
     ],
 ];

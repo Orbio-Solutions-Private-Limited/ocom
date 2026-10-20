@@ -18,35 +18,23 @@ export class ThemeGalleryPage extends BasePage {
         await expect(this.page.getByText("My Themes", { exact: true })).toBeVisible();
     }
 
-    async expectThemesGroupedByInstallState(): Promise<void> {
+    async expectInstalledThemesWithoutMarketplace(): Promise<void> {
         await this.open();
 
         const installed = this.group("My Themes");
 
-        const available = this.group("Buy Themes");
-
         await expect(installed).toBeVisible();
 
-        await expect(available).toBeVisible();
+        await expect(
+            this.page.getByText("Buy Themes", { exact: true }),
+        ).toHaveCount(0);
 
         await expect(
             installed.getByRole("link", { name: "Customize" }).first(),
         ).toBeVisible();
 
         await expect(
-            installed.getByRole("link", { name: "Preview" }),
-        ).toHaveCount(0);
-
-        await expect(
-            installed.getByRole("link", { name: "View & Buy" }),
-        ).toHaveCount(0);
-
-        await expect(
-            available.getByRole("link", { name: "View & Buy" }).first(),
-        ).toBeVisible();
-
-        await expect(
-            available.getByRole("link", { name: "Customize" }),
+            this.page.getByRole("link", { name: "View & Buy" }),
         ).toHaveCount(0);
     }
 }

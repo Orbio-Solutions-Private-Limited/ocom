@@ -263,6 +263,9 @@
                         case 'patch':
                         case 'delete':
                             this.$emitter.emit('open-confirm-modal', {
+                                options: {
+                                    destructive: method === 'delete',
+                                },
                                 agree: () => {
                                     this.$emit('actionStart', action);
 

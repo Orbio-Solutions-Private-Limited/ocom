@@ -5,34 +5,34 @@
 | Shop Theme Catalog
 |--------------------------------------------------------------------------
 |
-| Themes offered for the storefront, mirroring https://bagisto.com/en/bagisto-themes/.
+| Themes offered for the storefront, mirroring https://www.orbiosolutions.com/.
 |
 | An entry whose `code` matches a theme in `config/themes.php` is treated as installed.
 | `screenshot` is a remote url, or a path relative to the admin asset directory.
 |
 */
 
-$screenshots = 'https://bagisto.com/wp-content/themes/bagisto/images/theme-listing/themes';
+$screenshots = 'https://www.orbiosolutions.com';
 
 return [
     [
         'code' => 'default',
         'name' => 'Default',
-        'author' => 'Webkul',
+        'author' => 'Orbio Solutions',
         'version' => '2.4',
         'url' => null,
-        'demo_url' => 'https://commerce.bagisto.com/',
+        'demo_url' => 'https://www.orbiosolutions.com/',
         'screenshot' => 'images/themes/default.jpg',
         'rating' => null,
         'tags' => ['free', 'starter'],
-        'description' => 'The theme Bagisto ships with. A clean, responsive storefront that works out of the box for any catalog.',
+        'description' => 'The default theme included with the platform. A clean, responsive storefront that works out of the box for any catalog.',
     ], [
         'code' => 'fashion',
         'name' => 'Ethereal Fashion',
         'author' => null,
         'version' => null,
-        'url' => 'https://store.webkul.com/bagisto-fashion-commerce.html',
-        'demo_url' => 'https://demo.bagisto.com/ethereal-fashion/',
+        'url' => 'https://www.orbiosolutions.com/bagisto-fashion-commerce.html',
+        'demo_url' => 'https://www.orbiosolutions.com/ethereal-fashion/',
         'screenshot' => $screenshots.'/fashion-theme.png',
         'rating' => null,
         'tags' => ['premium', 'fashion'],
@@ -42,8 +42,8 @@ return [
         'name' => 'Vape Commerce',
         'author' => null,
         'version' => null,
-        'url' => 'https://store.webkul.com/vape-commerce.html',
-        'demo_url' => 'https://demo.bagisto.com/breeze-vape/',
+        'url' => 'https://www.orbiosolutions.com/vape-commerce.html',
+        'demo_url' => 'https://www.orbiosolutions.com/breeze-vape/',
         'screenshot' => $screenshots.'/vape-commerce-theme.png',
         'rating' => null,
         'tags' => ['premium', 'vape'],
@@ -53,8 +53,8 @@ return [
         'name' => 'Quick Commerce',
         'author' => null,
         'version' => null,
-        'url' => 'https://store.webkul.com/bagisto-quick-commerce.html',
-        'demo_url' => 'https://demo.bagisto.com/commercia-retail/',
+        'url' => 'https://www.orbiosolutions.com/bagisto-quick-commerce.html',
+        'demo_url' => 'https://www.orbiosolutions.com/commercia-retail/',
         'screenshot' => $screenshots.'/quick-commerce-theme.png',
         'rating' => null,
         'tags' => ['premium', 'quick-commerce'],
@@ -64,8 +64,8 @@ return [
         'name' => 'Jewellery Commerce',
         'author' => null,
         'version' => null,
-        'url' => 'https://store.webkul.com/jewellery-commerce.html',
-        'demo_url' => 'https://demo.bagisto.com/adornments-jewellery/',
+        'url' => 'https://www.orbiosolutions.com/jewellery-commerce.html',
+        'demo_url' => 'https://www.orbiosolutions.com/adornments-jewellery/',
         'screenshot' => $screenshots.'/dornments-theme.png',
         'rating' => null,
         'tags' => ['premium', 'jewellery'],
@@ -75,8 +75,8 @@ return [
         'name' => 'Velora Perfume',
         'author' => null,
         'version' => null,
-        'url' => 'https://store.webkul.com/bagisto-perfume-theme.html',
-        'demo_url' => 'https://demo.bagisto.com/perfume-theme/',
+        'url' => 'https://www.orbiosolutions.com/bagisto-perfume-theme.html',
+        'demo_url' => 'https://www.orbiosolutions.com/perfume-theme/',
         'screenshot' => $screenshots.'/perfume-commerce-theme.png',
         'rating' => null,
         'tags' => ['premium', 'perfume'],
@@ -86,30 +86,30 @@ return [
         'name' => 'Electronic Theme',
         'author' => null,
         'version' => null,
-        'url' => 'https://store.webkul.com/bagisto-laravel-electronic-theme.html',
-        'demo_url' => 'https://demo.bagisto.com/electronic-theme/',
+        'url' => 'https://www.orbiosolutions.com/bagisto-laravel-electronic-theme.html',
+        'demo_url' => 'https://www.orbiosolutions.com/electronic-theme/',
         'screenshot' => $screenshots.'/electronic-commerce-theme.png',
         'rating' => null,
         'tags' => ['premium', 'electronics'],
         'description' => 'Modern electronics theme designed for high-converting online stores.',
     ], [
         'code' => 'elvix',
-        'name' => 'Bagisto Elvix',
+        'name' => 'Elvix',
         'author' => null,
         'version' => null,
         'url' => null,
-        'demo_url' => 'https://demo.bagisto.com/elvix-theme/',
+        'demo_url' => 'https://www.orbiosolutions.com/elvix-theme/',
         'screenshot' => $screenshots.'/elvix-theme.png',
         'rating' => null,
         'tags' => ['electronics'],
-        'description' => 'Bagisto Elvix theme.',
+        'description' => 'Elvix theme.',
     ], [
         'code' => 'autrivo',
         'name' => 'Autrivo Automobile',
         'author' => null,
         'version' => null,
         'url' => null,
-        'demo_url' => 'https://demo.bagisto.com/automobile-theme/',
+        'demo_url' => 'https://www.orbiosolutions.com/automobile-theme/',
         'screenshot' => $screenshots.'/autrivo-theme.png',
         'rating' => null,
         'tags' => ['automobile'],
@@ -120,7 +120,7 @@ return [
         'author' => null,
         'version' => null,
         'url' => null,
-        'demo_url' => 'https://demo.bagisto.com/common/waggin/',
+        'demo_url' => 'https://www.orbiosolutions.com/common/waggin/',
         'screenshot' => $screenshots.'/pet-theme.png',
         'rating' => null,
         'tags' => ['premium', 'pet'],

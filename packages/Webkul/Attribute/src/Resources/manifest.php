@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'name' => 'Webkul Bagisto Attributes',
+    'name' => 'Ocom Attributes',
     'version' => core()->version(),
 ];

@@ -51,7 +51,11 @@
                                     @{{ options.btnDisagree }}
                                 </button>
 
-                                <button type="button" class="primary-button" @click="agree">
+                                <button
+                                    type="button"
+                                    :class="options.destructive ? 'danger-button' : 'primary-button'"
+                                    @click="agree"
+                                >
                                     @{{ options.btnAgree }}
                                 </button>
                             </div>
@@ -77,6 +81,7 @@
                     options: {
                         btnDisagree: '',
                         btnAgree: '',
+                        destructive: false,
                     },
 
                     agreeCallback: null,
@@ -96,6 +101,7 @@
                     options = {
                         btnDisagree: "@lang('admin::app.components.modal.confirm.disagree-btn')",
                         btnAgree: "@lang('admin::app.components.modal.confirm.agree-btn')",
+                        destructive: false,
                     },
                     agree = () => {},
                     disagree = () => {},
@@ -108,7 +114,12 @@
 
                     this.message = message;
 
-                    this.options = options;
+                    this.options = {
+                        btnDisagree: "@lang('admin::app.components.modal.confirm.disagree-btn')",
+                        btnAgree: "@lang('admin::app.components.modal.confirm.agree-btn')",
+                        destructive: false,
+                        ...options,
+                    };
 
                     this.agreeCallback = agree;
 

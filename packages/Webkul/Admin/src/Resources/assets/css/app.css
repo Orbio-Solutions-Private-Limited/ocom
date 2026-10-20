@@ -22,11 +22,58 @@
     --breakpoint-2xl: 1920px;
 
     /**
-     * Colours — the palette of named colours used in the admin.
+     * Colours — Orbio admin design system.
      */
-    --color-darkGreen: #40994A;
-    --color-darkBlue:  #0044F2;
-    --color-darkPink:  #F85156;
+    --color-darkGreen: #159876;
+    --color-darkBlue:  #004A3B;
+    --color-darkPink:  #A23B3B;
+
+    --color-brand:         #004A3B;
+    --color-brand-sidebar: #FFFFFF;
+    --color-sidebar-text:  #075B46;
+    --color-sidebar-hover: #EDF5F1;
+    --color-sidebar-active: #175D49;
+    --color-sidebar-sublink-text: #536B61;
+    --color-sidebar-sublink-hover: #F2F6F4;
+    --color-sidebar-sublink-active-bg: #E2F1E9;
+    --color-sidebar-sublink-active-text: #004A3B;
+    --color-brand-panel:   #004A3B;
+    --color-brand-focus:   #0B6B53;
+    --color-brand-accent:  #81BB55;
+    --color-brand-muted:   #CFE3DA;
+    --color-surface:       #FFFFFF;
+    --color-wash:          #F2F6F4;
+    --color-border:        #D5DED9;
+    --color-ink:           #13241F;
+    --color-ink-secondary: #536B61;
+
+    --color-gray-50:  #F2F6F4;
+    --color-gray-100: #E8EDEA;
+    --color-gray-200: #D5DED9;
+    --color-gray-300: #B8C5BE;
+    --color-gray-400: #8A9A92;
+    --color-gray-500: #536B61;
+    --color-gray-600: #536B61;
+    --color-gray-700: #2D453C;
+    --color-gray-800: #13241F;
+    --color-gray-900: #0A1814;
+    --color-gray-950: #050D0B;
+
+    --color-blue-50:  #E8F5F0;
+    --color-blue-100: #CFE3DA;
+    --color-blue-200: #A8D4C4;
+    --color-blue-400: #2BAE8A;
+    --color-blue-500: #159876;
+    --color-blue-600: #004A3B;
+    --color-blue-700: #003D31;
+
+    --color-green-600: #159876;
+    --color-red-600:   #A23B3B;
+    --color-rose-600:  #A23B3B;
+    --color-yellow-500: #B7791F;
+    --color-cyan-600:  #159876;
+    --color-indigo-600: #536B61;
+    --color-slate-400: #8A9A92;
 
     /**
      * Fonts — the named families the admin can ask for by utility.
@@ -45,12 +92,13 @@
 
     /**
      * Text — a font size paired with a default line height.
-     *
-     * Named rather than numbered so the pairing travels together; a utility set on the
-     * element still overrides either half.
      */
     --text-body:               14px;
-    --text-body--line-height:  calc(17 / 14);
+    --text-body--line-height:  calc(20 / 14);
+
+    --radius-button: 8px;
+    --radius-card:   12px;
+    --radius-auth:   16px;
 }
 
 @utility container {
@@ -157,13 +205,20 @@
  * Element defaults, and the handful of v3 behaviours v4 dropped that the admin still
  * relies on — the grey border, the pointer on buttons, the grey placeholder.
  */
+:root {
+    /* --gradient-primary: linear-gradient(90deg, #81bb55 0%, #e6dd61 100%); */
+    --gradient-primary: linear-gradient(90deg, #0088FF 0%, #6155F5 100%);
+    --gradient-primary-hover: linear-gradient(90deg, #74a84c 0%, #d4cc56 100%);
+    --gradient-primary-active: linear-gradient(90deg, #68963f 0%, #c4bc4a 100%);
+}
+
 @layer base {
     *,
     ::after,
     ::before,
     ::backdrop,
     ::file-selector-button {
-        border-color: var(--color-gray-200, currentColor);
+        border-color: var(--color-border, currentColor);
     }
 
     button:not(:disabled),
@@ -172,12 +227,36 @@
     }
 
     body {
-        @apply bg-gray-50;
+        @apply bg-gray-50 font-sans font-normal text-gray-800 antialiased;
+    }
+
+    .font-medium,
+    .font-semibold,
+    .font-bold {
+        font-weight: 400;
+    }
+
+    p.text-xl.font-bold,
+    h1.text-xl.font-bold {
+        font-size: 24px;
+        line-height: 1.25;
+        @apply font-normal text-gray-800 dark:text-white;
+    }
+
+    body.admin-auth p.text-xl.font-bold,
+    body.admin-auth h1.text-xl.font-bold {
+        font-size: 30px;
+        line-height: 1.2;
     }
 
     button:disabled,
     button:disabled:hover {
-        @apply cursor-not-allowed opacity-50;
+        @apply cursor-not-allowed;
+    }
+
+    button:disabled:not(.primary-button):not(.danger-button),
+    button:disabled:not(.primary-button):not(.danger-button):hover {
+        @apply opacity-60;
     }
 
     input,
@@ -187,11 +266,15 @@
     }
 
     p {
-        @apply text-body;
+        @apply text-body text-ink;
+    }
+
+    a:not([class]) {
+        @apply text-brand;
     }
 
     ::selection {
-        @apply bg-darkBlue/20;
+        @apply bg-brand-focus/20;
     }
 
     input::placeholder,
@@ -245,20 +328,152 @@
         @apply text-gray-300;
     }
 
+    .admin-sidebar [class^="icon-"]:not(.sidebar-link.sidebar-active *),
+    .admin-sidebar [class*=" icon-"]:not(.sidebar-link.sidebar-active *),
+    .admin-sidebar-menu [class^="icon-"]:not(.sidebar-link.sidebar-active *),
+    .admin-sidebar-menu [class*=" icon-"]:not(.sidebar-link.sidebar-active *) {
+        color: var(--color-sidebar-text);
+    }
+
+    .admin-sidebar .sidebar-link.sidebar-active [class^="icon-"],
+    .admin-sidebar .sidebar-link.sidebar-active [class*=" icon-"],
+    .admin-sidebar-menu .sidebar-link.sidebar-active [class^="icon-"],
+    .admin-sidebar-menu .sidebar-link.sidebar-active [class*=" icon-"] {
+        @apply text-white;
+    }
+
     .box-shadow {
-        @apply border-[1px] dark:border-gray-800 shadow-[0px_0px_0px_0px_rgba(0,0,0,0.03),0px_1px_1px_0px_rgba(0,0,0,0.03),0px_3px_3px_0px_rgba(0,0,0,0.03),0px_6px_4px_0px_rgba(0,0,0,0.02),0px_11px_4px_0px_rgba(0,0,0,0.00),0px_17px_5px_0px_rgba(0,0,0,0.00)];
+        @apply rounded-card border border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900;
+
+        box-shadow: 0 1px 3px rgb(19 36 31 / 8%);
+    }
+
+    .auth-card {
+        @apply rounded-auth bg-white dark:bg-gray-900;
+
+        box-shadow: 0 4px 24px rgb(19 36 31 / 10%);
     }
 
     .primary-button {
-        @apply bg-blue-600 border border-blue-700 cursor-pointer flex focus:opacity-[0.9] font-semibold gap-x-1 hover:opacity-[0.9] items-center place-content-center px-3 py-1.5 rounded-md text-gray-50 transition-all;
+        @apply inline-flex h-9 min-h-9 cursor-pointer items-center justify-center gap-x-1 whitespace-nowrap rounded-lg border-0 px-3 text-sm font-normal text-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-focus focus-visible:ring-offset-2;
+
+        background: var(--gradient-primary);
+    }
+
+    .primary-button:hover:not(:disabled) {
+        background: var(--gradient-primary-hover);
+    }
+
+    .primary-button:active:not(:disabled) {
+        background: var(--gradient-primary-active);
+    }
+
+    .primary-button:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
     }
 
     .secondary-button {
-        @apply flex cursor-pointer place-content-center items-center gap-x-1 whitespace-nowrap rounded-md border-2 border-blue-600 bg-white px-3 py-1.5 font-semibold text-blue-600 transition-all hover:bg-blue-50/[0.38] focus:bg-blue-50/[0.38] dark:border-gray-400 dark:bg-gray-800 dark:text-white dark:hover:opacity-80;
+        @apply inline-flex h-9 min-h-9 cursor-pointer items-center justify-center gap-x-1 whitespace-nowrap rounded-lg border border-brand-focus bg-white px-3 text-sm font-normal text-brand-focus transition-all hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-focus focus-visible:ring-offset-2 dark:border-brand-focus dark:bg-gray-900 dark:text-white dark:hover:bg-gray-950;
     }
 
     .transparent-button {
-        @apply flex cursor-pointer appearance-none place-content-center items-center gap-x-1 whitespace-nowrap rounded-md border-2 border-transparent px-3 py-1.5 font-semibold text-gray-600 transition-all marker:shadow hover:bg-gray-100 focus:bg-gray-100 dark:hover:bg-gray-950;
+        @apply inline-flex h-9 min-h-9 cursor-pointer items-center justify-center gap-x-1 whitespace-nowrap rounded-lg border border-transparent bg-transparent px-3 text-sm font-normal text-brand-focus transition-all hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-focus focus-visible:ring-offset-2 dark:hover:bg-gray-950;
+    }
+
+    .danger-button {
+        @apply inline-flex h-9 min-h-9 cursor-pointer items-center justify-center gap-x-1 whitespace-nowrap rounded-lg border border-[#A23B3B] bg-[#A23B3B] px-3 text-sm font-normal text-white transition-all hover:bg-[#8f3333] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-focus focus-visible:ring-offset-2 active:bg-[#7d2d2d];
+    }
+
+    .danger-button:disabled {
+        @apply cursor-not-allowed opacity-60;
+    }
+
+    .sign-out-button {
+        @apply inline-flex h-9 min-h-9 cursor-pointer items-center justify-center gap-x-1 whitespace-nowrap rounded-lg border border-brand-accent bg-transparent px-3 text-sm font-normal text-brand-accent transition-all hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-focus focus-visible:ring-offset-2;
+    }
+
+    .brand-selected {
+        background: var(--gradient-primary);
+        @apply text-white;
+    }
+
+    .brand-tab-active {
+        background: var(--gradient-primary);
+        @apply rounded-lg px-2.5 py-1.5 text-xs text-white;
+    }
+
+    .admin-sidebar {
+        background: #ffffff;
+        color: var(--color-sidebar-text);
+    }
+
+    .admin-sidebar .sidebar-link,
+    .admin-sidebar-menu .sidebar-link {
+        color: var(--color-sidebar-text);
+    }
+
+    .admin-sidebar .sidebar-link:hover:not(.sidebar-active),
+    .admin-sidebar-menu .sidebar-link:hover:not(.sidebar-active) {
+        background: var(--color-sidebar-hover);
+        color: var(--color-sidebar-text);
+    }
+
+    .admin-sidebar .sidebar-link.sidebar-active,
+    .admin-sidebar-menu .sidebar-link.sidebar-active {
+        background: var(--color-sidebar-active);
+        @apply text-white;
+    }
+
+    .admin-sidebar .sidebar-link:focus-visible,
+    .admin-sidebar-menu .sidebar-link:focus-visible,
+    .admin-sidebar .sidebar-sublink:focus-visible,
+    .admin-sidebar-menu .sidebar-sublink:focus-visible {
+        @apply outline-none ring-2 ring-brand-focus ring-offset-2;
+    }
+
+    .admin-sidebar .sidebar-sublink,
+    .admin-sidebar-menu .sidebar-sublink {
+        display: block;
+        max-width: 100%;
+        padding: 8px 10px;
+        border-radius: 6px;
+        font-weight: 400;
+        color: var(--color-sidebar-sublink-text);
+        @apply text-sm whitespace-nowrap;
+    }
+
+    .admin-sidebar .sidebar-sublink:hover:not(.sidebar-active),
+    .admin-sidebar-menu .sidebar-sublink:hover:not(.sidebar-active) {
+        background: var(--color-sidebar-sublink-hover);
+        color: var(--color-sidebar-sublink-text);
+    }
+
+    .admin-sidebar .sidebar-sublink.sidebar-active,
+    .admin-sidebar-menu .sidebar-sublink.sidebar-active {
+        background: var(--color-sidebar-sublink-active-bg);
+        color: var(--color-sidebar-sublink-active-text);
+    }
+
+    .sidebar-link.sidebar-active {
+        background: var(--color-sidebar-active);
+        @apply text-white;
+    }
+
+    .admin-auth-shell {
+        @apply relative min-h-screen overflow-hidden bg-brand-panel;
+    }
+
+    .admin-auth-blur {
+        @apply pointer-events-none absolute rounded-full blur-3xl;
+    }
+
+    .admin-auth-blur--a {
+        @apply -left-20 -top-20 h-72 w-72 bg-[#2BAE8A]/25;
+    }
+
+    .admin-auth-blur--b {
+        @apply -bottom-24 -right-16 h-80 w-80 bg-[#81BB55]/20;
     }
 
     .journal-scroll::-webkit-scrollbar {
@@ -302,7 +517,7 @@
     .label-pending_payment,
     .label-completed,
     .label-active {
-        @apply text-[12px] text-white font-semibold py-px px-1.5 max-w-max rounded-[35px];
+        @apply max-w-max rounded-[35px] px-1.5 py-px text-[12px] font-normal text-white;
     }
 
     .label-pending,
@@ -311,7 +526,7 @@
     }
 
     .label-processing {
-        @apply bg-cyan-600;
+        @apply bg-green-600;
     }
 
     .label-completed,
@@ -320,16 +535,16 @@
     }
 
     .label-closed {
-        @apply bg-indigo-600;
+        @apply bg-gray-500;
     }
 
     .label-canceled,
     .label-fraud {
-        @apply bg-rose-600;
+        @apply bg-red-600;
     }
 
     .label-info {
-        @apply bg-slate-400;
+        @apply bg-gray-400;
     }
     
     .status-enable {

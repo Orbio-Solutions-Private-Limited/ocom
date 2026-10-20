@@ -6,7 +6,7 @@ return [
             'email' => 'E-posta Adresi',
             'forget-password-link' => 'Şifremi Unuttum ?',
             'password' => 'Şifre',
-            'powered-by-description' => ':webkul tarafından geliştirilen açık kaynaklı bir proje olan :bagisto tarafından desteklenmektedir.',
+            'powered-by-description' => 'Powered by Orbio Solutions.',
             'submit-btn' => 'Giriş Yap',
             'title' => 'Giriş Yap',
         ],
@@ -16,7 +16,7 @@ return [
                 'email' => 'Kayıtlı E-posta',
                 'email-not-exist' => 'E-posta Bulunamadı',
                 'page-title' => 'Şifremi Unuttum',
-                'powered-by-description' => ':webkul tarafından geliştirilen açık kaynaklı bir proje olan :bagisto tarafından desteklenmektedir.',
+                'powered-by-description' => 'Powered by Orbio Solutions.',
                 'reset-link-sent' => 'Şifre Sıfırlama Bağlantısı Gönderildi',
                 'reset-link-failed' => 'Parola sıfırlama bağlantısı gönderilemedi. Lütfen daha sonra tekrar deneyin.',
                 'sign-in-link' => 'Giriş Yap’a Geri Dön ?',
@@ -30,7 +30,7 @@ return [
             'confirm-password' => 'Şifreyi Onayla',
             'email' => 'Kayıtlı E-posta',
             'password' => 'Şifre',
-            'powered-by-description' => ':webkul tarafından geliştirilen açık kaynaklı bir proje olan :bagisto tarafından desteklenmektedir.',
+            'powered-by-description' => 'Powered by Orbio Solutions.',
             'submit-btn' => 'Şifre Sıfırla',
             'title' => 'Şifre Sıfırlama',
         ],
@@ -125,13 +125,13 @@ return [
     'help' => [
         'index' => [
             'title' => 'Yardım ve Kaynaklar',
-            'description' => 'Bagisto\'dan en iyi şekilde yararlanmak için ihtiyacınız olan her şey — barındırma, destek ve profesyonel hizmetler, ayrıca eklentiler ve geliştirici belgeleri.',
+            'description' => 'Ocom\'dan en iyi şekilde yararlanmak için ihtiyacınız olan her şey — barındırma, destek ve profesyonel hizmetler, ayrıca eklentiler ve geliştirici belgeleri.',
 
             'services-title' => 'Hizmetler',
             'resources-title' => 'Kaynaklar ve Belgeler',
 
             'cloud-hosting' => 'Bulut Barındırma',
-            'cloud-hosting-info' => 'Uygun maliyetli, yönetilen bulut barındırma — Bagisto mağazanızı dakikalar içinde bulutta, tamamen optimize edilmiş ve ölçeklenebilir şekilde başlatın.',
+            'cloud-hosting-info' => 'Uygun maliyetli, yönetilen bulut barındırma — Ocom mağazanızı dakikalar içinde bulutta, tamamen optimize edilmiş ve ölçeklenebilir şekilde başlatın.',
 
             'support' => 'Destek ve Bakım',
             'support-info' => 'Mağazanızı güvenli, güncel ve sorunsuz tutmak için özel teknik destek ve sürekli bakım planları.',
@@ -140,22 +140,22 @@ return [
             'paid-services-info' => 'Modül entegrasyonu, özelleştirme, veri taşıma, sürüm yükseltmeleri ve özel geliştirme için uzman yardımı.',
 
             'extensions' => 'Eklentiler',
-            'extensions-info' => 'Bagisto\'yu yeni bağlayıcılar, kanallar ve özelliklerle genişletmek için resmi ve topluluk eklentilerine göz atın.',
+            'extensions-info' => 'Ocom\'yu yeni bağlayıcılar, kanallar ve özelliklerle genişletmek için resmi ve topluluk eklentilerine göz atın.',
 
             'docs' => 'Geliştirici Belgeleri ve Bloglar',
             'docs-info' => 'Oluşturmanıza, yapılandırmanıza ve güncel kalmanıza yardımcı olacak geliştirici kılavuzları, öğreticiler ve en son makaleler.',
 
             'api-docs' => 'API Belgeleri',
-            'api-docs-info' => 'Bagisto\'yu yığınınızla entegre etmek için uç noktalar, kimlik doğrulama ve örneklerle birlikte eksiksiz REST ve GraphQL API referansı.',
+            'api-docs-info' => 'Ocom\'yu yığınınızla entegre etmek için uç noktalar, kimlik doğrulama ve örneklerle birlikte eksiksiz REST ve GraphQL API referansı.',
 
             'community' => 'Topluluk Forumu',
-            'community-info' => 'Sorular sorun, fikirlerinizi paylaşın ve dünya çapında binlerce Bagisto geliştiricisi ve satıcısıyla bağlantı kurun.',
+            'community-info' => 'Sorular sorun, fikirlerinizi paylaşın ve dünya çapında binlerce Ocom geliştiricisi ve satıcısıyla bağlantı kurun.',
 
             'video-tutorials' => 'Video Eğitimleri',
             'video-tutorials-info' => 'Kurulum, yapılandırma ve günlük mağaza yönetimini kapsayan adım adım video kılavuzları.',
 
             'cta-title' => 'Hâlâ yardıma mı ihtiyacınız var?',
-            'cta-description' => 'Barındırma, özel geliştirme veya başka herhangi bir konu hakkında Bagisto ekibiyle konuşun.',
+            'cta-description' => 'Barındırma, özel geliştirme veya başka herhangi bir konu hakkında Ocom ekibiyle konuşun.',
             'cta-btn' => 'Bize Ulaşın',
         ],
     ],
@@ -4399,7 +4399,7 @@ return [
                     'title' => 'Genel',
 
                     'sections' => [
-                        'bagisto' => 'Bagisto',
+                        'bagisto' => 'Ocom',
                         'cache' => 'Önbelleğe Alındı',
                         'database' => 'Veritabanı',
                         'drivers' => 'Sürücüler',
@@ -5881,6 +5881,7 @@ return [
                 'gdpr-data-requests' => 'GDPR Veri Talepleri',
                 'groups' => 'Gruplar',
                 'help' => 'Yardım ve Kaynaklar',
+                'powered-by' => 'Powered by Orbio Solutions',
                 'imports' => 'İthalat',
                 'inventory-sources' => 'Envanter Kaynakları',
                 'invoices' => 'Faturalar',
@@ -5917,7 +5918,7 @@ return [
             ],
 
             'powered-by' => [
-                'description' => ':webkul tarafından geliştirilen açık kaynaklı bir proje olan :bagisto tarafından desteklenmektedir.',
+                'description' => 'Powered by Orbio Solutions.',
             ],
         ],
 
@@ -6308,7 +6309,7 @@ return [
     ],
 
     'footer' => [
-        'copy-right' => 'Tarafından desteklenmektedir <a href="https://bagisto.com/" target="_blank">Bagisto</a>, Bir Topluluk Projesi <a href="https://webkul.com/" target="_blank">Webkul</a>',
+        'copy-right' => 'Powered by <a href="https://www.orbiosolutions.com/" target="_blank">Ocom</a>, a product of <a href="https://www.orbiosolutions.com/" target="_blank">Orbio Solutions</a>',
     ],
 
     'emails' => [
@@ -6511,7 +6512,7 @@ return [
             'refunded-at' => 'İade tarihi',
 
             'actions' => 'Eylemler',
-            'actions-note' => 'İadeler, Bagisto\'nun mevcut sipariş / iade / RMA araçlarıyla manuel olarak işlenir. Sonucu cayma kanıtına kaydetmek için bu eylemleri kullanın.',
+            'actions-note' => 'İadeler, Ocom\'nun mevcut sipariş / iade / RMA araçlarıyla manuel olarak işlenir. Sonucu cayma kanıtına kaydetmek için bu eylemleri kullanın.',
             'resend-confirmation' => 'Onay E-postasını Yeniden Gönder',
             'mark-refunded' => 'İade Edildi Olarak İşaretle',
             'refund-note-label' => 'İade referansı (isteğe bağlı)',

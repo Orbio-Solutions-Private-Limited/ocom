@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'name' => 'Webkul Bagisto Payment',
+    'name' => 'Ocom Payment',
     'version' => core()->version(),
 ];

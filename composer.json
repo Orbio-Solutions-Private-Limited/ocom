@@ -1,7 +1,7 @@
 {
-    "name": "bagisto/bagisto",
+    "name": "orbio/ocom",
     "type": "project",
-    "description": "Bagisto Laravel E-Commerce",
+    "description": "Ocom e-commerce by Orbio Solutions",
     "keywords": [
         "framework",
         "laravel"
@@ -18,6 +18,8 @@
         "ext-pdo_mysql": "*",
         "ext-tokenizer": "*",
         "astrotomic/laravel-translatable": "^11.16",
+        "bagistoplus/visual": "^2.0@dev",
+        "bagistoplus/visual-debut": "^2.0@dev",
         "barryvdh/laravel-dompdf": "^2.0.0|^3.0",
         "diglactic/laravel-breadcrumbs": "^10.0",
         "elasticsearch/elasticsearch": "^8.10",
@@ -179,12 +181,12 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "support": {
-        "issues": "https://github.com/bagisto/bagisto/issues",
-        "forum": "https://forums.bagisto.com",
-        "source": "https://github.com/bagisto/bagisto",
-        "docs": "https://devdocs.bagisto.com"
+        "issues": "https://www.orbiosolutions.com/",
+        "forum": "https://www.orbiosolutions.com/",
+        "source": "https://www.orbiosolutions.com/",
+        "docs": "https://www.orbiosolutions.com/"
     }
 }

@@ -100,4 +100,12 @@ class MenuItem
         return $currentKey === $this->key
             || str_starts_with($currentKey, $this->key.'.');
     }
+
+    /**
+     * Whether this item is the page that is actually open.
+     */
+    public function isCurrent(): bool
+    {
+        return menu()->getCurrentKey() === $this->key;
+    }
 }

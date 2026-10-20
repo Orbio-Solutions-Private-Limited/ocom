@@ -217,7 +217,7 @@
                                         <button
                                             type="button"
                                             class="relative h-5 w-9 shrink-0 rounded-full transition-all"
-                                            :class="element.status ? 'bg-blue-600' : 'bg-gray-200 dark:bg-gray-800'"
+                                            :class="element.status ? 'brand-selected' : 'bg-gray-200 dark:bg-gray-800'"
                                             :title="element.status
                                                 ? '@lang('admin::app.appearance.sections.edit.active')'
                                                 : '@lang('admin::app.appearance.sections.edit.inactive')'"

@@ -20,7 +20,8 @@ it('should render the theme gallery', function () {
     get(route('admin.appearance.themes.index'))
         ->assertOk()
         ->assertSee(trans('admin::app.appearance.themes.index.title'))
-        ->assertSee('Default');
+        ->assertSee('Default')
+        ->assertDontSee(trans('admin::app.appearance.themes.index.buy-themes'), false);
 });
 
 // ============================================================================

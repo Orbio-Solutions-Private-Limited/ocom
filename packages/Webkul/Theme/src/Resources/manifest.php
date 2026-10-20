@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'name' => 'Webkul Bagisto Theme',
+    'name' => 'Ocom Theme',
     'version' => core()->version(),
 ];

@@ -807,7 +807,7 @@ return [
         'index' => [
             'create-administrator' => [
                 'admin' => 'Admin',
-                'bagisto' => 'Bagisto',
+                'bagisto' => 'Ocom',
                 'confirm-password' => 'Confirm Password',
                 'email' => 'Email',
                 'email-address' => 'admin@example.com',
@@ -822,7 +822,7 @@ return [
                 'application-name' => 'Application Name',
                 'argentine-peso' => 'Argentine Peso (ARS)',
                 'australian-dollar' => 'Australian Dollar (AUD)',
-                'bagisto' => 'Bagisto',
+                'bagisto' => 'Ocom',
                 'bangladeshi-taka' => 'Bangladeshi Taka (BDT)',
                 'bahraini-dinar' => 'Bahraini Dinar (BHD)',
                 'brazilian-real' => 'Brazilian Real (BRL)',
@@ -917,25 +917,25 @@ return [
             ],
 
             'installation-processing' => [
-                'bagisto' => 'Installation Bagisto',
+                'bagisto' => 'Installation Ocom',
                 'bagisto-info' => 'Creating the database tables, this can take a few moments',
                 'title' => 'Installation',
             ],
 
             'installation-completed' => [
                 'admin-panel' => 'Admin Panel',
-                'bagisto-forums' => 'Bagisto Forum',
+                'bagisto-forums' => 'Ocom Forum',
                 'customer-panel' => 'Customer Panel',
-                'explore-bagisto-extensions' => 'Explore Bagisto Extension',
+                'explore-bagisto-extensions' => 'Explore Ocom Extension',
                 'title' => 'Installation Completed',
-                'title-info' => 'Bagisto is Successfully installed on your system.',
+                'title-info' => 'Ocom is Successfully installed on your system.',
             ],
 
             'ready-for-installation' => [
                 'create-database-tables' => 'Create the database tables',
                 'drop-existing-tables' => 'Drop any existing tables present',
                 'install' => 'Installation',
-                'install-info' => 'Bagisto For Installation',
+                'install-info' => 'Ocom For Installation',
                 'install-info-button' => 'Click the button below to',
                 'populate-database-tables' => 'Populate the database tables',
                 'start-installation' => 'Start Installation',
@@ -947,8 +947,8 @@ return [
                 'locale' => 'Locale',
                 'main' => 'Start',
                 'select-locale' => 'Select Locale',
-                'title' => 'Your Bagisto install',
-                'welcome-title' => 'Welcome to Bagisto',
+                'title' => 'Your Ocom install',
+                'welcome-title' => 'Welcome to Ocom',
             ],
 
             'server-requirements' => [
@@ -976,9 +976,9 @@ return [
 
             'arabic' => 'Arabic',
             'back' => 'Back',
-            'bagisto' => 'Bagisto',
+            'bagisto' => 'Ocom',
             'bagisto-info' => 'a Community Project by',
-            'bagisto-logo' => 'Bagisto Logo',
+            'bagisto-logo' => 'Ocom Logo',
             'bengali' => 'Bengali',
             'catalan' => 'Catalan',
             'chinese' => 'Chinese',
@@ -990,7 +990,7 @@ return [
             'hebrew' => 'Hebrew',
             'hindi' => 'Hindi',
             'indonesian' => 'Indonesian',
-            'installation-description' => 'Bagisto installation typically involves several steps. Here\'s a general outline of the installation process for Bagisto',
+            'installation-description' => 'Ocom installation typically involves several steps. Here\'s a general outline of the installation process for Ocom',
             'installation-info' => 'We are happy to see you here!',
             'installation-title' => 'Welcome to Installation',
             'italian' => 'Italian',
@@ -1003,10 +1003,10 @@ return [
             'sinhala' => 'Sinhala',
             'spanish' => 'Spanish',
             'swahili' => 'Swahili',
-            'title' => 'Bagisto Installer',
+            'title' => 'Ocom Installer',
             'turkish' => 'Turkish',
             'ukrainian' => 'Ukrainian',
-            'webkul' => 'Webkul',
+            'webkul' => 'Orbio Solutions',
         ],
     ],
 ];

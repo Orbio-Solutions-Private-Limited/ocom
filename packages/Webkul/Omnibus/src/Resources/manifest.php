@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'name' => 'Webkul Bagisto Omnibus',
+    'name' => 'Ocom Omnibus',
     'version' => core()->version(),
 ];

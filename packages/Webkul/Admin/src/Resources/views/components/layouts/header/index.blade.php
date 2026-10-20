@@ -104,7 +104,7 @@
             <x-slot:content class="p-0!">
                 <div class="flex items-center gap-1.5 border border-b-gray-300 px-4 py-2 dark:border-gray-800 sm:px-5 sm:py-2.5">
                     <img
-                        src="{{ url('cache/logo/bagisto.png') }}"
+                        src="{{ url('cache/logo/orbio.png') }}"
                         class="sm:h-6 sm:w-6"
                         width="20"
                         height="20"
@@ -133,7 +133,7 @@
                     </x-admin::form>
 
                     <a
-                        class="cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-950 sm:px-5 sm:text-base"
+                        class="sign-out-button mx-4 sm:mx-5"
                         href="{{ route('admin.session.destroy') }}"
                         onclick="event.preventDefault(); document.getElementById('adminLogout').submit();"
                     >
@@ -174,37 +174,37 @@
     <!-- Drawer Content -->
     <x-slot:content class="p-3 sm:p-4">
         <div class="journal-scroll h-[calc(100vh-100px)] overflow-auto">
-            <nav class="grid w-full gap-1.5 sm:gap-2">
+            <nav class="admin-sidebar-menu grid w-full gap-1.5 sm:gap-2">
                 <!-- Navigation Menu -->
                 @foreach (menu()->getItems('admin') as $menuItem)
                     <div class="group/item relative">
                         <a
                             href="{{ $menuItem->getUrl() }}"
-                            class="flex items-center gap-2 p-1.5 cursor-pointer hover:rounded-lg {{ $menuItem->isActive() == 'active' ? 'bg-blue-600 rounded-lg' : ' hover:bg-gray-100 hover:dark:bg-gray-950' }} peer sm:gap-2.5"
+                            class="sidebar-link flex items-center gap-2 p-1.5 cursor-pointer rounded-lg {{ $menuItem->isActive() ? 'sidebar-active' : '' }} peer sm:gap-2.5"
                         >
-                            <span class="{{ $menuItem->getIcon() }} text-xl {{ $menuItem->isActive() ? 'text-white' : ''}} sm:text-2xl"></span>
+                            <span class="{{ $menuItem->getIcon() }} text-xl {{ $menuItem->isActive() ? 'text-white' : 'text-sidebar-text'}} sm:text-2xl"></span>
 
-                            <p class="font-semibold text-gray-600 dark:text-gray-300 whitespace-nowrap text-sm group-[.sidebar-collapsed]/container:hidden {{ $menuItem->isActive() ? 'text-white' : ''}} sm:text-base">
+                            <p class="font-normal whitespace-nowrap text-sm {{ $menuItem->isActive() ? 'text-white' : 'text-sidebar-text'}} sm:text-base">
                                 {{ $menuItem->getName() }}
                             </p>
                         </a>
 
                         @if ($menuItem->haveChildren())
-                            <div class="{{ $menuItem->isActive() ? ' grid! bg-gray-100 dark:bg-gray-950' : '' }} hidden min-w-45 ltr:pl-8 rtl:pr-8 pb-2 rounded-b-lg z-[100] sm:ltr:pl-10 sm:rtl:pr-10">
+                            <div class="{{ $menuItem->isActive() ? 'grid!' : '' }} hidden min-w-45 ltr:pl-8 rtl:pr-8 pb-2 rounded-b-lg z-[100]">
                                 @foreach ($menuItem->getChildren() as $subMenuItem)
                                     <a
                                         href="{{ $subMenuItem->getUrl() }}"
-                                        class="{{ $subMenuItem->haveChildren() ? 'font-medium' : '' }} text-xs text-{{ $subMenuItem->isActive() ? 'blue':'gray' }}-600 dark:text-{{ $subMenuItem->isActive() ? 'blue':'gray' }}-300 whitespace-nowrap py-1 group-[.sidebar-collapsed]/container:px-4 group-[.sidebar-collapsed]/container:py-2 group-[.inactive]/item:px-4 group-[.inactive]/item:py-2 hover:text-blue-600 dark:hover:bg-gray-950 sm:text-sm sm:group-[.sidebar-collapsed]/container:px-5 sm:group-[.sidebar-collapsed]/container:py-2.5 sm:group-[.inactive]/item:px-5 sm:group-[.inactive]/item:py-2.5"
+                                        class="sidebar-sublink {{ $subMenuItem->isCurrent() ? 'sidebar-active' : '' }}"
                                     >
                                         {{ $subMenuItem->getName() }}
                                     </a>
 
                                     @if ($subMenuItem->haveChildren())
-                                        <div class="grid ltr:pl-4 rtl:pr-4">
+                                        <div class="grid">
                                             @foreach ($subMenuItem->getChildren() as $subSubMenuItem)
                                                 <a
                                                     href="{{ $subSubMenuItem->getUrl() }}"
-                                                    class="text-xs text-{{ $subSubMenuItem->isActive() ? 'blue':'gray' }}-600 dark:text-{{ $subSubMenuItem->isActive() ? 'blue':'gray' }}-300 whitespace-nowrap py-1 hover:text-blue-600 dark:hover:bg-gray-950 sm:text-sm"
+                                                    class="sidebar-sublink {{ $subSubMenuItem->isCurrent() ? 'sidebar-active' : '' }}"
                                                 >
                                                     {{ $subSubMenuItem->getName() }}
                                                 </a>
@@ -228,10 +228,10 @@
                 <div class="group/item relative">
                     <a
                         href="{{ route('admin.help.index') }}"
-                        class="flex items-center gap-2 p-1.5 cursor-pointer hover:rounded-lg {{ $isHelpActive ? 'bg-blue-600 rounded-lg' : 'hover:bg-gray-100 hover:dark:bg-gray-950' }} sm:gap-2.5"
+                        class="sidebar-link flex items-center gap-2 p-1.5 cursor-pointer rounded-lg {{ $isHelpActive ? 'sidebar-active' : '' }} sm:gap-2.5"
                     >
                         <svg
-                            class="h-5 w-5 shrink-0 {{ $isHelpActive ? 'text-white' : 'text-gray-600 dark:text-gray-300' }} sm:h-6 sm:w-6"
+                            class="h-5 w-5 shrink-0 {{ $isHelpActive ? 'text-white' : 'text-sidebar-text' }} sm:h-6 sm:w-6"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -244,7 +244,7 @@
                             <path d="M12 17.2h.01"></path>
                         </svg>
 
-                        <p class="font-semibold text-gray-600 dark:text-gray-300 whitespace-nowrap text-sm {{ $isHelpActive ? 'text-white' : '' }} sm:text-base">
+                        <p class="font-normal whitespace-nowrap text-sm {{ $isHelpActive ? 'text-white' : 'text-sidebar-text' }} sm:text-base">
                             @lang('admin::app.components.layouts.sidebar.help')
                         </p>
                     </a>

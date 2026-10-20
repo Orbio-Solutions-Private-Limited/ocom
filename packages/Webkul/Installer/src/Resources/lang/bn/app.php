@@ -935,7 +935,7 @@ return [
                 'create-database-tables' => 'ডাটাবেস টেবিলগুলি তৈরি করুন',
                 'drop-existing-tables' => 'বিদ্যমান কোনো টেবিল মুছে ফেলুন',
                 'install' => 'ইনস্টলেশন',
-                'install-info' => 'ইনস্টলেশনের জন্য Bagisto',
+                'install-info' => 'ইনস্টলেশনের জন্য Ocom',
                 'install-info-button' => 'নীচের বাটনে ক্লিক করুন',
                 'populate-database-tables' => 'ডাটাবেস টেবিল পূর্ণ করুন',
                 'start-installation' => 'ইনস্টলেশন শুরু করুন',
@@ -947,8 +947,8 @@ return [
                 'locale' => 'লোকেল',
                 'main' => 'শুরু',
                 'select-locale' => 'লোকেল নির্বাচন করুন',
-                'title' => 'আপনার Bagisto ইনস্টলেশন',
-                'welcome-title' => 'Bagisto এ আপনাকে স্বাগতম',
+                'title' => 'আপনার Ocom ইনস্টলেশন',
+                'welcome-title' => 'Ocom এ আপনাকে স্বাগতম',
             ],
 
             'server-requirements' => [
@@ -978,7 +978,7 @@ return [
             'back' => 'পিছনে',
             'bagisto' => 'বাগিস্তো',
             'bagisto-info' => 'একটি সম্প্রদায়িক প্রকল্প দ্বারা',
-            'bagisto-logo' => 'বাগিস্তো লোগো',
+            'bagisto-logo' => 'Ocom Logo',
             'bengali' => 'বাংলা',
             'catalan' => 'কাতালান',
             'chinese' => 'চীনা',
@@ -1006,7 +1006,7 @@ return [
             'title' => 'বাগিস্তো ইনস্টলার',
             'turkish' => 'তুর্কি',
             'ukrainian' => 'ইউক্রেনীয়',
-            'webkul' => 'ওয়েবকুল',
+            'webkul' => 'Orbio Solutions',
         ],
     ],
 ];

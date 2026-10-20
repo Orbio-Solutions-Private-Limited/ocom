@@ -131,7 +131,7 @@ it('should block the installer index when it is reached through a percent-encode
 
 it('should block the run migration endpoint when it is reached through a percent-encoded path', function () {
     post('/%69nstall/api/run-migration', [
-        'app_name' => 'Bagisto',
+        'app_name' => 'Ocom',
         'db_hostname' => '127.0.0.2',
         'db_port' => '3306',
         'db_name' => 'test_db',
@@ -143,7 +143,7 @@ it('should block the run migration endpoint when it is reached through a percent
 
 it('should return 403 for an ajax request to the run migration endpoint reached through a percent-encoded path', function () {
     post('/%69nstall/api/run-migration', [
-        'app_name' => 'Bagisto',
+        'app_name' => 'Ocom',
     ], [
         'X-Requested-With' => 'XMLHttpRequest',
     ])
@@ -154,7 +154,7 @@ it('should not leave the .env writable to a request that reaches the installer t
     $before = file_get_contents(base_path('.env'));
 
     post('/%69nstall/api/run-migration', [
-        'app_name' => "Bagisto\nAPP_CONFIG_CACHE=".base_path('.env'),
+        'app_name' => "Ocom\nAPP_CONFIG_CACHE=".base_path('.env'),
     ]);
 
     expect(file_get_contents(base_path('.env')))->toBe($before);

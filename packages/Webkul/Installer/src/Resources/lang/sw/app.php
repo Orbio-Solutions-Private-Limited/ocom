@@ -807,7 +807,7 @@ return [
         'index' => [
             'create-administrator' => [
                 'admin' => 'Msimamizi',
-                'bagisto' => 'Bagisto',
+                'bagisto' => 'Ocom',
                 'confirm-password' => 'Thibitisha Nenosiri',
                 'email' => 'Barua Pepe',
                 'email-address' => 'admin@example.com',
@@ -822,7 +822,7 @@ return [
                 'application-name' => 'Jina la Programu',
                 'argentine-peso' => 'Peso ya Ajentina (ARS)',
                 'australian-dollar' => 'Dola ya Australia (AUD)',
-                'bagisto' => 'Bagisto',
+                'bagisto' => 'Ocom',
                 'bangladeshi-taka' => 'Taka ya Bangladesh (BDT)',
                 'bahraini-dinar' => 'Dinari ya Bahareni (BHD)',
                 'brazilian-real' => 'Real ya Brazil (BRL)',
@@ -917,25 +917,25 @@ return [
             ],
 
             'installation-processing' => [
-                'bagisto' => 'Usakinishaji wa Bagisto',
+                'bagisto' => 'Usakinishaji wa Ocom',
                 'bagisto-info' => 'Inatengeneza majedwali ya hifadhidata, hii inaweza kuchukua muda mfupi',
                 'title' => 'Usakinishaji',
             ],
 
             'installation-completed' => [
                 'admin-panel' => 'Paneli ya Msimamizi',
-                'bagisto-forums' => 'Jukwaa la Bagisto',
+                'bagisto-forums' => 'Jukwaa la Ocom',
                 'customer-panel' => 'Paneli ya Wateja',
-                'explore-bagisto-extensions' => 'Chunguza Viendelezi vya Bagisto',
+                'explore-bagisto-extensions' => 'Chunguza Viendelezi vya Ocom',
                 'title' => 'Usakinishaji Umekamilika',
-                'title-info' => 'Bagisto imesakinishwa kwa mafanikio kwenye mfumo wako.',
+                'title-info' => 'Ocom imesakinishwa kwa mafanikio kwenye mfumo wako.',
             ],
 
             'ready-for-installation' => [
                 'create-database-tables' => 'Tengeneza majedwali ya hifadhidata',
                 'drop-existing-tables' => 'Futa majedwali yoyote yaliyopo',
                 'install' => 'Usakinishaji',
-                'install-info' => 'Bagisto Kwa Usakinishaji',
+                'install-info' => 'Ocom Kwa Usakinishaji',
                 'install-info-button' => 'Bofya kitufe kilicho chini ili',
                 'populate-database-tables' => 'Jaza majedwali ya hifadhidata',
                 'start-installation' => 'Anza Usakinishaji',
@@ -947,8 +947,8 @@ return [
                 'locale' => 'Lugha',
                 'main' => 'Anza',
                 'select-locale' => 'Chagua Lugha',
-                'title' => 'Usakinishaji wako wa Bagisto',
-                'welcome-title' => 'Karibu Bagisto',
+                'title' => 'Usakinishaji wako wa Ocom',
+                'welcome-title' => 'Karibu Ocom',
             ],
 
             'server-requirements' => [
@@ -976,9 +976,9 @@ return [
 
             'arabic' => 'Kiarabu',
             'back' => 'Rudi',
-            'bagisto' => 'Bagisto',
+            'bagisto' => 'Ocom',
             'bagisto-info' => 'Mradi wa Jamii kutoka',
-            'bagisto-logo' => 'Nembo ya Bagisto',
+            'bagisto-logo' => 'Nembo ya Ocom',
             'bengali' => 'Kibengali',
             'catalan' => 'Kikatalani',
             'chinese' => 'Kichina',
@@ -990,7 +990,7 @@ return [
             'hebrew' => 'Kiebrania',
             'hindi' => 'Kihindi',
             'indonesian' => 'Kiindonesia',
-            'installation-description' => 'Usakinishaji wa Bagisto kwa kawaida huhusisha hatua kadhaa. Hapa kuna muhtasari wa jumla wa mchakato wa usakinishaji wa Bagisto',
+            'installation-description' => 'Usakinishaji wa Ocom kwa kawaida huhusisha hatua kadhaa. Hapa kuna muhtasari wa jumla wa mchakato wa usakinishaji wa Ocom',
             'installation-info' => 'Tunafuraha kukuona hapa!',
             'installation-title' => 'Karibu kwa Usakinishaji',
             'italian' => 'Kiitaliano',
@@ -1003,10 +1003,10 @@ return [
             'sinhala' => 'Kisinhala',
             'spanish' => 'Kihispania',
             'swahili' => 'Kiswahili',
-            'title' => 'Kisakinishi cha Bagisto',
+            'title' => 'Kisakinishi cha Ocom',
             'turkish' => 'Kituruki',
             'ukrainian' => 'Kiukraini',
-            'webkul' => 'Webkul',
+            'webkul' => 'Orbio Solutions',
         ],
     ],
 ];

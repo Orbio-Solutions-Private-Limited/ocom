@@ -290,7 +290,7 @@
 
                 computed: {
                     /**
-                     * Installed themes and themes on offer under headings of their own, leaving out an empty one.
+                     * Installed themes under their own heading, leaving the group out when empty.
                      */
                     groups() {
                         return [
@@ -298,10 +298,6 @@
                                 key: 'installed',
                                 label: "@lang('admin::app.appearance.themes.index.my-themes')",
                                 themes: this.themes.filter(theme => theme.is_installed),
-                            }, {
-                                key: 'available',
-                                label: "@lang('admin::app.appearance.themes.index.buy-themes')",
-                                themes: this.themes.filter(theme => ! theme.is_installed),
                             },
                         ].filter(group => group.themes.length);
                     },

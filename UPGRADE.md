@@ -94,7 +94,7 @@ use Webkul\Theme\ViewRenderEventManager;
 use Webkul\Core\View\ViewRenderEventManager;
 ```
 
-**Every listener that type-hints it has to be repointed.** The hint is what the container matches, so a listener left on the old name receives the new class and fails with a type error the first time that view renders.
+First-party listeners were repointed. The old class name remains as an alias of the Core class, so a third-party listener that still type-hints `Webkul\Theme\ViewRenderEventManager` keeps receiving the payload. New code should import the Core class.
 
 The `view_render_event()` helper moved with it, from the Theme package's helpers into Core's, and its singleton is registered by `CoreServiceProvider` rather than `ThemeServiceProvider`. The function name, its signature and **every event name a view fires are unchanged**, so a listener that takes the payload untyped keeps working:
 

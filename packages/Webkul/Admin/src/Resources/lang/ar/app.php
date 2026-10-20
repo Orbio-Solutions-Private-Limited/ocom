@@ -6,7 +6,7 @@ return [
             'email' => 'عنوان البريد الإلكتروني',
             'forget-password-link' => 'نسيت كلمة المرور؟',
             'password' => 'كلمة المرور',
-            'powered-by-description' => 'مدعوم من :bagisto، مشروع مفتوح المصدر من :webkul.',
+            'powered-by-description' => 'Powered by Orbio Solutions.',
             'submit-btn' => 'تسجيل الدخول',
             'title' => 'تسجيل الدخول',
         ],
@@ -16,7 +16,7 @@ return [
                 'email' => 'البريد الإلكتروني المسجل',
                 'email-not-exist' => 'البريد الإلكتروني غير موجود',
                 'page-title' => 'نسيت كلمة المرور',
-                'powered-by-description' => 'مدعوم من :bagisto، مشروع مفتوح المصدر من :webkul.',
+                'powered-by-description' => 'Powered by Orbio Solutions.',
                 'reset-link-sent' => 'تم إرسال رابط إعادة تعيين كلمة المرور',
                 'reset-link-failed' => 'تعذر إرسال رابط إعادة تعيين كلمة المرور. يرجى المحاولة مرة أخرى لاحقًا.',
                 'sign-in-link' => 'العودة إلى تسجيل الدخول؟',
@@ -30,7 +30,7 @@ return [
             'confirm-password' => 'تأكيد كلمة المرور',
             'email' => 'البريد الإلكتروني المسجل',
             'password' => 'كلمة المرور',
-            'powered-by-description' => 'مدعوم من :bagisto، مشروع مفتوح المصدر من :webkul.',
+            'powered-by-description' => 'Powered by Orbio Solutions.',
             'submit-btn' => 'إعادة تعيين كلمة المرور',
             'title' => 'إعادة تعيين كلمة المرور',
         ],
@@ -125,13 +125,13 @@ return [
     'help' => [
         'index' => [
             'title' => 'المساعدة والموارد',
-            'description' => 'كل ما تحتاجه للاستفادة القصوى من Bagisto — الاستضافة والدعم والخدمات الاحترافية، بالإضافة إلى الإضافات ووثائق المطورين.',
+            'description' => 'كل ما تحتاجه للاستفادة القصوى من Ocom — الاستضافة والدعم والخدمات الاحترافية، بالإضافة إلى الإضافات ووثائق المطورين.',
 
             'services-title' => 'الخدمات',
             'resources-title' => 'الموارد والوثائق',
 
             'cloud-hosting' => 'الاستضافة السحابية',
-            'cloud-hosting-info' => 'استضافة سحابية مُدارة وفعّالة من حيث التكلفة — أطلق متجر Bagisto الخاص بك على السحابة في دقائق، محسّن بالكامل وقابل للتوسع.',
+            'cloud-hosting-info' => 'استضافة سحابية مُدارة وفعّالة من حيث التكلفة — أطلق متجر Ocom الخاص بك على السحابة في دقائق، محسّن بالكامل وقابل للتوسع.',
 
             'support' => 'الدعم والصيانة',
             'support-info' => 'دعم تقني مخصص وخطط صيانة مستمرة للحفاظ على أمان متجرك وتحديثه وتشغيله بسلاسة.',
@@ -140,22 +140,22 @@ return [
             'paid-services-info' => 'مساعدة الخبراء في دمج الوحدات والتخصيص ونقل البيانات وترقية الإصدارات والتطوير المخصص.',
 
             'extensions' => 'الإضافات',
-            'extensions-info' => 'تصفّح الإضافات الرسمية وإضافات المجتمع لتوسيع Bagisto بموصلات وقنوات وميزات جديدة.',
+            'extensions-info' => 'تصفّح الإضافات الرسمية وإضافات المجتمع لتوسيع Ocom بموصلات وقنوات وميزات جديدة.',
 
             'docs' => 'وثائق المطورين والمدونات',
             'docs-info' => 'أدلة المطورين والدروس التعليمية وأحدث المقالات لمساعدتك على البناء والتهيئة والبقاء على اطلاع.',
 
             'api-docs' => 'وثائق واجهة برمجة التطبيقات',
-            'api-docs-info' => 'مرجع كامل لواجهات REST و GraphQL مع نقاط النهاية والمصادقة والأمثلة لدمج Bagisto مع نظامك.',
+            'api-docs-info' => 'مرجع كامل لواجهات REST و GraphQL مع نقاط النهاية والمصادقة والأمثلة لدمج Ocom مع نظامك.',
 
             'community' => 'منتدى المجتمع',
-            'community-info' => 'اطرح الأسئلة وشارك الأفكار وتواصل مع آلاف مطوري وتجار Bagisto حول العالم.',
+            'community-info' => 'اطرح الأسئلة وشارك الأفكار وتواصل مع آلاف مطوري وتجار Ocom حول العالم.',
 
             'video-tutorials' => 'دروس الفيديو',
             'video-tutorials-info' => 'شروحات فيديو خطوة بخطوة تغطي التثبيت والتهيئة وإدارة المتجر اليومية.',
 
             'cta-title' => 'لا تزال بحاجة إلى مساعدة؟',
-            'cta-description' => 'تحدث مع فريق Bagisto حول الاستضافة أو التطوير المخصص أو أي شيء آخر.',
+            'cta-description' => 'تحدث مع فريق Ocom حول الاستضافة أو التطوير المخصص أو أي شيء آخر.',
             'cta-btn' => 'اتصل بنا',
         ],
     ],
@@ -4399,7 +4399,7 @@ return [
                     'title' => 'عام',
 
                     'sections' => [
-                        'bagisto' => 'Bagisto',
+                        'bagisto' => 'Ocom',
                         'cache' => 'مخزّن مؤقتًا',
                         'database' => 'قاعدة البيانات',
                         'drivers' => 'المشغّلات',
@@ -5881,6 +5881,7 @@ return [
                 'gdpr-data-requests' => 'طلبات بيانات GDPR',
                 'groups' => 'المجموعات',
                 'help' => 'المساعدة والموارد',
+                'powered-by' => 'Powered by Orbio Solutions',
                 'imports' => 'الواردات',
                 'inventory-sources' => 'مصادر المخزون',
                 'invoices' => 'الفواتير',
@@ -5917,7 +5918,7 @@ return [
             ],
 
             'powered-by' => [
-                'description' => 'مدعوم من :bagisto، مشروع مفتوح المصدر من :webkul.',
+                'description' => 'Powered by Orbio Solutions.',
             ],
         ],
 
@@ -6308,7 +6309,7 @@ return [
     ],
 
     'footer' => [
-        'copy-right' => 'بدعم من <a href="https://bagisto.com/" target="_blank">Bagisto</a>، مشروع مجتمعي من <a href="https://webkul.com/" target="_blank">Webkul</a>',
+        'copy-right' => 'Powered by <a href="https://www.orbiosolutions.com/" target="_blank">Ocom</a>, a product of <a href="https://www.orbiosolutions.com/" target="_blank">Orbio Solutions</a>',
     ],
 
     'emails' => [

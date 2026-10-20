@@ -208,19 +208,12 @@
                         <p class="mb-6 w-full place-self-end text-left">
                             <a
                                 class="bg-white text-blue-600 underline"
-                                href="https://bagisto.com/en/"
+                                href="https://www.orbiosolutions.com/"
                             >
                                 @lang('installer::app.installer.index.bagisto')
                             </a>
 
                             <span>@lang('installer::app.installer.index.bagisto-info')</span>
-
-                            <a
-                                class="bg-white text-blue-600 underline"
-                                href="https://webkul.com/"
-                            >
-                                @lang('installer::app.installer.index.webkul')
-                            </a>
                         </p>
                     </div>
                 </div>
@@ -701,7 +694,7 @@
                                     <x-installer::form.control-group.control
                                         type="text"
                                         name="app_name"
-                                        ::value="envData.app_name ?? 'Bagisto'"
+                                        ::value="envData.app_name ?? 'Ocom'"
                                         rules="required"
                                         :label="trans('installer::app.installer.index.environment-configuration.application-name')"
                                         :placeholder="trans('installer::app.installer.index.environment-configuration.bagisto')"
@@ -1140,14 +1133,14 @@
 
                     <div class="flex items-center justify-between px-4 py-2.5">
                         <a
-                            href="https://forums.bagisto.com"
+                            href="https://www.orbiosolutions.com/"
                             class="cursor-pointer text-xs font-semibold text-blue-600"
                         >
                             @lang('installer::app.installer.index.installation-completed.bagisto-forums')
                         </a>
 
                         <a
-                            href="https://bagisto.com/en/extensions"
+                            href="https://www.orbiosolutions.com/"
                             class="cursor-pointer rounded-md border border-blue-700 bg-white px-3 py-1.5 font-semibold text-blue-600 hover:opacity-90"
                         >
                             @lang('installer::app.installer.index.installation-completed.explore-bagisto-extensions')

@@ -196,7 +196,7 @@
                                         <!-- Group Name -->
                                         <div
                                             class="group_node group flex max-w-max gap-1.5 rounded-sm py-1.5 text-gray-600 transition-all dark:text-gray-300 ltr:pr-1.5 rtl:pl-1.5"
-                                            :class="{'bg-blue-600 text-white group-hover:[&>*]:text-white': selectedGroup.id == element.id}"
+                                            :class="{'brand-selected group-hover:[&>*]:text-white': selectedGroup.id == element.id}"
                                             @click.stop="groupSelected(element)"
                                         >
                                             <i class="icon-drag cursor-grab text-xl text-inherit transition-all group-hover:text-gray-800 dark:group-hover:text-white"></i>

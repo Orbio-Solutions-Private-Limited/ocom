@@ -40,7 +40,7 @@ class Installer extends Command
      *
      * @var string
      */
-    protected $description = 'Bagisto installer. Use the global --no-interaction (-n) option for an unattended install that uses the existing `.env`, creates the default admin user and skips sample products. Add --demo-samples to also seed demo/sample product data, and --force to install into a production environment, which drops every existing table.';
+    protected $description = 'Ocom installer. Use the global --no-interaction (-n) option for an unattended install that uses the existing `.env`, creates the default admin user and skips sample products. Add --demo-samples to also seed demo/sample product data, and --force to install into a production environment, which drops every existing table.';
 
     /**
      * Environment details.
@@ -115,7 +115,7 @@ class Installer extends Command
 
         $this->wipeAndMigrate();
 
-        $this->warn('Step: Seeding basic data for Bagisto kickstart...');
+        $this->warn('Step: Seeding basic data for Ocom kickstart...');
         $this->databaseManager->seed($this->getSeederConfiguration());
         $this->components->info('Basic data seeded successfully.');
 
@@ -140,7 +140,6 @@ class Installer extends Command
         $this->call('optimize:clear');
 
         if (! $noInteraction) {
-            $this->askToExploreCloudHosting();
         }
 
         ComposerEvents::postCreateProject();
@@ -171,7 +170,7 @@ class Installer extends Command
         $this->updateTextTypeEnv(
             'APP_NAME',
             'Please enter the application name',
-            $this->getEnvVariable('APP_NAME', 'Bagisto')
+            $this->getEnvVariable('APP_NAME', 'Ocom')
         );
 
         $this->updateTextTypeEnv(
@@ -378,11 +377,11 @@ class Installer extends Command
      */
     protected function finalizeInstallation(string $adminEmail, string $adminPassword): void
     {
-        File::put(storage_path('installed'), 'Bagisto is successfully installed.');
+        File::put(storage_path('installed'), 'Ocom is successfully installed.');
 
         $this->info('-----------------------------');
         $this->info('Congratulations!');
-        $this->info('The installation has been finished and you can now use Bagisto.');
+        $this->info('The installation has been finished and you can now use Ocom.');
         $this->info('Go to '.$this->getEnvVariable('APP_URL').'/'.$this->getEnvVariable('APP_ADMIN_URL', 'admin').' and authenticate with:');
         $this->info('Email: '.$adminEmail);
         $this->info('Password: '.$adminPassword);
@@ -550,29 +549,5 @@ class Installer extends Command
             'allowed_currencies' => $this->envDetails['APP_ALLOWED_CURRENCIES'] ?? [$this->getEnvVariable('APP_CURRENCY', 'USD')],
             'skip_admin_creation' => true,
         ];
-    }
-
-    /**
-     * Ask user to explore Bagisto Cloud hosting.
-     */
-    protected function askToExploreCloudHosting(): void
-    {
-        if (! $this->confirm('Would you like to explore managed Bagisto Cloud hosting?', true)) {
-            return;
-        }
-
-        $cloudUrl = 'https://bagisto.com/en/cloud/';
-
-        if (PHP_OS_FAMILY == 'Darwin') {
-            exec("open {$cloudUrl}");
-        }
-
-        if (PHP_OS_FAMILY == 'Windows') {
-            exec("start {$cloudUrl}");
-        }
-
-        if (PHP_OS_FAMILY == 'Linux') {
-            exec("xdg-open {$cloudUrl}");
-        }
     }
 }

@@ -5,10 +5,10 @@ return [
         'forgot-password' => [
             'already-sent' => 'E-mailul de resetare a parolei a fost deja trimis.',
             'back' => 'Înapoi la autentificare?',
-            'bagisto' => 'Bagisto',
+            'bagisto' => 'Ocom',
             'email' => 'E-mail',
             'email-not-exist' => 'Nu putem găsi un utilizator cu această adresă de e-mail.',
-            'footer' => '© Drepturi de autor 2010 - :current_year, Webkul Software (Înregistrat în India). Toate drepturile rezervate.',
+            'footer' => '© Copyright :current_year, Orbio Solutions. All rights reserved.',
             'forgot-password-text' => 'Dacă ați uitat parola, recuperați-o introducând adresa de e-mail.',
             'page-title' => 'Ați uitat parola?',
             'reset-link-sent' => 'Dacă această adresă de e-mail este înregistrată, i-a fost trimis un link de resetare a parolei.',
@@ -20,21 +20,21 @@ return [
 
         'reset-password' => [
             'back-link-title' => 'Înapoi la autentificare',
-            'bagisto' => 'Bagisto',
+            'bagisto' => 'Ocom',
             'confirm-password' => 'Confirmă parola',
             'email' => 'E-mail înregistrat',
-            'footer' => '© Drepturi de autor 2010 - :current_year, Webkul Software (Înregistrat în India). Toate drepturile rezervate.',
+            'footer' => '© Copyright :current_year, Orbio Solutions. All rights reserved.',
             'password' => 'Parolă',
             'submit-btn-title' => 'Resetare parolă',
             'title' => 'Resetare parolă',
         ],
 
         'login-form' => [
-            'bagisto' => 'Bagisto',
+            'bagisto' => 'Ocom',
             'button-title' => 'Autentificare',
             'create-your-account' => 'Creează-ți contul',
             'email' => 'E-mail',
-            'footer' => '© Drepturi de autor 2010 - :current_year, Webkul Software (Înregistrat în India). Toate drepturile rezervate.',
+            'footer' => '© Copyright :current_year, Orbio Solutions. All rights reserved.',
             'forgot-pass' => 'Ai uitat parola?',
             'form-login-text' => 'Dacă aveți un cont, autentificați-vă cu adresa de e-mail.',
             'invalid-credentials' => 'Vă rugăm să verificați datele de autentificare și să încercați din nou.',
@@ -50,13 +50,13 @@ return [
 
         'signup-form' => [
             'account-exists' => 'Aveți deja un cont?',
-            'bagisto' => 'Bagisto',
+            'bagisto' => 'Ocom',
             'button-title' => 'Înregistrare',
             'click-here' => 'Click aici',
             'confirm-pass' => 'Confirmă parola',
             'email' => 'E-mail',
             'first-name' => 'Prenume',
-            'footer' => '© Drepturi de autor 2010 - :current_year, Webkul Software (Înregistrat în India). Toate drepturile rezervate.',
+            'footer' => '© Copyright :current_year, Orbio Solutions. All rights reserved.',
             'form-signup-text' => 'Dacă sunteți nou în magazinul nostru, ne bucurăm să vă avem ca membru.',
             'last-name' => 'Nume',
             'page-title' => 'Deveniți utilizator',
@@ -583,7 +583,7 @@ return [
                     'bottom' => [
                         'all' => 'Toate',
                         'back-button' => 'Înapoi la meniul principal',
-                        'bagisto' => 'Bagisto',
+                        'bagisto' => 'Ocom',
                         'categories' => 'Categorii',
                         'compare' => 'Comparare',
                         'dropdown-text' => 'Gestionează coșul, comenzile și lista de dorințe',
@@ -604,7 +604,7 @@ return [
                 'mobile' => [
                     'account' => 'Cont',
                     'back-button' => 'Înapoi la meniul principal',
-                    'bagisto' => 'Bagisto',
+                    'bagisto' => 'Ocom',
                     'compare' => 'Comparare',
                     'currencies' => 'Monede',
                     'dropdown-text' => 'Gestionează coșul, comenzile și lista de dorințe',
@@ -644,7 +644,7 @@ return [
                 'customer-service' => 'Serviciu clienți',
                 'email' => 'E-mail',
                 'footer-content' => 'Conținut subsol',
-                'footer-text' => '© Drepturi de autor 2010 - :current_year, Webkul Software (Înregistrat în India). Toate drepturile rezervate.',
+                'footer-text' => '© Copyright :current_year, Orbio Solutions. All rights reserved.',
                 'locale' => 'Limbă',
                 'newsletter-text' => 'Pregătiți-vă pentru newsletter-ul nostru distractiv!',
                 'order-return' => 'Comenzi și retururi',
@@ -1113,7 +1113,7 @@ return [
             'suspended-account-message' => 'Contul dvs. a fost suspendat.',
 
             'index' => [
-                'bagisto' => 'Bagisto',
+                'bagisto' => 'Ocom',
                 'cart' => 'Coș de cumpărături',
                 'continue-shopping' => 'Continuă cumpărăturile',
                 'empty-product' => 'Nu aveți niciun produs în coș.',

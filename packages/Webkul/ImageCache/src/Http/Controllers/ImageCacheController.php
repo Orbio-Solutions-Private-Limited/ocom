@@ -6,15 +6,14 @@ use Exception;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
-use Webkul\Core\Helpers\InstalledPackages;
 use Webkul\ImageCache\TemplateRegistry;
 
 class ImageCacheController extends Controller
 {
     /**
-     * The Bagisto logo URL.
+     * Default brand mark served for the logo cache template.
      */
-    protected const BAGISTO_LOGO = 'https://updates.bagisto.com/bagisto.png';
+    protected const BRAND_LOGO_PATH = 'packages/Webkul/Admin/src/Resources/assets/images/favicon.ico';
 
     /**
      * The image types the cache serves, so a stored file whose bytes read as anything else is never sent from the store.
@@ -94,34 +93,27 @@ class ImageCacheController extends Controller
     }
 
     /**
-     * Get the logo image from a remote URL.
+     * Get the brand logo from the application bundle.
      */
     protected function getLogo(): Response
     {
+        $path = base_path(self::BRAND_LOGO_PATH);
+
+        if (! is_readable($path)) {
+            abort(404, 'Unable to fetch logo.');
+        }
+
         try {
-            $content = $this->fetchFromUrl($this->getLogoUrl());
+            $content = file_get_contents($path);
+
+            if ($content === false) {
+                throw new Exception('Unable to read logo.');
+            }
 
             return $this->buildResponse($content);
         } catch (Exception) {
             abort(404, 'Unable to fetch logo.');
         }
-    }
-
-    /**
-     * Build the logo URL, appending the packages this installation is running so
-     * the tracker can record what its live instances are made up of.
-     */
-    protected function getLogoUrl(): string
-    {
-        $url = self::BAGISTO_LOGO;
-
-        $packages = app(InstalledPackages::class)->all();
-
-        if (! empty($packages)) {
-            $url .= (str_contains($url, '?') ? '&' : '?').http_build_query(['modules' => $packages]);
-        }
-
-        return $url;
     }
 
     /**

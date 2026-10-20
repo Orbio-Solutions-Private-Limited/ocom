@@ -122,44 +122,6 @@ return [
         ],
     ],
 
-    'help' => [
-        'index' => [
-            'title' => 'Hilfe & Ressourcen',
-            'description' => 'Alles, was Sie brauchen, um das Beste aus Ocom herauszuholen — Hosting, Support und professionelle Dienstleistungen sowie Erweiterungen und Entwicklerdokumentation.',
-
-            'services-title' => 'Dienstleistungen',
-            'resources-title' => 'Ressourcen & Dokumentation',
-
-            'cloud-hosting' => 'Cloud-Hosting',
-            'cloud-hosting-info' => 'Kostengünstiges, verwaltetes Cloud-Hosting — starten Sie Ihren Ocom-Shop in wenigen Minuten in der Cloud, vollständig optimiert und skalierbar.',
-
-            'support' => 'Support & Wartung',
-            'support-info' => 'Engagierter technischer Support und laufende Wartungspläne, damit Ihr Shop sicher, aktuell und reibungslos läuft.',
-
-            'paid-services' => 'Kostenpflichtige Dienstleistungen',
-            'paid-services-info' => 'Fachkundige Hilfe bei Modulintegration, Anpassung, Datenmigration, Versions-Upgrades und maßgeschneiderter Entwicklung.',
-
-            'extensions' => 'Erweiterungen',
-            'extensions-info' => 'Durchsuchen Sie offizielle und Community-Add-ons, um Ocom mit neuen Konnektoren, Kanälen und Funktionen zu erweitern.',
-
-            'docs' => 'Entwicklerdokumentation & Blogs',
-            'docs-info' => 'Entwicklerhandbücher, Tutorials und die neuesten Artikel, die Ihnen beim Erstellen, Konfigurieren und Aktualisieren helfen.',
-
-            'api-docs' => 'API-Dokumentation',
-            'api-docs-info' => 'Vollständige REST- & GraphQL-API-Referenz mit Endpunkten, Authentifizierung und Beispielen zur Integration von Ocom in Ihren Stack.',
-
-            'community' => 'Community-Forum',
-            'community-info' => 'Stellen Sie Fragen, teilen Sie Ideen und vernetzen Sie sich mit Tausenden von Ocom-Entwicklern und -Händlern weltweit.',
-
-            'video-tutorials' => 'Video-Tutorials',
-            'video-tutorials-info' => 'Schritt-für-Schritt-Video-Anleitungen zu Installation, Konfiguration und alltäglicher Shop-Verwaltung.',
-
-            'cta-title' => 'Brauchen Sie noch Hilfe?',
-            'cta-description' => 'Sprechen Sie mit dem Ocom-Team über Hosting, individuelle Entwicklung oder alles andere.',
-            'cta-btn' => 'Kontaktieren Sie uns',
-        ],
-    ],
-
     'dashboard' => [
         'index' => [
             'add-customer' => 'Kunde hinzufügen',
@@ -5880,7 +5842,6 @@ return [
                 'exchange-rates' => 'Wechselkurse',
                 'gdpr-data-requests' => 'GDPR-Datenanfragen',
                 'groups' => 'Gruppen',
-                'help' => 'Hilfe & Ressourcen',
                 'powered-by' => 'Powered by Orbio Solutions',
                 'imports' => 'Importe',
                 'inventory-sources' => 'Inventarquellen',

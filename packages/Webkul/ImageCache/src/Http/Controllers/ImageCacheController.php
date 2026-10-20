@@ -13,7 +13,7 @@ class ImageCacheController extends Controller
     /**
      * Default brand mark served for the logo cache template.
      */
-    protected const BRAND_LOGO_PATH = 'packages/Webkul/Admin/src/Resources/assets/images/favicon.ico';
+    protected const BRAND_LOGO_PATH = 'packages/Webkul/Admin/src/Resources/assets/images/mark.png';
 
     /**
      * The image types the cache serves, so a stored file whose bytes read as anything else is never sent from the store.

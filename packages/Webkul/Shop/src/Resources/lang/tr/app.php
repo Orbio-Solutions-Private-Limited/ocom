@@ -1203,6 +1203,7 @@ return [
                 'first-name' => 'Ad',
                 'last-name' => 'Soyad',
                 'phone' => 'Telefon',
+                'telephone' => 'Telefon',
                 'postcode' => 'Posta Kodu',
                 'proceed' => 'Devam Et',
                 'same-as-billing' => 'Fatura adresi ile aynı olsun',

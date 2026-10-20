@@ -1203,6 +1203,7 @@ return [
                 'first-name' => 'Vorname',
                 'last-name' => 'Nachname',
                 'phone' => 'Telefon',
+                'telephone' => 'Telefon',
                 'postcode' => 'PLZ/Postleitzahl',
                 'proceed' => 'Fortfahren',
                 'same-as-billing' => 'Gleiche Adresse für den Versand verwenden?',

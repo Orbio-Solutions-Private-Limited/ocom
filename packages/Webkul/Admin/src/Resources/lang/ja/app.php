@@ -122,44 +122,6 @@ return [
         ],
     ],
 
-    'help' => [
-        'index' => [
-            'title' => 'ヘルプとリソース',
-            'description' => 'Ocom を最大限に活用するために必要なすべて — ホスティング、サポート、プロフェッショナルサービス、さらに拡張機能と開発者向けドキュメント。',
-
-            'services-title' => 'サービス',
-            'resources-title' => 'リソースとドキュメント',
-
-            'cloud-hosting' => 'クラウドホスティング',
-            'cloud-hosting-info' => '費用対効果の高いマネージドクラウドホスティング — 完全に最適化されスケーラブルな Ocom ストアを数分でクラウド上に立ち上げられます。',
-
-            'support' => 'サポートとメンテナンス',
-            'support-info' => 'ストアを安全に保ち、最新の状態に保ち、スムーズに稼働させるための専任の技術サポートと継続的なメンテナンスプラン。',
-
-            'paid-services' => '有料サービス',
-            'paid-services-info' => 'モジュール統合、カスタマイズ、データ移行、バージョンアップグレード、オーダーメイド開発のための専門家による支援。',
-
-            'extensions' => '拡張機能',
-            'extensions-info' => '新しいコネクタ、チャネル、機能で Ocom を拡張するために、公式およびコミュニティのアドオンを閲覧できます。',
-
-            'docs' => '開発者向けドキュメントとブログ',
-            'docs-info' => '構築、設定、最新情報の把握に役立つ開発者向けガイド、チュートリアル、最新記事。',
-
-            'api-docs' => 'API ドキュメント',
-            'api-docs-info' => 'Ocom をお使いのスタックに統合するためのエンドポイント、認証、例を含む完全な REST および GraphQL API リファレンス。',
-
-            'community' => 'コミュニティフォーラム',
-            'community-info' => '質問したり、アイデアを共有したり、世界中の何千もの Ocom 開発者やマーチャントとつながりましょう。',
-
-            'video-tutorials' => 'ビデオチュートリアル',
-            'video-tutorials-info' => 'インストール、設定、日常的なストア管理を網羅したステップバイステップのビデオ解説。',
-
-            'cta-title' => 'まだサポートが必要ですか？',
-            'cta-description' => 'ホスティング、カスタム開発、その他何でも Ocom チームにご相談ください。',
-            'cta-btn' => 'お問い合わせ',
-        ],
-    ],
-
     'dashboard' => [
         'index' => [
             'add-customer' => '顧客を追加',
@@ -5880,7 +5842,6 @@ return [
                 'exchange-rates' => '為替レート',
                 'gdpr-data-requests' => 'GDPRデータリクエスト',
                 'groups' => 'グループ',
-                'help' => 'ヘルプとリソース',
                 'powered-by' => 'Powered by Orbio Solutions',
                 'imports' => '輸入品',
                 'inventory-sources' => '在庫ソース',

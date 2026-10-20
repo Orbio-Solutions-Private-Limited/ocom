@@ -1,0 +1,17 @@
+[Unit]
+Description=Ocom queue worker
+After=network.target php8.5-fpm.service redis-server.service postgresql.service
+Requires=php8.5-fpm.service
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+Restart=always
+RestartSec=3
+WorkingDirectory=/opt/orbio/ocom
+ExecStart=/usr/bin/php artisan queue:work redis --queue=default,broadcastable --tries=3 --timeout=60 --sleep=3 --max-time=3600
+TimeoutStopSec=3600
+
+[Install]
+WantedBy=multi-user.target

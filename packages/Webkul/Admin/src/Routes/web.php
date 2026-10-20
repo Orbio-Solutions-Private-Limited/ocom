@@ -60,11 +60,6 @@ Route::group(['middleware' => ['admin', NoCacheMiddleware::class], 'prefix' => c
     require 'web/notification-routes.php';
 
     /**
-     * Help & Resources routes.
-     */
-    require 'web/help-routes.php';
-
-    /**
      * Remaining routes.
      */
     require 'web/rest-routes.php';

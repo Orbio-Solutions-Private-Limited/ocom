@@ -1203,6 +1203,7 @@ return [
                 'first-name' => '名',
                 'last-name' => '姓',
                 'phone' => '電話',
+                'telephone' => '電話',
                 'postcode' => '郵便番号',
                 'proceed' => '進む',
                 'same-as-billing' => '配送のために同じ住所を使用しますか？',

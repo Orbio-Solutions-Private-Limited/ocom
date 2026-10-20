@@ -122,44 +122,6 @@ return [
         ],
     ],
 
-    'help' => [
-        'index' => [
-            'title' => 'Ajuda i recursos',
-            'description' => 'Tot el que necessites per treure el màxim profit de Ocom: allotjament, suport i serveis professionals, a més d\'extensions i documentació per a desenvolupadors.',
-
-            'services-title' => 'Serveis',
-            'resources-title' => 'Recursos i documentació',
-
-            'cloud-hosting' => 'Allotjament al núvol',
-            'cloud-hosting-info' => 'Allotjament al núvol gestionat i rendible: posa en marxa la teva botiga Ocom al núvol en minuts, totalment optimitzada i escalable.',
-
-            'support' => 'Suport i manteniment',
-            'support-info' => 'Suport tècnic dedicat i plans de manteniment continu per mantenir la teva botiga segura, actualitzada i funcionant sense problemes.',
-
-            'paid-services' => 'Serveis de pagament',
-            'paid-services-info' => 'Ajuda experta per a la integració de mòduls, personalització, migració de dades, actualitzacions de versió i desenvolupament a mida.',
-
-            'extensions' => 'Extensions',
-            'extensions-info' => 'Explora complements oficials i de la comunitat per ampliar Ocom amb nous connectors, canals i funcionalitats.',
-
-            'docs' => 'Documentació i blogs per a desenvolupadors',
-            'docs-info' => 'Guies per a desenvolupadors, tutorials i els articles més recents per ajudar-te a construir, configurar i mantenir-te al dia.',
-
-            'api-docs' => 'Documentació de l\'API',
-            'api-docs-info' => 'Referència completa de l\'API REST i GraphQL amb punts d\'accés, autenticació i exemples per integrar Ocom amb el teu sistema.',
-
-            'community' => 'Fòrum de la comunitat',
-            'community-info' => 'Fes preguntes, comparteix idees i connecta amb milers de desenvolupadors i comerciants de Ocom de tot el món.',
-
-            'video-tutorials' => 'Videotutorials',
-            'video-tutorials-info' => 'Guies en vídeo pas a pas que cobreixen la instal·lació, la configuració i la gestió diària de la botiga.',
-
-            'cta-title' => 'Encara necessites ajuda?',
-            'cta-description' => 'Parla amb l\'equip de Ocom sobre allotjament, desenvolupament personalitzat o qualsevol altra cosa.',
-            'cta-btn' => 'Contacta amb nosaltres',
-        ],
-    ],
-
     'dashboard' => [
         'index' => [
             'add-customer' => 'Afegir client',
@@ -5880,7 +5842,6 @@ return [
                 'exchange-rates' => 'Taxes de canvi',
                 'gdpr-data-requests' => 'Sol·licituds de dades GDPR',
                 'groups' => 'Grups',
-                'help' => 'Ajuda i recursos',
                 'powered-by' => 'Powered by Orbio Solutions',
                 'imports' => 'Importacions',
                 'inventory-sources' => 'Fonts d\'inventari',

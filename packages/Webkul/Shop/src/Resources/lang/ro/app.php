@@ -1203,6 +1203,7 @@ return [
                 'first-name' => 'Prenume',
                 'last-name' => 'Nume',
                 'phone' => 'Telefon',
+                'telephone' => 'Telefon',
                 'postcode' => 'Cod poștal',
                 'proceed' => 'Continuă',
                 'same-as-billing' => 'Folosiți aceeași adresă pentru livrare?',

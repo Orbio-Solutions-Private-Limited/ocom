@@ -1203,6 +1203,7 @@ return [
                 'first-name' => 'මුල් නම',
                 'last-name' => 'අවසාන නම',
                 'phone' => 'දුරකථන',
+                'telephone' => 'දුරකථන',
                 'postcode' => 'තැපැල් කේතය',
                 'proceed' => 'ඉදිරිපත් වන්න',
                 'same-as-billing' => 'සහිතව සමාලෝචනයක් භාවිතා කරන්න?',

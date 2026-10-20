@@ -122,44 +122,6 @@ return [
         ],
     ],
 
-    'help' => [
-        'index' => [
-            'title' => 'Msaada & Nyenzo',
-            'description' => 'Kila kitu unachohitaji ili kupata faida kubwa ya Ocom — hosting, msaada na huduma za kitaalamu, pamoja na nyongeza na nyaraka za wasanidi programu.',
-
-            'services-title' => 'Huduma',
-            'resources-title' => 'Nyenzo & Nyaraka',
-
-            'cloud-hosting' => 'Hosting ya Wingu',
-            'cloud-hosting-info' => 'Hosting ya wingu yenye gharama nafuu na inayosimamiwa — anzisha duka lako la Ocom kwenye wingu kwa dakika chache, lililoboreshwa kikamilifu na linalokua.',
-
-            'support' => 'Msaada na Matunzo',
-            'support-info' => 'Msaada wa kiufundi wa kipekee na mipango ya matunzo endelevu ili duka lako libaki salama, limesasishwa na likifanya kazi vizuri.',
-
-            'paid-services' => 'Huduma za Kulipa',
-            'paid-services-info' => 'Msaada wa kitaalamu kwa kuunganisha moduli, kubadilisha kwa mahitaji yako, uhamishaji wa data, kusasisha matoleo na maendeleo ya kipekee.',
-
-            'extensions' => 'Nyongeza',
-            'extensions-info' => 'Vinjari viongezeo rasmi na vya jamii ili kuongezea Ocom viunganishi vipya, chaneli na vipengele vipya.',
-
-            'docs' => 'Nyaraka & Makala za Wasanidi',
-            'docs-info' => 'Miongozo ya wasanidi programu, mafunzo na makala mpya kukusaidia kujenga, kusanidi na kubaki na habari mpya.',
-
-            'api-docs' => 'Nyaraka za API',
-            'api-docs-info' => 'Rejea kamili ya REST & GraphQL API yenye endpoints, uthibitishaji na mifano ya kuunganisha Ocom na mfumo wako.',
-
-            'community' => 'Jukwaa la Jamii',
-            'community-info' => 'Uliza maswali, shiriki mawazo na ungana na maelfu ya wasanidi programu na wafanyabiashara wa Ocom duniani.',
-
-            'video-tutorials' => 'Video za Mafunzo',
-            'video-tutorials-info' => 'Video za hatua kwa hatua zinazojumuisha usakinishaji, usanidi na usimamizi wa kila siku wa duka.',
-
-            'cta-title' => 'Bado unahitaji msaada?',
-            'cta-description' => 'Wasiliana na timu ya Ocom kuhusu hosting, maendeleo ya kipekke au lolote lingine.',
-            'cta-btn' => 'Wasiliana Nasi',
-        ],
-    ],
-
     'dashboard' => [
         'index' => [
             'add-customer' => 'Ongeza Mteja',
@@ -5880,7 +5842,6 @@ return [
                 'exchange-rates' => 'Viwango vya Kubadilisha Sarafu',
                 'gdpr-data-requests' => 'Maombi ya Data ya GDPR',
                 'groups' => 'Makundi',
-                'help' => 'Msaada & Nyenzo',
                 'powered-by' => 'Powered by Orbio Solutions',
                 'imports' => 'Uingizaji',
                 'inventory-sources' => 'Vyanzo vya Stoo',

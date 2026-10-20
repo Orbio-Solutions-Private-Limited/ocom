@@ -1203,6 +1203,7 @@ return [
                 'first-name' => 'نام',
                 'last-name' => 'نام خانوادگی',
                 'phone' => 'تلفن',
+                'telephone' => 'تلفن',
                 'postcode' => 'کد پستی',
                 'proceed' => 'ادامه',
                 'same-as-billing' => 'استفاده از همان آدرس برای حمل و نقل؟',

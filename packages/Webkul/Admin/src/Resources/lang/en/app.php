@@ -122,44 +122,6 @@ return [
         ],
     ],
 
-    'help' => [
-        'index' => [
-            'title' => 'Help & Resources',
-            'description' => 'Everything you need to get the most out of Ocom — hosting, support and professional services, plus extensions and developer documentation.',
-
-            'services-title' => 'Services',
-            'resources-title' => 'Resources & Documentation',
-
-            'cloud-hosting' => 'Cloud Hosting',
-            'cloud-hosting-info' => 'Cost-effective, managed cloud hosting — launch your Ocom store on the cloud in minutes, fully optimised and scalable.',
-
-            'support' => 'Support & Maintenance',
-            'support-info' => 'Dedicated technical support and ongoing maintenance plans to keep your store secure, updated and running smoothly.',
-
-            'paid-services' => 'Paid Services',
-            'paid-services-info' => 'Expert help for module integration, customisation, data migration, version upgrades and bespoke development.',
-
-            'extensions' => 'Extensions',
-            'extensions-info' => 'Browse official and community add-ons to extend Ocom with new connectors, channels and features.',
-
-            'docs' => 'Dev Docs & Blogs',
-            'docs-info' => 'Developer guides, tutorials and the latest articles to help you build, configure and stay up to date.',
-
-            'api-docs' => 'API Docs',
-            'api-docs-info' => 'Full REST & GraphQL API reference with endpoints, authentication and examples to integrate Ocom with your stack.',
-
-            'community' => 'Community Forum',
-            'community-info' => 'Ask questions, share ideas and connect with thousands of Ocom developers and merchants worldwide.',
-
-            'video-tutorials' => 'Video Tutorials',
-            'video-tutorials-info' => 'Step-by-step video walkthroughs covering installation, configuration and everyday store management.',
-
-            'cta-title' => 'Still need a hand?',
-            'cta-description' => 'Talk to the Orbio Solutions team about hosting, custom development or anything else.',
-            'cta-btn' => 'Contact Us',
-        ],
-    ],
-
     'dashboard' => [
         'index' => [
             'add-customer' => 'Add Customer',
@@ -5880,7 +5842,6 @@ return [
                 'exchange-rates' => 'Exchange Rates',
                 'gdpr-data-requests' => 'GDPR Data Requests',
                 'groups' => 'Groups',
-                'help' => 'Help & Resources',
                 'powered-by' => 'Powered by Orbio Solutions',
                 'imports' => 'Imports',
                 'inventory-sources' => 'Inventory Sources',

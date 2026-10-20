@@ -1,4 +1,49 @@
-<svg width="140" height="36" viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0" y="6" width="24" height="24" rx="4" fill="#0041FF"/>
-<text x="32" y="24" font-family="Poppins, Arial, sans-serif" font-size="20" font-weight="700" fill="#000311">Pluto</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 152" fill="none" role="img" aria-label="Pluto">
+    <defs>
+        <linearGradient id="plutoBag" x1="80" y1="16" x2="80" y2="142" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#D4E8B4"/>
+            <stop offset="40%" stop-color="#96BC58"/>
+            <stop offset="100%" stop-color="#4F702A"/>
+        </linearGradient>
+        <linearGradient id="plutoHandle" x1="80" y1="12" x2="80" y2="54" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#D8EBB8"/>
+            <stop offset="100%" stop-color="#A4C666"/>
+        </linearGradient>
+        <linearGradient id="plutoOrbit" x1="18" y1="120" x2="158" y2="20" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#355218"/>
+            <stop offset="55%" stop-color="#7E9E42"/>
+            <stop offset="100%" stop-color="#C5DA70"/>
+        </linearGradient>
+    </defs>
+
+    <path d="M53 54c0-17 8-28 19.5-28S92 37 92 54" stroke="url(#plutoHandle)" stroke-width="9" stroke-linecap="round"/>
+    <path d="M90 54c0-17 8-28 19.5-28S129 37 129 54" stroke="url(#plutoHandle)" stroke-width="9" stroke-linecap="round"/>
+
+    <path
+        d="M40 50h82c6.5 0 10 4 11 10l9 73c1.2 9.5-4.8 16-14 16H45c-9.2 0-15.2-6.5-14-16l9-73c1-6 4.5-10 11-10z"
+        fill="url(#plutoBag)"
+    />
+
+    <path
+        d="M20 104C18 128 62 140 102 104c22-20 40-48 54-72"
+        stroke="url(#plutoOrbit)"
+        stroke-width="11"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+
+    <path d="M148 20l22 14-24 8z" fill="#C3D86C"/>
+    <path d="M157 12.5l3.6 7.4 8.2 1.2-5.9 5.8 1.4 8.1-7.3-3.8-7.3 3.8 1.4-8.1-5.9-5.8 8.2-1.2z" fill="#86A444"/>
+    <path d="M126 56l2.1 4.4 4.8.7-3.5 3.4.8 4.8-4.2-2.2-4.2 2.2.8-4.8-3.5-3.4 4.8-.7z" fill="#D4E88A"/>
+    <path d="M114 78l1.5 3.2 3.5.5-2.5 2.5.6 3.5-3.1-1.6-3.1 1.6.6-3.5-2.5-2.5 3.5-.5z" fill="#E3F2A4"/>
+
+    <text
+        x="196"
+        y="100"
+        fill="#4E6A24"
+        font-family="Arial Black, Arial, Helvetica, sans-serif"
+        font-size="64"
+        font-weight="800"
+        letter-spacing="4"
+    >PLUTO</text>
 </svg>

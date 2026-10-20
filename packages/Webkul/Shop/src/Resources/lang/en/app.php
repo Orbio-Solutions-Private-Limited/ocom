@@ -1203,6 +1203,7 @@ return [
                 'first-name' => 'First Name',
                 'last-name' => 'Last Name',
                 'phone' => 'Phone',
+                'telephone' => 'Phone',
                 'postcode' => 'Zip/Postcode',
                 'proceed' => 'Proceed',
                 'same-as-billing' => 'Use same address for shipping?',

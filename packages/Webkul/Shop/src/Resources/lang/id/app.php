@@ -1203,6 +1203,7 @@ return [
                 'first-name' => 'Nama Depan',
                 'last-name' => 'Nama Belakang',
                 'phone' => 'Telepon',
+                'telephone' => 'Telepon',
                 'postcode' => 'Kode Pos',
                 'proceed' => 'Lanjut',
                 'same-as-billing' => 'Gunakan alamat yang sama untuk pengiriman?',

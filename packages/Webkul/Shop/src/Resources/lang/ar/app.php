@@ -1203,6 +1203,7 @@ return [
                 'first-name' => 'الاسم الأول',
                 'last-name' => 'الاسم الأخير',
                 'phone' => 'الهاتف',
+                'telephone' => 'الهاتف',
                 'postcode' => 'الرمز البريدي',
                 'proceed' => 'المتابعة',
                 'same-as-billing' => 'استخدم نفس العنوان للشحن؟',

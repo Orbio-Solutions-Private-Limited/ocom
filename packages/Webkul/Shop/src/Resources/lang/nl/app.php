@@ -1203,6 +1203,7 @@ return [
                 'first-name' => 'Voornaam',
                 'last-name' => 'Achternaam',
                 'phone' => 'Telefoon',
+                'telephone' => 'Telefoon',
                 'postcode' => 'Postcode',
                 'proceed' => 'Ga verder',
                 'same-as-billing' => 'Gelijk adres gebruiken voor verzending?',

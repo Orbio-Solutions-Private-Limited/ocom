@@ -1203,6 +1203,7 @@ return [
                 'first-name' => '名',
                 'last-name' => '姓',
                 'phone' => '电话',
+                'telephone' => '电话',
                 'postcode' => '邮政编码',
                 'proceed' => '继续',
                 'same-as-billing' => '是否使用相同地址进行配送？',

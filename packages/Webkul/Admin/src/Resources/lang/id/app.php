@@ -122,44 +122,6 @@ return [
         ],
     ],
 
-    'help' => [
-        'index' => [
-            'title' => 'Bantuan & Sumber Daya',
-            'description' => 'Semua yang Anda butuhkan untuk memaksimalkan Ocom — hosting, dukungan dan layanan profesional, serta ekstensi dan dokumentasi pengembang.',
-
-            'services-title' => 'Layanan',
-            'resources-title' => 'Sumber Daya & Dokumentasi',
-
-            'cloud-hosting' => 'Cloud Hosting',
-            'cloud-hosting-info' => 'Cloud hosting terkelola yang hemat biaya — luncurkan toko Ocom Anda di cloud dalam hitungan menit, sepenuhnya dioptimalkan dan dapat diskalakan.',
-
-            'support' => 'Dukungan & Pemeliharaan',
-            'support-info' => 'Dukungan teknis khusus dan paket pemeliharaan berkelanjutan untuk menjaga toko Anda tetap aman, diperbarui dan berjalan lancar.',
-
-            'paid-services' => 'Layanan Berbayar',
-            'paid-services-info' => 'Bantuan ahli untuk integrasi modul, kustomisasi, migrasi data, peningkatan versi dan pengembangan khusus.',
-
-            'extensions' => 'Ekstensi',
-            'extensions-info' => 'Jelajahi add-on resmi dan komunitas untuk memperluas Ocom dengan konektor, saluran dan fitur baru.',
-
-            'docs' => 'Dokumen Dev & Blog',
-            'docs-info' => 'Panduan pengembang, tutorial dan artikel terbaru untuk membantu Anda membangun, mengonfigurasi dan tetap mutakhir.',
-
-            'api-docs' => 'Dokumen API',
-            'api-docs-info' => 'Referensi API REST & GraphQL lengkap dengan endpoint, autentikasi dan contoh untuk mengintegrasikan Ocom dengan stack Anda.',
-
-            'community' => 'Forum Komunitas',
-            'community-info' => 'Ajukan pertanyaan, bagikan ide dan terhubung dengan ribuan pengembang dan pedagang Ocom di seluruh dunia.',
-
-            'video-tutorials' => 'Tutorial Video',
-            'video-tutorials-info' => 'Panduan video langkah demi langkah yang mencakup instalasi, konfigurasi dan pengelolaan toko sehari-hari.',
-
-            'cta-title' => 'Masih butuh bantuan?',
-            'cta-description' => 'Bicaralah dengan tim Ocom tentang hosting, pengembangan khusus atau hal lainnya.',
-            'cta-btn' => 'Hubungi Kami',
-        ],
-    ],
-
     'dashboard' => [
         'index' => [
             'add-customer' => 'Tambah Pelanggan',
@@ -5880,7 +5842,6 @@ return [
                 'exchange-rates' => 'Kurs',
                 'gdpr-data-requests' => 'Permintaan Data GDPR',
                 'groups' => 'Grup',
-                'help' => 'Bantuan & Sumber Daya',
                 'powered-by' => 'Powered by Orbio Solutions',
                 'imports' => 'Impor',
                 'inventory-sources' => 'Sumber Inventaris',

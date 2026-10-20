@@ -55,10 +55,15 @@
         />
     @else
         <link
+            rel="icon"
+            type="image/svg+xml"
+            href="{{ bagisto_asset('images/mark.svg') }}"
+        />
+        <link
             type="image/x-icon"
             href="{{ bagisto_asset('images/favicon.ico') }}"
             rel="shortcut icon"
-            sizes="16x16"
+            sizes="any"
         />
     @endif
 
@@ -92,7 +97,7 @@
                 aria-hidden="true"
             ></div>
 
-            <div class="relative z-10">
+            <div class="relative z-10 min-h-screen">
                 {{ $slot }}
             </div>
         </div>

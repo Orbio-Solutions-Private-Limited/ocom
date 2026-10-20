@@ -1203,6 +1203,7 @@ return [
                 'first-name' => 'Jina la Kwanza',
                 'last-name' => 'Jina la Mwisho',
                 'phone' => 'Namba ya simu',
+                'telephone' => 'Namba ya simu',
                 'postcode' => 'Zip/Msimbo wa Posta',
                 'proceed' => 'Endelea',
                 'same-as-billing' => 'Tumia anwani ileile kwa usafirishaji?',

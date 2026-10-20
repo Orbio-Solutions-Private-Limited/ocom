@@ -21,9 +21,18 @@
                 />
             @else
                 <img
+                    src="{{ bagisto_asset('images/mark.svg') }}"
+                    class="js-admin-logo h-8 w-auto sm:hidden"
+                    data-light="{{ bagisto_asset('images/mark.svg') }}"
+                    data-dark="{{ bagisto_asset('images/mark.svg') }}"
+                    alt="{{ config('app.name') }}"
+                />
+                <img
                     src="{{ request()->cookie('dark_mode') ? bagisto_asset('images/dark-logo.svg') : bagisto_asset('images/logo.svg') }}"
-                    class="h-8 w-auto sm:h-10"
+                    class="js-admin-logo hidden h-8 w-auto sm:block sm:h-10"
                     id="logo-image"
+                    data-light="{{ bagisto_asset('images/logo.svg') }}"
+                    data-dark="{{ bagisto_asset('images/dark-logo.svg') }}"
                     alt="{{ config('app.name') }}"
                 />
             @endif
@@ -163,8 +172,9 @@
             @else
                 <img
                     src="{{ request()->cookie('dark_mode') ? bagisto_asset('images/dark-logo.svg') : bagisto_asset('images/logo.svg') }}"
-                    class="h-8 w-auto sm:h-10"
-                    id="logo-image"
+                    class="js-admin-logo h-8 w-auto sm:h-10"
+                    data-light="{{ bagisto_asset('images/logo.svg') }}"
+                    data-dark="{{ bagisto_asset('images/dark-logo.svg') }}"
                     alt="{{ config('app.name') }}"
                 />
             @endif
@@ -216,39 +226,6 @@
                         @endif
                     </div>
                 @endforeach
-
-                <!-- Help & Resources -->
-                @php
-                    $isHelpActive = request()->routeIs('admin.help.index');
-                @endphp
-
-                <!-- Divider -->
-                <div class="my-1 border-t border-gray-200 dark:border-gray-800"></div>
-
-                <div class="group/item relative">
-                    <a
-                        href="{{ route('admin.help.index') }}"
-                        class="sidebar-link flex items-center gap-2 p-1.5 cursor-pointer rounded-lg {{ $isHelpActive ? 'sidebar-active' : '' }} sm:gap-2.5"
-                    >
-                        <svg
-                            class="h-5 w-5 shrink-0 {{ $isHelpActive ? 'text-white' : 'text-sidebar-text' }} sm:h-6 sm:w-6"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.8"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <circle cx="12" cy="12" r="9"></circle>
-                            <path d="M9.4 9.3a2.6 2.6 0 0 1 5.05.85c0 1.7-2.45 2.05-2.45 3.6"></path>
-                            <path d="M12 17.2h.01"></path>
-                        </svg>
-
-                        <p class="font-normal whitespace-nowrap text-sm {{ $isHelpActive ? 'text-white' : 'text-sidebar-text' }} sm:text-base">
-                            @lang('admin::app.components.layouts.sidebar.help')
-                        </p>
-                    </a>
-                </div>
             </nav>
         </div>
     </x-slot>
@@ -916,13 +893,13 @@
 
                     if (this.isDarkMode) {
                         this.$emitter.emit('change-theme', 'dark');
-
-                        document.getElementById('logo-image').src = this.dark_logo;
                     } else {
                         this.$emitter.emit('change-theme', 'light');
-
-                        document.getElementById('logo-image').src = this.logo;
                     }
+
+                    document.querySelectorAll('.js-admin-logo').forEach((image) => {
+                        image.src = this.isDarkMode ? image.dataset.dark : image.dataset.light;
+                    });
                 },
 
                 isDarkModeCookie() {

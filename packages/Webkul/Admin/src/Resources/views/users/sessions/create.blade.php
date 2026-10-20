@@ -1,107 +1,113 @@
 <x-admin::layouts.anonymous>
-    <!-- Page Title -->
     <x-slot:title>
         @lang('admin::app.users.sessions.title')
     </x-slot>
 
-    <div class="flex min-h-screen items-center justify-center px-4 py-8">
-        <div class="flex flex-col items-center gap-5">
-            <!-- Logo -->            
-            @if ($logo = core()->getConfigData('general.design.admin_logo.logo_image'))
-                <img
-                    class="h-10 w-27.5"
-                    src="{{ Storage::url($logo) }}"
-                    alt="{{ config('app.name') }}"
-                />
-            @else
-                <img
-                    class="w-max" 
-                    src="{{ bagisto_asset('images/logo.svg') }}"
-                    alt="{{ config('app.name') }}"
-                />
-            @endif
+    <div class="admin-login">
+        <aside class="admin-login-brand" aria-hidden="true">
+            <span class="admin-login-orbit"></span>
+            <span class="admin-login-orbit admin-login-orbit--inner"></span>
 
-            <div class="auth-card flex min-w-75 flex-col">
-                <!-- Login Form -->
-                <x-admin::form :action="route('admin.session.store')">
-                    <p class="p-4 text-xl font-bold text-gray-800 dark:text-white">
-                        @lang('admin::app.users.sessions.title')
-                    </p>
+            <img
+                class="admin-login-mark"
+                src="{{ bagisto_asset('images/mark.svg') }}"
+                alt=""
+            >
 
-                    <div class="border-y p-4 dark:border-gray-800">
-                        <!-- Email -->
-                        <x-admin::form.control-group>
-                            <x-admin::form.control-group.label class="required">
-                                @lang('admin::app.users.sessions.email')
-                            </x-admin::form.control-group.label>
+            <p class="admin-login-wordmark">PLUTO</p>
+        </aside>
 
-                            <x-admin::form.control-group.control 
-                                type="email" 
-                                class="w-63.5 max-w-full" 
-                                id="email"
-                                name="email" 
-                                rules="required|email" 
-                                :label="trans('admin::app.users.sessions.email')"
-                                :placeholder="trans('admin::app.users.sessions.email')"
-                            />
+        <section class="admin-login-panel">
+            <div class="admin-login-form">
+                <h1 class="admin-login-title">
+                    @lang('admin::app.users.sessions.title')
+                </h1>
 
-                            <x-admin::form.control-group.error control-name="email" />
-                        </x-admin::form.control-group>
+                <form
+                    method="POST"
+                    action="{{ route('admin.session.store') }}"
+                >
+                    @csrf
 
-                        <!-- Password -->
-                        <x-admin::form.control-group class="relative w-full">
-                            <x-admin::form.control-group.label class="required">
-                                @lang('admin::app.users.sessions.password')
-                            </x-admin::form.control-group.label>
-                    
-                            <x-admin::form.control-group.control 
-                                type="password" 
-                                class="w-63.5 max-w-full ltr:pr-10 rtl:pl-10" 
-                                id="password"
-                                name="password" 
-                                rules="required|min:6" 
-                                :label="trans('admin::app.users.sessions.password')"
-                                :placeholder="trans('admin::app.users.sessions.password')"
-                            />
-                    
-                            <span 
-                                class="icon-view absolute top-10.5 -translate-y-2/4 cursor-pointer text-2xl ltr:right-2 rtl:left-2"
-                                onclick="switchVisibility()"
-                                id="visibilityIcon"
-                                role="presentation"
-                                tabindex="0"
-                            >
-                            </span>
-                    
-                            <x-admin::form.control-group.error control-name="password" />
-                        </x-admin::form.control-group>
+                    <div class="mb-4">
+                        <label
+                            for="email"
+                            class="required mb-1.5 flex items-center gap-1 text-xs font-normal uppercase tracking-widest text-gray-600"
+                        >
+                            @lang('admin::app.users.sessions.email')
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value="{{ old('email') }}"
+                            autocomplete="username"
+                            required
+                            autofocus
+                            class="admin-login-input"
+                            placeholder="@lang('admin::app.users.sessions.email')"
+                        >
+
+                        @error('email')
+                            <p class="mt-1 text-xs italic text-red-600">{{ $message }}</p>
+                        @enderror
                     </div>
 
-                    <div class="flex items-center justify-between p-4">
-                        <!-- Forgot Password Link -->
-                        <a 
-                            class="cursor-pointer text-xs font-normal leading-6 text-brand"
+                    <div class="relative mb-4">
+                        <label
+                            for="password"
+                            class="required mb-1.5 flex items-center gap-1 text-xs font-normal uppercase tracking-widest text-gray-600"
+                        >
+                            @lang('admin::app.users.sessions.password')
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            autocomplete="current-password"
+                            required
+                            class="admin-login-input ltr:pr-10 rtl:pl-10"
+                            placeholder="@lang('admin::app.users.sessions.password')"
+                        >
+
+                        <button
+                            type="button"
+                            class="icon-view absolute top-10.5 -translate-y-2/4 cursor-pointer border-0 bg-transparent p-0 text-2xl text-gray-500 ltr:right-2 rtl:left-2"
+                            id="visibilityIcon"
+                            onclick="switchVisibility()"
+                            aria-label="@lang('admin::app.users.sessions.password')"
+                        ></button>
+
+                        @error('password')
+                            <p class="mt-1 text-xs italic text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <div class="mt-6 flex flex-col gap-4">
+                        <button
+                            type="submit"
+                            class="admin-login-submit"
+                            aria-label="{{ trans('admin::app.users.sessions.submit-btn') }}"
+                        >
+                            @lang('admin::app.users.sessions.submit-btn')
+                        </button>
+
+                        <a
+                            class="text-center text-xs font-normal leading-6 text-[#4E6A24] hover:underline"
                             href="{{ route('admin.forget_password.create') }}"
                         >
                             @lang('admin::app.users.sessions.forget-password-link')
                         </a>
-
-                        <!-- Submit Button -->
-                        <button
-                            class="primary-button"
-                            aria-label="{{ trans('admin::app.users.sessions.submit-btn')}}"
-                        >
-                            @lang('admin::app.users.sessions.submit-btn')
-                        </button>
                     </div>
-                </x-admin::form>
-            </div>
+                </form>
 
-            <!-- Powered By -->
-            <div class="text-sm font-normal text-brand-muted">
-                @lang('admin::app.users.sessions.powered-by-description')
+                <p class="admin-login-credit">
+                    @lang('admin::app.users.sessions.powered-by-description')
+                </p>
             </div>
-        </div>
+        </section>
     </div>
 
     @push('scripts')

@@ -1203,6 +1203,7 @@ return [
                 'first-name' => 'Nom',
                 'last-name' => 'Cognom',
                 'phone' => 'Telèfon',
+                'telephone' => 'Telèfon',
                 'postcode' => 'Codi postal',
                 'proceed' => 'Continuar',
                 'same-as-billing' => '¿Utilitzar la mateixa adreça per l\'enviament?',

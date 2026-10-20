@@ -1,0 +1,10 @@
+[Unit]
+Description=Run the Ocom scheduler every minute
+
+[Timer]
+OnCalendar=minutely
+Persistent=true
+AccuracySec=1s
+
+[Install]
+WantedBy=timers.target

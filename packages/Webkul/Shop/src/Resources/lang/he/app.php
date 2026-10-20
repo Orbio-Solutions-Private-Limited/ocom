@@ -1203,6 +1203,7 @@ return [
                 'first-name' => 'שם פרטי',
                 'last-name' => 'שם משפחה',
                 'phone' => 'טלפון',
+                'telephone' => 'טלפון',
                 'postcode' => 'מיקוד',
                 'proceed' => 'המשך',
                 'same-as-billing' => 'השתמש באותה כתובת למשלוח?',

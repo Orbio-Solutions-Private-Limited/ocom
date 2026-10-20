@@ -1203,6 +1203,7 @@ return [
                 'first-name' => 'पहला नाम',
                 'last-name' => 'आख़िरी नाम',
                 'phone' => 'फ़ोन',
+                'telephone' => 'फ़ोन',
                 'postcode' => 'पिन कोड',
                 'proceed' => 'आगे बढ़ें',
                 'same-as-billing' => 'शिपिंग के लिए एक ही पता उपयोग करें?',

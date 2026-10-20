@@ -23,7 +23,6 @@ class Bouncer
         'admin.datagrid.saved_filters.index',
         'admin.datagrid.saved_filters.store',
         'admin.datagrid.saved_filters.update',
-        'admin.help.index',
         'admin.magic_ai.content',
         'admin.magic_ai.image',
         'admin.notification.get_notification',

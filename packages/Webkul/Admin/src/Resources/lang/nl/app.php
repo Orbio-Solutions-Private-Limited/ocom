@@ -122,44 +122,6 @@ return [
         ],
     ],
 
-    'help' => [
-        'index' => [
-            'title' => 'Help & Bronnen',
-            'description' => 'Alles wat u nodig hebt om het meeste uit Ocom te halen — hosting, ondersteuning en professionele diensten, plus extensies en ontwikkelaarsdocumentatie.',
-
-            'services-title' => 'Diensten',
-            'resources-title' => 'Bronnen & Documentatie',
-
-            'cloud-hosting' => 'Cloudhosting',
-            'cloud-hosting-info' => 'Kosteneffectieve, beheerde cloudhosting — lanceer uw Ocom-winkel binnen enkele minuten in de cloud, volledig geoptimaliseerd en schaalbaar.',
-
-            'support' => 'Ondersteuning & Onderhoud',
-            'support-info' => 'Toegewijde technische ondersteuning en doorlopende onderhoudsplannen om uw winkel veilig, up-to-date en soepel draaiend te houden.',
-
-            'paid-services' => 'Betaalde Diensten',
-            'paid-services-info' => 'Deskundige hulp bij module-integratie, maatwerk, datamigratie, versie-upgrades en op maat gemaakte ontwikkeling.',
-
-            'extensions' => 'Extensies',
-            'extensions-info' => 'Blader door officiële en community add-ons om Ocom uit te breiden met nieuwe connectoren, kanalen en functies.',
-
-            'docs' => 'Dev-documentatie & Blogs',
-            'docs-info' => 'Ontwikkelaarshandleidingen, tutorials en de nieuwste artikelen om u te helpen bouwen, configureren en up-to-date te blijven.',
-
-            'api-docs' => 'API-documentatie',
-            'api-docs-info' => 'Volledige REST- & GraphQL-API-referentie met endpoints, authenticatie en voorbeelden om Ocom met uw stack te integreren.',
-
-            'community' => 'Communityforum',
-            'community-info' => 'Stel vragen, deel ideeën en maak verbinding met duizenden Ocom-ontwikkelaars en -verkopers wereldwijd.',
-
-            'video-tutorials' => 'Videotutorials',
-            'video-tutorials-info' => 'Stapsgewijze videohandleidingen over installatie, configuratie en dagelijks winkelbeheer.',
-
-            'cta-title' => 'Toch nog hulp nodig?',
-            'cta-description' => 'Praat met het Ocom-team over hosting, maatwerkontwikkeling of iets anders.',
-            'cta-btn' => 'Neem Contact Op',
-        ],
-    ],
-
     'dashboard' => [
         'index' => [
             'add-customer' => 'Klant Toevoegen',
@@ -5880,7 +5842,6 @@ return [
                 'exchange-rates' => 'Wisselkoersen',
                 'gdpr-data-requests' => 'GDPR Data Verzoeken',
                 'groups' => 'Groepen',
-                'help' => 'Help & Bronnen',
                 'powered-by' => 'Powered by Orbio Solutions',
                 'imports' => 'Importeert',
                 'inventory-sources' => 'Voorraadbronnen',

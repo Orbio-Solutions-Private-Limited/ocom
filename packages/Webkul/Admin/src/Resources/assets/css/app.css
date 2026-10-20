@@ -461,7 +461,9 @@
     }
 
     .admin-auth-shell {
-        @apply relative min-h-screen overflow-hidden bg-brand-panel;
+        @apply relative min-h-screen overflow-hidden;
+
+        background: linear-gradient(160deg, #6d8c3e 0%, #3f5c28 68%, #2c4318 100%);
     }
 
     .admin-auth-blur {
@@ -469,11 +471,87 @@
     }
 
     .admin-auth-blur--a {
-        @apply -left-20 -top-20 h-72 w-72 bg-[#2BAE8A]/25;
+        @apply -left-20 -top-20 h-72 w-72 bg-[#d4e8b4]/20;
     }
 
     .admin-auth-blur--b {
-        @apply -bottom-24 -right-16 h-80 w-80 bg-[#81BB55]/20;
+        @apply -bottom-24 -right-16 h-80 w-80 bg-[#c5da70]/15;
+    }
+
+    .admin-auth-shell:has(.admin-login) .admin-auth-blur {
+        @apply hidden;
+    }
+
+    .admin-login {
+        @apply grid min-h-screen grid-cols-1 lg:grid-cols-2;
+    }
+
+    .admin-login-brand {
+        @apply relative flex flex-row items-center justify-center gap-4 overflow-hidden px-5 py-8 lg:flex-col lg:gap-0 lg:px-12 lg:py-16;
+
+        background:
+            radial-gradient(ellipse at 18% 12%, rgb(212 232 180 / 22%), transparent 46%),
+            linear-gradient(160deg, #6d8c3e 0%, #3f5c28 68%, #2c4318 100%);
+        color: #eef6d4;
+    }
+
+    .admin-login-orbit {
+        @apply pointer-events-none absolute rounded-full border-2 border-[#e4f0c4]/20;
+
+        inset: auto -22% 8% -34%;
+        height: 58%;
+        transform: rotate(-18deg);
+    }
+
+    .admin-login-orbit--inner {
+        inset: auto -8% 22% -18%;
+        height: 38%;
+        border-color: rgb(228 240 196 / 10%);
+        transform: rotate(-26deg);
+    }
+
+    .admin-login-mark {
+        @apply relative z-10 h-16 w-auto lg:h-36;
+    }
+
+    .admin-login-wordmark {
+        @apply relative z-10 m-0 tracking-[0.18em] text-[#eef6d4];
+
+        font-family: "Arial Black", Arial, Helvetica, sans-serif;
+        font-size: clamp(1.8rem, 4vw, 4.25rem);
+        font-weight: 800;
+    }
+
+    .admin-login-panel {
+        @apply flex items-center justify-center bg-[#f7f4ea] px-5 py-10 sm:px-10 lg:px-16;
+    }
+
+    .admin-login-form {
+        @apply w-full max-w-96;
+    }
+
+    .admin-login-credit {
+        @apply mt-10 text-center text-xs text-[#8a9a62];
+    }
+
+    .admin-login-title {
+        @apply mb-8 text-[2rem] leading-none text-[#1f2a14];
+
+        font-family: "DM Serif Display", serif;
+    }
+
+    .admin-login-input {
+        @apply w-full rounded-lg border border-[#d5d2c6] bg-white px-3 py-3 text-sm text-[#1f2a14] transition-all hover:border-[#8a9a62] focus-visible:ring-2 focus-visible:ring-[#6d8c3e] focus-visible:ring-offset-2;
+    }
+
+    .admin-login-submit {
+        @apply inline-flex h-11 min-h-11 w-full cursor-pointer items-center justify-center rounded-lg border-0 text-sm font-normal text-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6d8c3e] focus-visible:ring-offset-2;
+
+        background: linear-gradient(90deg, #6d8c3e 0%, #3f5c28 100%);
+    }
+
+    .admin-login-submit:hover:not(:disabled) {
+        background: linear-gradient(90deg, #5f7c34 0%, #334d20 100%);
     }
 
     .journal-scroll::-webkit-scrollbar {

@@ -10,10 +10,14 @@ mkdir -p \
     storage/app/public \
     storage/framework/cache/data \
     storage/framework/sessions \
-    storage/framework/views \
+    storage/framework/views/livewire/islands \
     storage/logs \
     bootstrap/cache
 touch storage/logs/laravel.log
+
+sudo chown -R ubuntu:www-data storage bootstrap/cache
+sudo find storage bootstrap/cache -type d -exec chmod 2775 {} +
+sudo find storage bootstrap/cache -type f -exec chmod 664 {} +
 
 composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist --ignore-platform-req=php
 
@@ -37,7 +41,7 @@ sudo cp "${DEPLOY_DIR}/systemd/ocom-scheduler.service" /etc/systemd/system/ocom-
 sudo cp "${DEPLOY_DIR}/systemd/ocom-scheduler.timer" /etc/systemd/system/ocom-scheduler.timer
 
 sudo chown -R ubuntu:www-data storage bootstrap/cache
-sudo find storage bootstrap/cache -type d -exec chmod 775 {} +
+sudo find storage bootstrap/cache -type d -exec chmod 2775 {} +
 sudo find storage bootstrap/cache -type f -exec chmod 664 {} +
 
 sudo systemctl daemon-reload

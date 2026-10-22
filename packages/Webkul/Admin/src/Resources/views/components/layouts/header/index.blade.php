@@ -204,17 +204,17 @@
                                 @foreach ($menuItem->getChildren() as $subMenuItem)
                                     <a
                                         href="{{ $subMenuItem->getUrl() }}"
-                                        class="sidebar-sublink {{ $subMenuItem->isCurrent() ? 'sidebar-active' : '' }}"
+                                        class="sidebar-sublink px-5 py-2.5 {{ $subMenuItem->isCurrent() ? 'sidebar-active' : '' }}"
                                     >
                                         {{ $subMenuItem->getName() }}
                                     </a>
 
                                     @if ($subMenuItem->haveChildren())
-                                        <div class="grid">
+                                        <div class="grid ltr:pl-5 rtl:pr-5 pb-1">
                                             @foreach ($subMenuItem->getChildren() as $subSubMenuItem)
                                                 <a
                                                     href="{{ $subSubMenuItem->getUrl() }}"
-                                                    class="sidebar-sublink {{ $subSubMenuItem->isCurrent() ? 'sidebar-active' : '' }}"
+                                                    class="sidebar-sublink px-5 py-2.5 {{ $subSubMenuItem->isCurrent() ? 'sidebar-active' : '' }}"
                                                 >
                                                     {{ $subSubMenuItem->getName() }}
                                                 </a>

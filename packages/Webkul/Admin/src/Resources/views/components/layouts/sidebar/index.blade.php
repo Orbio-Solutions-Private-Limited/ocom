@@ -23,17 +23,17 @@
                             @foreach ($menuItem->getChildren() as $subMenuItem)
                                 <a
                                     href="{{ $subMenuItem->getUrl() }}"
-                                    class="sidebar-sublink group-[.sidebar-collapsed]/container:px-5 group-[.sidebar-collapsed]/container:py-2.5 group-[.inactive]/item:px-5 group-[.inactive]/item:py-2.5 {{ $subMenuItem->isCurrent() ? 'sidebar-active' : '' }}"
+                                    class="sidebar-sublink px-5 py-2.5 {{ $subMenuItem->isCurrent() ? 'sidebar-active' : '' }}"
                                 >
                                     {{ $subMenuItem->getName() }}
                                 </a>
 
                                 @if ($subMenuItem->haveChildren())
-                                    <div class="grid group-[.inactive]/item:ltr:pl-5 group-[.inactive]/item:rtl:pr-5 group-[.inactive]/item:pb-1 group-[.sidebar-collapsed]/container:ltr:pl-5 group-[.sidebar-collapsed]/container:rtl:pr-5 group-[.sidebar-collapsed]/container:pb-1">
+                                    <div class="grid ltr:pl-5 rtl:pr-5 pb-1">
                                         @foreach ($subMenuItem->getChildren() as $subSubMenuItem)
                                             <a
                                                 href="{{ $subSubMenuItem->getUrl() }}"
-                                                class="sidebar-sublink group-[.sidebar-collapsed]/container:px-5 group-[.sidebar-collapsed]/container:py-2.5 group-[.inactive]/item:px-5 group-[.inactive]/item:py-2.5 {{ $subSubMenuItem->isCurrent() ? 'sidebar-active' : '' }}"
+                                                class="sidebar-sublink px-5 py-2.5 {{ $subSubMenuItem->isCurrent() ? 'sidebar-active' : '' }}"
                                             >
                                                 {{ $subSubMenuItem->getName() }}
                                             </a>

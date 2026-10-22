@@ -530,9 +530,15 @@ class Core
             $price = 0;
         }
 
-        $currency = $currencyCode
-            ? $this->getAllCurrencies()->where('code', $currencyCode)->first()
-            : $this->getCurrentCurrency();
+        if ($currencyCode) {
+            $currency = $this->currencyRepository->findOneByField('code', $currencyCode);
+        } else {
+            $currency = $this->getCurrentCurrency();
+        }
+
+        if (! $currency) {
+            $currency = $this->getBaseCurrency();
+        }
 
         return $this->formatCurrency($price, $currency);
     }

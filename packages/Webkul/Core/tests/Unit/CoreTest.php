@@ -191,6 +191,12 @@ it('should format a price in the currency named by its code', function () {
     expect(core()->formatPrice(1234.5, $currency->code))->toBe('1,234.50 £');
 });
 
+it('should format a price in the base currency when the named code is unknown', function () {
+    currencyOfNewCurrentChannel('₹', CurrencyPositionEnum::LEFT->value);
+
+    expect(core()->formatPrice(1234.5, 'USD'))->toBe('₹1,234.50');
+});
+
 it('should format a base price in the currency configured as the base one', function () {
     $currency = Currency::factory()->create([
         'symbol' => '₹',

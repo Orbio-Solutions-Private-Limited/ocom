@@ -23,6 +23,14 @@ function invoiceMarkup(Invoice $invoice): string
     ])->render();
 }
 
+/**
+ * The data URI of the Pluto mark used when no invoice logo is stored.
+ */
+function defaultInvoiceLogoDataUri(): string
+{
+    return 'data:image/png;base64,'.base64_encode(file_get_contents(base_path('packages/Webkul/Shop/src/Resources/assets/images/invoice-logo.png')));
+}
+
 // ============================================================================
 // Index
 // ============================================================================
@@ -280,14 +288,14 @@ it('should show the saved logo on the invoice, whatever size it was saved at', f
 
 it('should fall back to the default logo when the store has saved none', function () {
     expect(invoiceMarkup($this->invoiceOrder($this->createOrder())))
-        ->toContain('data:image/png;base64,iVBORw0KGgo');
+        ->toContain(defaultInvoiceLogoDataUri());
 });
 
 it('should fall back to the default logo when the saved one is no longer on disk', function () {
     $this->setConfig('sales.invoice_settings.pdf_print_outs.logo', 'configurations/deleted.png');
 
     expect(invoiceMarkup($this->invoiceOrder($this->createOrder())))
-        ->toContain('data:image/png;base64,iVBORw0KGgo');
+        ->toContain(defaultInvoiceLogoDataUri());
 });
 
 // ============================================================================

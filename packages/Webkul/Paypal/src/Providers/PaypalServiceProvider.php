@@ -53,10 +53,11 @@ class PaypalServiceProvider extends ServiceProvider
     protected function aliasLegacySmartButtonRouteNames(): void
     {
         $register = function (UrlGenerator $url): void {
-            $url->resolveMissingNamedRoutesUsing(function (string $name, array $parameters, bool $absolute) use ($url): ?string {
+            $url->resolveMissingNamedRoutesUsing(function (string $name, mixed $parameters, bool $absolute) use ($url): ?string {
                 $legacy = [
                     'paypal.smart-button.create-order' => 'paypal.smart_button.create_order',
                     'paypal.smart-button.capture-order' => 'paypal.smart_button.capture_order',
+                    'shop.customers.account.orders.print-invoice' => 'shop.customers.account.orders.print_invoice',
                 ];
 
                 if (! isset($legacy[$name])) {

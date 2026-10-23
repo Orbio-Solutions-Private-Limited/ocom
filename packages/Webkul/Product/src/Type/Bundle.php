@@ -369,14 +369,18 @@ class Bundle extends AbstractType
      */
     public function validateBundleOptionForCart($data)
     {
-        foreach ($data as $key => $value) {
-            if (is_array($value)) {
-                $data[$key] = $this->validateBundleOptionForCart($value);
-            } elseif ($value) {
-                $data[$key] = (int) $value;
-            } else {
-                unset($data[$key]);
+        foreach ($data as $optionId => $value) {
+            $ids = is_array($value) ? $value : [$value];
+
+            $ids = array_values(array_filter(array_map(fn ($id) => $id ? (int) $id : 0, $ids)));
+
+            if ($ids === []) {
+                unset($data[$optionId]);
+
+                continue;
             }
+
+            $data[$optionId] = $ids;
         }
 
         return $data;

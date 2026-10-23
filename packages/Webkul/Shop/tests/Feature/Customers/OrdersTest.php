@@ -42,7 +42,16 @@ it('should list only the orders of the signed-in customer', function () {
 it('should show an order to the customer who placed it', function () {
     $customer = Customer::factory()->create();
 
-    $order = $this->createOrder(customer: $customer);
+    $product = $this->createSimpleProduct();
+
+    $order = $this->createOrder(customer: $customer, items: [[
+        'product' => $product,
+        'additional' => [
+            'product_id' => $product->id,
+            'quantity' => 1,
+            'attributes' => [],
+        ],
+    ]]);
 
     $this->loginAsCustomer($customer);
 
@@ -154,6 +163,13 @@ it('should not reorder the order of another customer', function () {
 // Invoice
 // ============================================================================
 
+it('should expose the kebab-case print invoice route name for themed order views', function () {
+    $invoiceId = 42;
+
+    expect(route('shop.customers.account.orders.print-invoice', $invoiceId))
+        ->toBe(route('shop.customers.account.orders.print_invoice', $invoiceId));
+});
+
 it('should let the customer download the invoice of their order', function () {
     $customer = Customer::factory()->create();
 
@@ -164,6 +180,20 @@ it('should let the customer download the invoice of their order', function () {
     $this->loginAsCustomer($customer);
 
     get(route('shop.customers.account.orders.print_invoice', $invoice->id))
+        ->assertOk()
+        ->assertHeader('content-type', 'application/pdf');
+});
+
+it('should let the customer download the invoice using the kebab-case route name', function () {
+    $customer = Customer::factory()->create();
+
+    $order = $this->createOrder(customer: $customer);
+
+    $invoice = $this->invoiceOrder($order);
+
+    $this->loginAsCustomer($customer);
+
+    get(route('shop.customers.account.orders.print-invoice', $invoice->id))
         ->assertOk()
         ->assertHeader('content-type', 'application/pdf');
 });

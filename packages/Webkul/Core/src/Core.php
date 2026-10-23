@@ -706,6 +706,17 @@ class Core
     }
 
     /**
+     * Returns country name by code (snake_case alias for themed storefront views).
+     *
+     * @param  string  $code
+     * @return string
+     */
+    public function country_name($code)
+    {
+        return $this->countryName($code);
+    }
+
+    /**
      * Retrieve all country states.
      *
      * @param  string  $countryCode

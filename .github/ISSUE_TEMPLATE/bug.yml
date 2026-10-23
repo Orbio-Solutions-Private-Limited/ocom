@@ -3,23 +3,6 @@ description: Report a general issue.
 labels: ['Bug']
 
 body:
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Terms
-      options:
-        - label: Before opening this issue, I have checked whether it has already been reported.
-          required: true
-
-  - type: input
-    id: versioninput
-    attributes:
-      label: Bagisto Version(s) Affected
-      description: Please enter the Bagisto version(s) affected by this issue.
-      placeholder: 'x.y.z'
-    validations:
-      required: true
-
   - type: textarea
     id: description
     attributes:

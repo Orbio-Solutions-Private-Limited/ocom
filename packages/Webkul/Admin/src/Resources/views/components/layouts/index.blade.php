@@ -123,7 +123,7 @@
         <x-admin::layouts.header />
 
         <div
-            class="group/container {{ request()->cookie('sidebar_collapsed') ?? 0 ? 'sidebar-collapsed' : 'sidebar-not-collapsed' }} flex flex-col lg:flex-row gap-0 lg:gap-4"
+            class="group/container sidebar-not-collapsed flex flex-col lg:flex-row gap-0 lg:gap-4"
             ref="appLayout"
         >
             <!-- Page Sidebar Blade Component -->
@@ -131,7 +131,7 @@
                 <x-admin::layouts.sidebar />
             </div>
 
-            <div class="min-h-[calc(100vh-62px)] max-w-full flex-1 bg-gray-50 transition-all duration-300 dark:bg-gray-950 pt-3 px-2 sm:px-4 lg:pt-3 lg:px-4 lg:ltr:pl-71.5 lg:group-[.sidebar-collapsed]/container:ltr:pl-21.25 lg:rtl:pr-71.5 lg:group-[.sidebar-collapsed]/container:rtl:pr-21.25">
+            <div class="min-h-[calc(100vh-62px)] max-w-full flex-1 bg-gray-50 transition-all duration-300 dark:bg-gray-950 pt-3 px-2 sm:px-4 lg:pt-3 lg:px-4 lg:ltr:pl-71.5 lg:rtl:pr-71.5 ">
                 <!-- Added dynamic tabs for third level menus  -->
                 <div class="pb-4 lg:pb-6">
                     <!-- Page Content Blade Component -->

@@ -1,5 +1,5 @@
-<div class="admin-sidebar fixed top-14 z-1000 h-full w-67.5 pt-4 shadow-[0px_8px_10px_0px_rgba(0,0,0,0.2)] transition-all duration-300 group-[.sidebar-collapsed]/container:w-17.5 max-lg:hidden">
-    <div class="journal-scroll h-[calc(100vh-100px)] overflow-auto group-[.sidebar-collapsed]/container:overflow-visible">
+<div class="admin-sidebar fixed top-14 z-1000 h-[calc(100vh-3.5rem)] w-67.5 pt-4 shadow-[0px_8px_10px_0px_rgba(0,0,0,0.2)] transition-all duration-300 max-lg:hidden">
+    <div class="journal-scroll h-full overflow-y-auto pb-16">
         <nav class="grid w-full gap-2">
             <!-- Navigation Menu -->
             @foreach (menu()->getItems('admin') as $menuItem)
@@ -48,76 +48,9 @@
         </nav>
     </div>
 
-    <!-- Collapse menu -->
-    <v-sidebar-collapse></v-sidebar-collapse>
 </div>
 
 @pushOnce('scripts')
-    <script
-        type="text/x-template"
-        id="v-sidebar-collapse-template"
-    >
-        <div
-            class="fixed bottom-0 w-full cursor-pointer border-t border-gray-200 bg-white px-4 transition-all duration-300 hover:bg-sidebar-hover"
-            :class="isCollapsed ? 'max-w-17.5' : 'max-w-67.5'"
-            @click="toggle"
-        >
-            <p
-                v-show="!isCollapsed"
-                class="pointer-events-none pt-2 text-center text-[11px] leading-snug text-sidebar-text"
-            >
-                @lang('admin::app.components.layouts.sidebar.powered-by')
-            </p>
-
-            <div class="flex items-center gap-2.5 p-1.5">
-                <span
-                    class="icon-collapse text-2xl text-sidebar-text transition-all"
-                    :class="[isCollapsed ? 'ltr:rotate-180 rtl:rotate-0' : 'ltr:rotate-0 rtl:rotate-180']"
-                ></span>
-            </div>
-        </div>
-    </script>
-
-    <script type="module">
-        app.component('v-sidebar-collapse', {
-            template: '#v-sidebar-collapse-template',
-
-            data() {
-                return {
-                    isCollapsed: {{ request()->cookie('sidebar_collapsed') ?? 0 }},
-                }
-            },
-
-            methods: {
-                toggle() {
-                    this.isCollapsed = parseInt(this.isCollapsedCookie()) ? 0 : 1;
-
-                    var expiryDate = new Date();
-
-                    expiryDate.setMonth(expiryDate.getMonth() + 1);
-
-                    document.cookie = 'sidebar_collapsed=' + this.isCollapsed + '; path=/; expires=' + expiryDate.toGMTString();
-
-                    this.$root.$refs.appLayout.classList.toggle('sidebar-collapsed');
-                },
-
-                isCollapsedCookie() {
-                    const cookies = document.cookie.split(';');
-
-                    for (const cookie of cookies) {
-                        const [name, value] = cookie.trim().split('=');
-
-                        if (name === 'sidebar_collapsed') {
-                            return value;
-                        }
-                    }
-
-                    return 0;
-                },
-            },
-        });
-    </script>
-
     <script>
         const headerHeight = 56;
 

@@ -57,14 +57,6 @@
     </div>
 
     <div class="flex items-center gap-1 sm:gap-2.5">
-        <!-- Dark Mode Switcher -->
-        <v-dark>
-            <div class="flex">
-                <span
-                    class="{{ request()->cookie('dark_mode') ? 'icon-light' : 'icon-dark' }} cursor-pointer rounded-md p-1.5 text-xl transition-all hover:bg-gray-100 dark:hover:bg-gray-950 sm:text-2xl"
-                ></span>
-            </div>
-        </v-dark>
 
         <!-- Visit Shop Link -->
         <a

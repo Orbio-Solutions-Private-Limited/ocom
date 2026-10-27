@@ -129,7 +129,7 @@ class Grouped extends AbstractType
         }
 
         foreach ($this->product->grouped_products as $groupedProduct) {
-            if ($groupedProduct->associated_product->isSaleable()) {
+            if ($groupedProduct->associated_product?->isSaleable()) {
                 return true;
             }
         }
@@ -143,7 +143,7 @@ class Grouped extends AbstractType
     public function haveSufficientQuantity(int $qty): bool
     {
         foreach ($this->product->grouped_products as $groupedProduct) {
-            if ($groupedProduct->associated_product->haveSufficientQuantity($qty)) {
+            if ($groupedProduct->associated_product?->haveSufficientQuantity($qty)) {
                 return true;
             }
         }

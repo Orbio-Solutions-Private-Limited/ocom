@@ -440,7 +440,7 @@ class Order extends Model implements OrderContract
                 continue;
             }
 
-            if (! $item->product?->getTypeInstance()->isSaleable()) {
+            if (! $item->product?->getTypeInstance()?->isSaleable()) {
                 return false;
             }
 

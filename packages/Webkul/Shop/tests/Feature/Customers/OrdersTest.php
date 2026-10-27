@@ -70,6 +70,42 @@ it('should not show the order of another customer', function () {
         ->assertNotFound();
 });
 
+it('should show an order after its catalog product has been removed', function () {
+    $customer = Customer::factory()->create();
+
+    $product = $this->createSimpleProduct();
+
+    $order = $this->createOrder(customer: $customer, items: [['product' => $product]]);
+
+    $order->items->first()->update(['product_id' => null]);
+
+    $this->loginAsCustomer($customer);
+
+    get(route('shop.customers.account.orders.view', $order->id))
+        ->assertOk()
+        ->assertSeeText($order->increment_id);
+});
+
+it('should show a configurable order when the variant child item is missing', function () {
+    $customer = Customer::factory()->create();
+
+    $product = $this->createConfigurableProduct();
+
+    $order = $this->createOrder(customer: $customer, items: [[
+        'product' => $product,
+        'type' => 'configurable',
+        'sku' => $product->sku,
+        'name' => $product->name,
+    ]]);
+
+    $this->loginAsCustomer($customer);
+
+    get(route('shop.customers.account.orders.view', $order->id))
+        ->assertOk()
+        ->assertSeeText($order->increment_id)
+        ->assertSeeText($product->sku);
+});
+
 // ============================================================================
 // Cancel
 // ============================================================================

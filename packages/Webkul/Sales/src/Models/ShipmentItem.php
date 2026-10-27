@@ -35,7 +35,8 @@ class ShipmentItem extends Model implements ShipmentItemContract
      */
     public function getTypeInstance()
     {
-        return $this->order_item->getTypeInstance();
+        return $this->order_item?->getTypeInstance()
+            ?? app(config('product_types.simple.class'));
     }
 
     /**

@@ -58,6 +58,16 @@ it('should be reorderable only while its products are still for sale', function 
     expect($order->refresh()->canReorder())->toBeFalse();
 });
 
+it('should not be reorderable when the catalog product is no longer attached', function () {
+    $product = $this->setProductStock($this->createSimpleProduct(), 5);
+
+    $order = $this->createOrder(items: [['product' => $product]]);
+
+    $order->items->first()->update(['product_id' => null]);
+
+    expect($order->refresh()->canReorder())->toBeFalse();
+});
+
 // ============================================================================
 // Amounts And Labels
 // ============================================================================

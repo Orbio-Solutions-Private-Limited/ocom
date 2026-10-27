@@ -157,7 +157,7 @@
                                     @foreach ($order->items as $item)
                                         <tr class="border-b bg-white align-top font-medium [&>*]:px-6 [&>*]:py-4">
                                             <td data-value="@lang('shop::app.customers.account.orders.view.information.sku')">
-                                                {{ $item->getTypeInstance()->getOrderedItem($item)->sku }}
+                                                {{ $item->getTypeInstance()->getOrderedItem($item)?->sku ?? $item->sku }}
                                             </td>
 
                                             <td data-value="@lang('shop::app.customers.account.orders.view.information.product-name')">
@@ -556,7 +556,7 @@
                                                 </span>
 
                                                 <span>
-                                                    {{ $item->getTypeInstance()->getOrderedItem($item)->sku }}
+                                                    {{ $item->getTypeInstance()->getOrderedItem($item)?->sku ?? $item->sku }}
                                                 </span>
                                             </div>
 
@@ -959,7 +959,7 @@
                                                             </span>
 
                                                             <span>
-                                                                {{ $item->getTypeInstance()->getOrderedItem($item)->sku }}
+                                                                {{ $item->getTypeInstance()->getOrderedItem($item)?->sku ?? $item->sku }}
                                                             </span>
                                                         </div>
 
@@ -1225,7 +1225,7 @@
                                                 @foreach ($invoice->items as $item)
                                                     <tr class="border-b bg-white text-black [&>*]:font-medium [&>*]:px-6 [&>*]:py-4">
                                                         <td data-value="@lang('shop::app.customers.account.orders.view.invoices.sku')">
-                                                            {{ $item->getTypeInstance()->getOrderedItem($item)->sku }}
+                                                            {{ $item->getTypeInstance()->getOrderedItem($item)?->sku ?? $item->sku }}
                                                         </td>
 
                                                         <td data-value="@lang('shop::app.customers.account.orders.view.invoices.product-name')">
@@ -1614,7 +1614,7 @@
                                             @foreach ($refund->items as $item)
                                                 <tr class="border-b bg-white [&>*]:font-medium [&>*]:px-6 [&>*]:py-4 [&>*]:text-black">
                                                     <td data-value="@lang('shop::app.customers.account.orders.view.refunds.sku')">
-                                                        {{ $item->getTypeInstance()->getOrderedItem($item)->sku }}
+                                                        {{ $item->getTypeInstance()->getOrderedItem($item)?->sku ?? $item->sku }}
                                                     </td>
 
                                                     <td data-value="@lang('shop::app.customers.account.orders.view.refunds.product-name')">
@@ -1722,7 +1722,7 @@
                                                         </span>
 
                                                         <span>
-                                                            {{ $item->getTypeInstance()->getOrderedItem($item)->sku }}
+                                                            {{ $item->getTypeInstance()->getOrderedItem($item)?->sku ?? $item->sku }}
                                                         </span>
                                                     </div>
 
@@ -2212,7 +2212,7 @@
                         @lang('shop::app.customers.account.orders.view.payment-method')
 
                         <div class="mt-1 grid gap-2.5 text-xs text-black">
-                            {{ core()->getConfigData('sales.payment_methods.' . $order->payment->method . '.title') }}
+                            {{ core()->getConfigData('sales.payment_methods.' . $order->payment?->method . '.title') }}
 
                             @if (! empty($additionalDetails))
                                 <div class="instructions">
@@ -2296,7 +2296,7 @@
                     </p>
 
                     <p class="text-sm">
-                        {{ core()->getConfigData('sales.payment_methods.' . $order->payment->method . '.title') }}
+                        {{ core()->getConfigData('sales.payment_methods.' . $order->payment?->method . '.title') }}
                     </p>
 
                     @if (! empty($additionalDetails))

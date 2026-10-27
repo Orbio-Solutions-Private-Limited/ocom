@@ -33,7 +33,8 @@ class RefundItem extends Model implements RefundItemContract
      */
     public function getTypeInstance(): AbstractType
     {
-        return $this->order_item->getTypeInstance();
+        return $this->order_item?->getTypeInstance()
+            ?? app(config('product_types.simple.class'));
     }
 
     /**

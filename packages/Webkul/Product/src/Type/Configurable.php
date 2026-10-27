@@ -460,7 +460,7 @@ class Configurable extends AbstractType
      */
     public function getOrderedItem($item)
     {
-        return $item->child;
+        return $item->child ?? $item;
     }
 
     /**

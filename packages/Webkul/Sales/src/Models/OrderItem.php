@@ -48,7 +48,7 @@ class OrderItem extends Model implements OrderItemContract
     protected $typeInstance;
 
     /**
-     * Retrieve type instance
+     * Retrieve type instance.
      */
     public function getTypeInstance(): AbstractType
     {
@@ -56,7 +56,16 @@ class OrderItem extends Model implements OrderItemContract
             return $this->typeInstance;
         }
 
-        $this->typeInstance = app(config('product_types.'.$this->type.'.class'));
+        $class = config('product_types.'.$this->type.'.class');
+
+        if (
+            ! is_string($class)
+            || ! class_exists($class)
+        ) {
+            $class = config('product_types.simple.class');
+        }
+
+        $this->typeInstance = app($class);
 
         if ($this->product) {
             $this->typeInstance->setProduct($this->product);
@@ -65,6 +74,9 @@ class OrderItem extends Model implements OrderItemContract
         return $this->typeInstance;
     }
 
+    /**
+     * Whether this item is a physical good that can be shipped.
+     */
     public function isStockable(): bool
     {
         return $this->getTypeInstance()->isStockable();

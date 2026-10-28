@@ -2,7 +2,7 @@
 
 namespace Webkul\Theme;
 
-use Illuminate\Support\Facades\Vite;
+use Illuminate\Foundation\Vite;
 
 class Theme
 {
@@ -90,12 +90,12 @@ class Theme
     public function url(string $url)
     {
         try {
-            $viteUrl = trim($this->vite['package_assets_directory'], '/').'/'.$url;
-
-            return Vite::useHotFile($this->vite['hot_file'])
-                ->useBuildDirectory($this->vite['build_directory'])
-                ->asset($viteUrl);
+            return $this->viteAsset($url);
         } catch (\Exception $e) {
+            if ($fallback = $this->fallbackTheme()) {
+                return $fallback->url($url);
+            }
+
             report($e);
 
             abort(404);
@@ -105,12 +105,48 @@ class Theme
     /**
      * Set bagisto vite.
      *
-     * @return \Illuminate\Foundation\Vite
+     * @return Vite
      */
     public function setBagistoVite(array $entryPoints)
     {
-        return Vite::useHotFile($this->vite['hot_file'])
-            ->useBuildDirectory($this->vite['build_directory'])
-            ->withEntryPoints($entryPoints);
+        return $this->makeVite()->withEntryPoints($entryPoints);
+    }
+
+    /**
+     * Resolve the Vite asset url for this theme's build.
+     */
+    protected function viteAsset(string $url): string
+    {
+        $viteUrl = trim($this->vite['package_assets_directory'], '/').'/'.$url;
+
+        return $this->makeVite()->asset($viteUrl);
+    }
+
+    /**
+     * Theme whose Vite build is used when this theme does not ship the asset.
+     */
+    protected function fallbackTheme(): ?self
+    {
+        $fallbackCode = config('themes.shop-default');
+
+        if (
+            ! $fallbackCode
+            || $this->code === $fallbackCode
+            || ! themes()->exists($fallbackCode)
+        ) {
+            return null;
+        }
+
+        return themes()->find($fallbackCode);
+    }
+
+    /**
+     * Vite instance bound to this theme's hot file and build directory.
+     */
+    protected function makeVite(): Vite
+    {
+        return (new Vite)
+            ->useHotFile($this->vite['hot_file'])
+            ->useBuildDirectory($this->vite['build_directory']);
     }
 }

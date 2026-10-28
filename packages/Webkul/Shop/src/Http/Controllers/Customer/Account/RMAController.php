@@ -20,6 +20,7 @@ use Webkul\RMA\Enums\DefaultRMAStatusEnum;
 use Webkul\RMA\Helpers\Attachment;
 use Webkul\RMA\Helpers\Helper as RMAHelper;
 use Webkul\RMA\Repositories\RMAAdditionalFieldRepository;
+use Webkul\RMA\Repositories\RMACustomFieldRepository;
 use Webkul\RMA\Repositories\RMAImageRepository;
 use Webkul\RMA\Repositories\RMAItemRepository;
 use Webkul\RMA\Repositories\RMAMessageRepository;
@@ -61,6 +62,7 @@ class RMAController extends Controller
         protected OrderRepository $orderRepository,
         protected ProductRepository $productRepository,
         protected RMAAdditionalFieldRepository $rmaAdditionalFieldRepository,
+        protected RMACustomFieldRepository $rmaCustomFieldRepository,
         protected RMAHelper $rmaHelper,
         protected RMAImageRepository $rmaImageRepository,
         protected RMAItemRepository $rmaItemRepository,
@@ -107,6 +109,24 @@ class RMAController extends Controller
 
         $rmaStatus = $this->rmaStatusRepository->findOrFail($rma->rma_status_id);
 
+        $rma->load([
+            'item.reason',
+            'item.orderItem.product',
+            'images',
+            'additionalFields.customField',
+            'messages',
+        ]);
+
+        if ($this->usesVisualTheme()) {
+            return view('shop::customers.account.rma.visual.view', compact(
+                'rma',
+                'canCloseRma',
+                'canReopenRma',
+                'isExpired',
+                'rmaStatus'
+            ));
+        }
+
         return view('shop::customers.account.rma.view', compact('rma', 'canCloseRma', 'canReopenRma', 'isExpired', 'rmaStatus'));
     }
 
@@ -118,6 +138,10 @@ class RMAController extends Controller
     {
         if (request()->ajax()) {
             return datagrid(OrderDataGrid::class)->process();
+        }
+
+        if ($this->usesVisualTheme()) {
+            return $this->visualCreateView();
         }
 
         return view('shop::customers.account.rma.create');
@@ -160,20 +184,20 @@ class RMAController extends Controller
         ]);
 
         if (! $order) {
-            return new JsonResponse([
-                'messages' => trans('shop::app.rma.response.invalid-order'),
-                'redirect' => route('shop.customers.account.rma.create'),
-            ]);
+            return $this->rmaStoreFailure(
+                trans('shop::app.rma.response.invalid-order'),
+                route('shop.customers.account.rma.create'),
+            );
         }
 
         $eligibleItem = $this->rmaHelper->getOrderItems($order->id)
             ->firstWhere('order_item_id', (int) $data['order_item_id']);
 
         if (! $eligibleItem) {
-            return new JsonResponse([
-                'messages' => trans('shop::app.rma.response.invalid-item'),
-                'redirect' => route('shop.customers.account.rma.create'),
-            ]);
+            return $this->rmaStoreFailure(
+                trans('shop::app.rma.response.invalid-item'),
+                route('shop.customers.account.rma.create'),
+            );
         }
 
         $resolutionMax = $data['resolution_type'] === DefaultRMAResolution::CANCEL_ITEMS->value
@@ -233,15 +257,15 @@ class RMAController extends Controller
 
             session()->flash('success', trans('shop::app.rma.response.create-success'));
 
-            return new JsonResponse([
-                'redirect' => route('shop.customers.account.rma.view', $rma->id),
-            ]);
+            return $this->rmaStoreSuccess(route('shop.customers.account.rma.view', $rma->id));
         } else {
             session()->flash('error', trans('shop::app.rma.response.invalid-item'));
 
-            return new JsonResponse([
-                'redirect' => route('shop.customers.account.rma.create'),
-            ]);
+            return $this->rmaStoreFailure(
+                trans('shop::app.rma.response.invalid-item'),
+                route('shop.customers.account.rma.create'),
+                false,
+            );
         }
     }
 
@@ -452,7 +476,7 @@ class RMAController extends Controller
     /**
      * Send message in rma conversation.
      */
-    public function sendMessage(): JsonResponse
+    public function sendMessage(): JsonResponse|RedirectResponse
     {
         $this->validate(request(), [
             'rma_id' => 'required|integer|exists:rma,id',
@@ -463,9 +487,7 @@ class RMAController extends Controller
         $rma = $this->rmaRepository->findOrFail(request()->input('rma_id'));
 
         if ($rma->order->customer_id != auth()->guard('customer')->id()) {
-            return new JsonResponse([
-                'messages' => trans('shop::app.customer.signup-form.failed'),
-            ]);
+            return $this->rmaMessageResponse(trans('shop::app.customer.signup-form.failed'), false);
         }
 
         $storedMessage = $this->rmaMessageRepository->create([
@@ -497,15 +519,117 @@ class RMAController extends Controller
             } catch (\Exception) {
             }
 
-            return new JsonResponse([
-                'messages' => trans('shop::app.rma.response.send-message', [
-                    'name' => trans('shop::app.rma.mail.customer-conversation.message'),
-                ]),
+            return $this->rmaMessageResponse(trans('shop::app.rma.response.send-message', [
+                'name' => trans('shop::app.rma.mail.customer-conversation.message'),
+            ]));
+        }
+
+        return $this->rmaMessageResponse(trans('shop::app.customer.signup-form.failed'), false);
+    }
+
+    /**
+     * Visual Debut create page: eligible orders, or a form for one order's items.
+     */
+    protected function visualCreateView(): View
+    {
+        $orderId = (int) request()->query('order_id');
+
+        if (! $orderId) {
+            return view('shop::customers.account.rma.visual.create', [
+                'order' => null,
+                'orderItems' => collect(),
+                'customFields' => collect(),
+                'reasonsByResolution' => [
+                    DefaultRMAResolution::RETURN->value => [],
+                    DefaultRMAResolution::CANCEL_ITEMS->value => [],
+                ],
             ]);
         }
 
-        return new JsonResponse([
-            'messages' => trans('shop::app.customer.signup-form.failed'),
+        $order = $this->orderRepository->findOneWhere([
+            'id' => $orderId,
+            'customer_id' => auth()->guard('customer')->id(),
         ]);
+
+        if (! $order) {
+            abort(404);
+        }
+
+        return view('shop::customers.account.rma.visual.create', [
+            'order' => $order,
+            'orderItems' => $this->getOrderItems($orderId),
+            'customFields' => $this->rmaCustomFieldRepository->with('options')->where('status', 1)->get(),
+            'reasonsByResolution' => [
+                DefaultRMAResolution::RETURN->value => $this->rmaReasonRepository
+                    ->getRMAReasonsByResolutionType(DefaultRMAResolution::RETURN->value)
+                    ->map(fn ($reason) => ['id' => $reason->id, 'title' => $reason->title])
+                    ->values(),
+                DefaultRMAResolution::CANCEL_ITEMS->value => $this->rmaReasonRepository
+                    ->getRMAReasonsByResolutionType(DefaultRMAResolution::CANCEL_ITEMS->value)
+                    ->map(fn ($reason) => ['id' => $reason->id, 'title' => $reason->title])
+                    ->values(),
+            ],
+        ]);
+    }
+
+    /**
+     * Whether the storefront is using a Visual theme.
+     */
+    protected function usesVisualTheme(): bool
+    {
+        $theme = themes()->current();
+
+        return $theme
+            && method_exists($theme, 'isVisualTheme')
+            && $theme->isVisualTheme();
+    }
+
+    /**
+     * Redirect after a successful store, keeping the JSON shape the default theme posts expect.
+     */
+    protected function rmaStoreSuccess(string $redirect): JsonResponse|RedirectResponse
+    {
+        if (request()->expectsJson()) {
+            return new JsonResponse([
+                'redirect' => $redirect,
+            ]);
+        }
+
+        return redirect()->to($redirect);
+    }
+
+    /**
+     * Redirect after a failed store, keeping the JSON shape the default theme posts expect.
+     */
+    protected function rmaStoreFailure(string $message, string $redirect, bool $flash = true): JsonResponse|RedirectResponse
+    {
+        if ($flash) {
+            session()->flash('error', $message);
+        }
+
+        if (request()->expectsJson()) {
+            return new JsonResponse([
+                'messages' => $message,
+                'redirect' => $redirect,
+            ]);
+        }
+
+        return redirect()->to($redirect);
+    }
+
+    /**
+     * JSON for the default-theme chat, or a redirect back after a normal form post.
+     */
+    protected function rmaMessageResponse(string $message, bool $success = true): JsonResponse|RedirectResponse
+    {
+        if (request()->expectsJson()) {
+            return new JsonResponse([
+                'messages' => $message,
+            ]);
+        }
+
+        session()->flash($success ? 'success' : 'error', $message);
+
+        return back();
     }
 }

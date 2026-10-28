@@ -209,5 +209,14 @@ class OrderDataGrid extends DataGrid
                 return route('shop.customers.account.orders.view', $row->id);
             },
         ]);
+
+        $this->addAction([
+            'icon' => '',
+            'title' => trans('shop::app.rma.customer.create.heading'),
+            'method' => 'GET',
+            'url' => function ($row) {
+                return route('shop.customers.account.rma.create', ['order_id' => $row->id]);
+            },
+        ]);
     }
 }

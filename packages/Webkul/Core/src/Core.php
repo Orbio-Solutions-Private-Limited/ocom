@@ -524,13 +524,11 @@ class Core
     /**
      * Format price.
      */
-    public function formatPrice(mixed $price, ?string $currencyCode = null): string
+    public function formatPrice(?float $price, ?string $currencyCode = null): string
     {
-        if (! is_numeric($price)) {
+        if (is_null($price)) {
             $price = 0;
         }
-
-        $price = (float) $price;
 
         if ($currencyCode) {
             $currency = $this->currencyRepository->findOneByField('code', $currencyCode);

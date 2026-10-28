@@ -68,14 +68,8 @@ class OrderItem extends Model implements OrderItemContract
 
         $this->typeInstance = app($class);
 
-        try {
-            $product = $this->product;
-        } catch (\Throwable) {
-            $product = null;
-        }
-
-        if ($product) {
-            $this->typeInstance->setProduct($product);
+        if ($this->product) {
+            $this->typeInstance->setProduct($this->product);
         }
 
         return $this->typeInstance;
@@ -164,15 +158,9 @@ class OrderItem extends Model implements OrderItemContract
      */
     public function isCancelableByCustomer(): bool
     {
-        try {
-            $booking = $this->booking;
-        } catch (\Throwable) {
-            return true;
-        }
-
         if (
-            $booking
-            && ! $booking->allow_cancellation
+            $this->booking
+            && ! $this->booking->allow_cancellation
         ) {
             return false;
         }
@@ -276,9 +264,6 @@ class OrderItem extends Model implements OrderItemContract
         return $this->hasOne(BookingProxy::modelClass());
     }
 
-    /**
-     * Append remaining quantity fields used by admin and shop order views.
-     */
     public function toArray(): array
     {
         $array = parent::toArray();

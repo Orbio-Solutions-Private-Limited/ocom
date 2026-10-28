@@ -47,13 +47,12 @@ class OrderController extends Controller
      */
     public function view($id)
     {
-        $order = $this->orderRepository->find($id);
+        $order = $this->orderRepository->findOneWhere([
+            'customer_id' => auth()->guard('customer')->id(),
+            'id' => $id,
+        ]);
 
-        abort_if(
-            ! $order
-            || (int) $order->customer_id !== (int) auth()->guard('customer')->id(),
-            404
-        );
+        abort_if(! $order, 404);
 
         return view('shop::customers.account.orders.view', compact('order'));
     }

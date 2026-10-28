@@ -1,21 +1,14 @@
 @php
     $euWithdrawalChannelCode = optional($order->channel)->code;
-
+    
     $euWithdrawalEnabled = (bool) core()->getConfigData(
         'sales.eu_withdrawal.general.enabled',
         $euWithdrawalChannelCode
     );
 
-    $existingWithdrawal = null;
-
-    if ($euWithdrawalEnabled) {
-        try {
-            $existingWithdrawal = app(\Webkul\EUWithdrawal\Repositories\WithdrawalRepository::class)
-                ->findForOrder($order->id);
-        } catch (\Throwable) {
-            $euWithdrawalEnabled = false;
-        }
-    }
+    $existingWithdrawal = $euWithdrawalEnabled
+        ? app(\Webkul\EUWithdrawal\Repositories\WithdrawalRepository::class)->findForOrder($order->id)
+        : null;
 @endphp
 
 @if ($euWithdrawalEnabled)

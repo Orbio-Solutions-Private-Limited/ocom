@@ -136,6 +136,23 @@ it('should show an order when the catalog product type is no longer registered',
         ->assertSeeText($order->increment_id);
 });
 
+it('should show an order when an item has a null additional payload', function () {
+    $customer = Customer::factory()->create();
+
+    $product = $this->createSimpleProduct();
+
+    $order = $this->createOrder(customer: $customer, items: [['product' => $product]]);
+
+    $order->items->first()->update(['additional' => null]);
+
+    $this->loginAsCustomer($customer);
+
+    get(route('shop.customers.account.orders.view', $order->id))
+        ->assertOk()
+        ->assertSeeText($order->increment_id)
+        ->assertSeeText($order->items->first()->name);
+});
+
 it('should show a configurable order when the variant child item is missing', function () {
     $customer = Customer::factory()->create();
 

@@ -5,13 +5,31 @@ namespace Webkul\Sales\Traits;
 trait HasDisplayAttributes
 {
     /**
+     * Decode the stored additional payload without throwing on null or invalid JSON.
+     */
+    public function getAdditionalAttribute(mixed $value): array
+    {
+        if (is_array($value)) {
+            return $value;
+        }
+
+        if (! is_string($value) || $value === '') {
+            return [];
+        }
+
+        $decoded = json_decode($value, true);
+
+        return is_array($decoded) ? $decoded : [];
+    }
+
+    /**
      * Normalize stored option rows so order views never print a non-scalar value.
      *
      * @return array<int, array{attribute_type: ?string, attribute_name: string, option_label: string}>
      */
     public function displayAttributes(): array
     {
-        $attributes = $this->additional['attributes'] ?? [];
+        $attributes = data_get($this->additional, 'attributes', []);
 
         if (! is_array($attributes)) {
             return [];

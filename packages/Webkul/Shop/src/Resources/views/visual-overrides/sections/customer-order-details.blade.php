@@ -3,6 +3,7 @@
   class=""
   x-data
 >
+  <!-- shop-visual-order-details-override -->
   <!-- Order Title & Status -->
   <div class="flex items-center">
     <h1 class="text-on-background mr-6 text-2xl font-semibold">

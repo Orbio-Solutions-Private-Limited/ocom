@@ -21,6 +21,22 @@ sudo find storage bootstrap/cache -type f -exec chmod 664 {} +
 
 composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist --ignore-platform-req=php
 
+python3 - <<'PY'
+from pathlib import Path
+
+path = Path('vendor/bagistoplus/visual-debut/resources/views/sections/customer-order-details.blade.php')
+text = path.read_text()
+text = text.replace(
+    "@foreach ($item->additional['attributes'] as $attribute)",
+    '@foreach ($item->displayAttributes() as $attribute)',
+)
+text = text.replace(
+    '$item->getTypeInstance()->getOrderedItem($item)->sku',
+    '$item->getTypeInstance()->getOrderedItem($item)?->sku ?? $item->sku',
+)
+path.write_text(text)
+PY
+
 php artisan migrate --force --no-interaction
 php artisan storage:link --force --no-interaction
 php artisan vendor:publish --tag=visual-assets --force --no-interaction

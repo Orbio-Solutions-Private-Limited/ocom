@@ -2,11 +2,14 @@
 
 namespace App\Providers;
 
+use BagistoPlus\Visual\Events\ThemeActivated;
 use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\ParallelTesting;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -45,6 +48,23 @@ class AppServiceProvider extends ServiceProvider
         $this->renameVisualEditorMenu();
 
         $this->nestVisualEditorUnderAppearance();
+
+        $this->preferShopPackageViewsOverVisualDebut();
+    }
+
+    /**
+     * Visual Debut prepends its views onto the shop namespace when the theme
+     * activates, so a Shop package override would otherwise never win.
+     */
+    protected function preferShopPackageViewsOverVisualDebut(): void
+    {
+        $path = base_path('packages/Webkul/Shop/src/Resources/views');
+
+        View::prependNamespace('shop', $path);
+
+        Event::listen(ThemeActivated::class, function () use ($path) {
+            View::prependNamespace('shop', $path);
+        });
     }
 
     /**

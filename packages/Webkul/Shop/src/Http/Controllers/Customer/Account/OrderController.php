@@ -3,9 +3,7 @@
 namespace Webkul\Shop\Http\Controllers\Customer\Account;
 
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
-use Throwable;
 use Webkul\Checkout\Facades\Cart;
 use Webkul\Core\Traits\PDFHandler;
 use Webkul\Sales\Repositories\InvoiceRepository;
@@ -45,7 +43,7 @@ class OrderController extends Controller
      * Show the view for the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return View
      */
     public function view($id)
     {
@@ -57,34 +55,7 @@ class OrderController extends Controller
             404
         );
 
-        try {
-            return response(view('shop::customers.account.orders.view', compact('order'))->render());
-        } catch (Throwable $e) {
-            report($e);
-
-            try {
-                return response(view('shop::customers.account.orders.view-safe', compact('order'))->render());
-            } catch (Throwable $safeError) {
-                report($safeError);
-
-                $rows = DB::table('order_items')
-                    ->where('order_id', $order->id)
-                    ->whereNull('parent_id')
-                    ->get(['sku', 'name', 'price']);
-
-                $html = '<h1>'.e($order->increment_id).'</h1>';
-
-                $html .= '<!-- full: '.e($e->getMessage().' @ '.$e->getFile().':'.$e->getLine()).' -->';
-
-                $html .= '<!-- safe: '.e($safeError->getMessage().' @ '.$safeError->getFile().':'.$safeError->getLine()).' -->';
-
-                foreach ($rows as $row) {
-                    $html .= '<p>'.e($row->sku).' '.e($row->name).'</p>';
-                }
-
-                return response($html);
-            }
-        }
+        return view('shop::customers.account.orders.view', compact('order'));
     }
 
     /**

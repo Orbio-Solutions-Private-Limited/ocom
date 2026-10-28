@@ -3,6 +3,7 @@
 namespace Webkul\Shop\Http\Controllers\Customer\Account;
 
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use Throwable;
 use Webkul\Checkout\Facades\Cart;
@@ -48,19 +49,37 @@ class OrderController extends Controller
      */
     public function view($id)
     {
-        $order = $this->orderRepository->findOneWhere([
-            'customer_id' => auth()->guard('customer')->id(),
-            'id' => $id,
-        ]);
+        $order = $this->orderRepository->find($id);
 
-        abort_if(! $order, 404);
+        abort_if(
+            ! $order
+            || (int) $order->customer_id !== (int) auth()->guard('customer')->id(),
+            404
+        );
 
         try {
             return response(view('shop::customers.account.orders.view', compact('order'))->render());
         } catch (Throwable $e) {
             report($e);
 
-            return response(view('shop::customers.account.orders.view-safe', compact('order'))->render());
+            try {
+                return response(view('shop::customers.account.orders.view-safe', compact('order'))->render());
+            } catch (Throwable $safeError) {
+                report($safeError);
+
+                $rows = DB::table('order_items')
+                    ->where('order_id', $order->id)
+                    ->whereNull('parent_id')
+                    ->get(['sku', 'name', 'price']);
+
+                $html = '<h1>'.e($order->increment_id).'</h1>';
+
+                foreach ($rows as $row) {
+                    $html .= '<p>'.e($row->sku).' '.e($row->name).'</p>';
+                }
+
+                return response($html);
+            }
         }
     }
 

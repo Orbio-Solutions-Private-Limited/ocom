@@ -4,9 +4,12 @@ namespace Webkul\Sales\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Webkul\Sales\Contracts\ShipmentItem as ShipmentItemContract;
+use Webkul\Sales\Traits\HasDisplayAttributes;
 
 class ShipmentItem extends Model implements ShipmentItemContract
 {
+    use HasDisplayAttributes;
+
     /**
      * The attributes that aren't mass assignable.
      *

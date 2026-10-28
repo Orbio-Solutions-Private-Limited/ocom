@@ -5,9 +5,12 @@ namespace Webkul\Sales\Models;
 use Illuminate\Database\Eloquent\Model;
 use Webkul\Product\Type\AbstractType;
 use Webkul\Sales\Contracts\RefundItem as RefundItemContract;
+use Webkul\Sales\Traits\HasDisplayAttributes;
 
 class RefundItem extends Model implements RefundItemContract
 {
+    use HasDisplayAttributes;
+
     /**
      * Guarded attributes.
      *

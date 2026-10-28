@@ -13,10 +13,11 @@ use Webkul\BookingProduct\Models\BookingProxy;
 use Webkul\Product\Type\AbstractType;
 use Webkul\Sales\Contracts\OrderItem as OrderItemContract;
 use Webkul\Sales\Database\Factories\OrderItemFactory;
+use Webkul\Sales\Traits\HasDisplayAttributes;
 
 class OrderItem extends Model implements OrderItemContract
 {
-    use HasFactory;
+    use HasDisplayAttributes, HasFactory;
 
     /**
      * Define the guarded property.

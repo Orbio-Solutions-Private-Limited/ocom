@@ -58,7 +58,7 @@ class AppServiceProvider extends ServiceProvider
      */
     protected function preferShopPackageViewsOverVisualDebut(): void
     {
-        $path = base_path('packages/Webkul/Shop/src/Resources/views');
+        $path = base_path('packages/Webkul/Shop/src/Resources/views/visual-overrides');
 
         View::prependNamespace('shop', $path);
 

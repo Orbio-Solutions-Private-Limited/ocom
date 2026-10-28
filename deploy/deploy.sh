@@ -40,7 +40,9 @@ PY
 php artisan migrate --force --no-interaction
 php artisan storage:link --force --no-interaction
 php artisan vendor:publish --tag=visual-assets --force --no-interaction
-php artisan optimize --no-interaction
+php artisan config:cache --no-interaction
+php artisan event:cache --no-interaction
+php artisan route:cache --no-interaction
 php artisan view:clear --no-interaction
 
 sudo cp "${DEPLOY_DIR}/php/99-ocom.ini" /etc/php/8.5/fpm/conf.d/99-ocom.ini

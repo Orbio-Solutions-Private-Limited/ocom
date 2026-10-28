@@ -12,10 +12,11 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Webkul\Product\Type\AbstractType;
 use Webkul\Sales\Contracts\InvoiceItem as InvoiceItemContract;
 use Webkul\Sales\Database\Factories\InvoiceItemFactory;
+use Webkul\Sales\Traits\HasDisplayAttributes;
 
 class InvoiceItem extends Model implements InvoiceItemContract
 {
-    use HasFactory;
+    use HasDisplayAttributes, HasFactory;
 
     protected $guarded = [
         'id',

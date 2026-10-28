@@ -363,8 +363,6 @@ class Product extends Model implements ProductContract
 
     /**
      * Get type instance.
-     *
-     * @throws Exception
      */
     public function getTypeInstance(): AbstractType
     {
@@ -372,10 +370,19 @@ class Product extends Model implements ProductContract
             return $this->typeInstance;
         }
 
-        $this->typeInstance = app(config('product_types.'.$this->type.'.class'));
+        $class = config('product_types.'.$this->type.'.class');
+
+        if (
+            ! is_string($class)
+            || ! class_exists($class)
+        ) {
+            $class = config('product_types.simple.class');
+        }
+
+        $this->typeInstance = app($class);
 
         if (! $this->typeInstance instanceof AbstractType) {
-            throw new Exception("Please ensure the product type '{$this->type}' is configured in your application.");
+            $this->typeInstance = app(config('product_types.simple.class'));
         }
 
         $this->typeInstance->setProduct($this);

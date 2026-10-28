@@ -86,6 +86,56 @@ it('should show an order after its catalog product has been removed', function (
         ->assertSeeText($order->increment_id);
 });
 
+it('should show an order whose stored option labels are locale arrays or loose strings', function () {
+    $customer = Customer::factory()->create();
+
+    $product = $this->createSimpleProduct();
+
+    $order = $this->createOrder(customer: $customer, items: [[
+        'product' => $product,
+        'additional' => [
+            'product_id' => $product->id,
+            'quantity' => 1,
+            'attributes' => [
+                'Color' => 'Red',
+                [
+                    'attribute_name' => ['en' => 'Size'],
+                    'option_label' => ['en' => 'M'],
+                ],
+                [
+                    'attribute_type' => 'file',
+                    'attribute_name' => 'Artwork',
+                    'option_label' => ['path' => 'orders/artwork.pdf'],
+                ],
+            ],
+        ],
+    ]]);
+
+    $this->loginAsCustomer($customer);
+
+    get(route('shop.customers.account.orders.view', $order->id))
+        ->assertOk()
+        ->assertSeeText($order->increment_id)
+        ->assertSeeText('Size')
+        ->assertSeeText('M');
+});
+
+it('should show an order when the catalog product type is no longer registered', function () {
+    $customer = Customer::factory()->create();
+
+    $product = $this->createSimpleProduct();
+
+    $order = $this->createOrder(customer: $customer, items: [['product' => $product]]);
+
+    $product->update(['type' => 'not-a-real-type']);
+
+    $this->loginAsCustomer($customer);
+
+    get(route('shop.customers.account.orders.view', $order->id))
+        ->assertOk()
+        ->assertSeeText($order->increment_id);
+});
+
 it('should show a configurable order when the variant child item is missing', function () {
     $customer = Customer::factory()->create();
 

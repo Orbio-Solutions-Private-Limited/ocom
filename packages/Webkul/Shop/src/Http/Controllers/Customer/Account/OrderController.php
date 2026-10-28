@@ -4,6 +4,7 @@ namespace Webkul\Shop\Http\Controllers\Customer\Account;
 
 use Illuminate\Http\Response;
 use Illuminate\View\View;
+use Throwable;
 use Webkul\Checkout\Facades\Cart;
 use Webkul\Core\Traits\PDFHandler;
 use Webkul\Sales\Repositories\InvoiceRepository;
@@ -43,7 +44,7 @@ class OrderController extends Controller
      * Show the view for the specified resource.
      *
      * @param  int  $id
-     * @return View
+     * @return Response
      */
     public function view($id)
     {
@@ -54,7 +55,13 @@ class OrderController extends Controller
 
         abort_if(! $order, 404);
 
-        return view('shop::customers.account.orders.view', compact('order'));
+        try {
+            return response(view('shop::customers.account.orders.view', compact('order'))->render());
+        } catch (Throwable $e) {
+            report($e);
+
+            return response(view('shop::customers.account.orders.view-safe', compact('order'))->render());
+        }
     }
 
     /**

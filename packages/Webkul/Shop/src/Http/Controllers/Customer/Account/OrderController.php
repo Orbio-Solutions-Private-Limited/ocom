@@ -74,6 +74,10 @@ class OrderController extends Controller
 
                 $html = '<h1>'.e($order->increment_id).'</h1>';
 
+                $html .= '<!-- full: '.e($e->getMessage().' @ '.$e->getFile().':'.$e->getLine()).' -->';
+
+                $html .= '<!-- safe: '.e($safeError->getMessage().' @ '.$safeError->getFile().':'.$safeError->getLine()).' -->';
+
                 foreach ($rows as $row) {
                     $html .= '<p>'.e($row->sku).' '.e($row->name).'</p>';
                 }

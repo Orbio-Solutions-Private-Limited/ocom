@@ -81,10 +81,10 @@
                 </thead>
 
                 <tbody>
-                    @foreach ($rma->items as $key => $item)
+                    @if ($item = $rma->item)
                         <tr>
                             <td style="border-bottom: 1px solid #e2e8f0; padding: 12px 16px; color: #4a5568;">
-                                {{ $item->orderItem->name }}
+                                {{ $item->orderItem?->name }}
                             </td>
 
                             <td style="border-bottom: 1px solid #e2e8f0; padding: 12px 16px; color: #4a5568;">
@@ -92,14 +92,14 @@
                             </td>
 
                             <td style="border-bottom: 1px solid #e2e8f0; padding: 12px 16px; color: #4a5568;">
-                                {{ $item->reason->title }}
+                                {{ $item->reason?->title }}
                             </td>
 
                             <td style="border-bottom: 1px solid #e2e8f0; padding: 12px 16px; color: #4a5568;">
-                                {{ $item->orderItem->sku }}
+                                {{ $item->orderItem?->sku }}
                             </td>
                         </tr>
-                    @endforeach
+                    @endif
                 </tbody>
             </table>
         </div>

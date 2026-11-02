@@ -496,7 +496,7 @@
                                                 name="resolution_type"
                                                 rules="required"
                                                 v-model="resolutionType[getProductId(product)]"
-                                                @change="getResolutionReason(getProductId(product))"
+                                                @change="getResolutionReason(getProductId(product), $event)"
                                                 :label="trans('shop::app.customers.account.rma.create.resolution-type')"
                                             >
                                                 <option value="">
@@ -536,7 +536,7 @@
                                                 name="resolution_type"
                                                 rules="required"
                                                 v-model="resolutionType[getProductId(product)]"
-                                                @change="getResolutionReason(getProductId(product))"
+                                                @change="getResolutionReason(getProductId(product), $event)"
                                                 :label="trans('shop::app.customers.account.rma.create.resolution-type')"
                                             >
                                                 <option value="">
@@ -1141,30 +1141,38 @@
                         }).format(returnDate);
                     },
 
-                    getResolutionReason(product_id) {
-                        let resolutionType = this.resolutionType[product_id];
+                    getResolutionReason(product_id, event) {
+                        const resolutionType = event?.target?.value || this.resolutionType[product_id];
+
+                        this.resolutionType[product_id] = resolutionType || null;
 
                         this.rma_qty[product_id] = null;
+
+                        this.rma_reason_id[product_id] = null;
+
+                        if (! resolutionType) {
+                            this.resolutionReason[product_id] = null;
+
+                            return;
+                        }
 
                         let url = '{{ route("shop.customers.account.rma.get_resolution_reasons", ":resolutionType") }}';
 
                         url = url.replace(':resolutionType', resolutionType);
 
-                        if (resolutionType) {
-                            this.$axios.get(url)
-                                .then(response => {
-                                    if (response.data['0'] == null) {
-                                        this.resolutionReason[product_id] = null;
+                        this.$axios.get(url)
+                            .then(response => {
+                                if (response.data['0'] == null) {
+                                    this.resolutionReason[product_id] = null;
 
-                                        return;
-                                    }
+                                    return;
+                                }
 
-                                    this.resolutionReason[product_id] = response.data;
+                                this.resolutionReason[product_id] = response.data;
 
-                                }).catch(error => {
-                                    console.log(error);
-                                });
-                        }
+                            }).catch(error => {
+                                console.log(error);
+                            });
                     },
 
                     formatTitle(title) {

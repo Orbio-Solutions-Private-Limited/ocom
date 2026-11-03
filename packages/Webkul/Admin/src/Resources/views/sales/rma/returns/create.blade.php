@@ -570,22 +570,16 @@
                                 {{ $attribute->label }} @if ($attribute->is_required == '1')<span class="required"></span>@endif
                             </x-admin::form.control-group.label>
 
-                            @if ($attribute->is_required == '1')
-                                @php
-                                $attribute->is_required = 'required';
-                                @endphp
-                            @elseif ($attribute->is_required == '0')
-                                @php
-                                $attribute->is_required = '';
-                                @endphp
-                            @endif
+                            @php
+                                $fieldRules = $attribute->is_required ? 'required' : '';
+                            @endphp
 
                             @switch($attribute->type)
                                 @case('text')
                                     <x-admin::form.control-group.control
                                         type="text"
                                         name="customAttributes[{{ $attribute->id }}]"
-                                        rules="{{ $attribute->is_required }}"
+                                        rules="{{ $fieldRules }}"
                                         :value="old($attribute->id)"
                                         label="{{ $attribute->label }}"
                                         placeholder="{{ $attribute->label }}"
@@ -601,7 +595,7 @@
                                     <x-admin::form.control-group.control
                                         type="textarea"
                                         name="customAttributes[{{ $attribute->id }}]"
-                                        rules="{{ $attribute->is_required }}"
+                                        rules="{{ $fieldRules }}"
                                         :value="old($attribute->id)"
                                         label="{{ $attribute->label }}"
                                         placeholder="{{ $attribute->label }}"
@@ -618,7 +612,7 @@
                                     <x-admin::form.control-group.control
                                         type="date"
                                         name="customAttributes[{{ $attribute->id }}]"
-                                        rules="{{ $attribute->is_required }}"
+                                        rules="{{ $fieldRules }}"
                                         :value="old($attribute->id)"
                                         label="{{ $attribute->label }}"
                                         placeholder="{{ $attribute->label }}"
@@ -638,7 +632,7 @@
                                         name="customAttributes[{{ $attribute->id }}]"
                                         id="{{ $attribute->id }}"
                                         class="cursor-pointer"
-                                        rules="{{ $attribute->is_required }}"
+                                        rules="{{ $fieldRules }}"
                                         :value="old($attribute->id)"
                                         label="{{ $attribute->label }}"
                                     >
@@ -665,7 +659,7 @@
                                         name="customAttributes[{{ $attribute->id }}]"
                                         id="{{ $attribute->id }}"
                                         class="cursor-pointer"
-                                        rules="{{ $attribute->is_required }}"
+                                        rules="{{ $fieldRules }}"
                                         :value="old($attribute->id)"
                                         label="{{ $attribute->label }}"
                                     >
@@ -722,7 +716,7 @@
                                                     name="customAttributes[{{ $attribute->id }}]"
                                                     id="{{ $attribute->id }}_{{ $key }}"
                                                     value="{{ $option->value }}"
-                                                    rules="{{ $attribute->is_required }}"
+                                                    rules="{{ $fieldRules }}"
                                                     for="{{ $attribute->id }}_{{ $key }}"
                                                 />
 

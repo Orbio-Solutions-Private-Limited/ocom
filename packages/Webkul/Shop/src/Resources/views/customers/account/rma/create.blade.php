@@ -694,22 +694,16 @@
                                 {{ $attribute->label }} @if ($attribute->is_required == '1')<span class="required"></span>@endif
                             </x-shop::form.control-group.label>
 
-                            @if ($attribute->is_required == '1')
-                                @php
-                                    $attribute->is_required = 'required';
-                                @endphp
-                            @elseif ($attribute->is_required == '0')
-                                @php
-                                    $attribute->is_required = '';
-                                @endphp
-                            @endif
+                            @php
+                                $fieldRules = $attribute->is_required ? 'required' : '';
+                            @endphp
 
                             @switch($attribute->type)
                                 @case('text')
                                     <x-shop::form.control-group.control
                                         type="text"
                                         name="customAttributes[{{ $attribute->id }}]"
-                                        rules="{{ $attribute->is_required }}"
+                                        rules="{{ $fieldRules }}"
                                         :value="old($attribute->id)"
                                         label="{{ $attribute->label }}"
                                         placeholder="{{ $attribute->label }}"
@@ -726,7 +720,7 @@
                                     <x-shop::form.control-group.control
                                         type="textarea"
                                         name="customAttributes[{{ $attribute->id }}]"
-                                        rules="{{ $attribute->is_required }}"
+                                        rules="{{ $fieldRules }}"
                                         :value="old($attribute->id)"
                                         label="{{ $attribute->label }}"
                                         placeholder="{{ $attribute->label }}"
@@ -744,7 +738,7 @@
                                     <x-shop::form.control-group.control
                                         type="date"
                                         name="customAttributes[{{ $attribute->id }}]"
-                                        rules="{{ $attribute->is_required }}"
+                                        rules="{{ $fieldRules }}"
                                         :value="old($attribute->id)"
                                         label="{{ $attribute->label }}"
                                         placeholder="{{ $attribute->label }}"
@@ -763,7 +757,7 @@
                                         id="{{ $attribute->id }}"
                                         class="cursor-pointer"
                                         name="customAttributes[{{ $attribute->id }}]"
-                                        rules="{{ $attribute->is_required }}"
+                                        rules="{{ $fieldRules }}"
                                         :value="old($attribute->id)"
                                         label="{{ $attribute->label }}"
                                     >
@@ -790,7 +784,7 @@
                                         id="{{ $attribute->id }}"
                                         class="cursor-pointer"
                                         name="customAttributes[{{ $attribute->id }}][]"
-                                        rules="{{ $attribute->is_required }}"
+                                        rules="{{ $fieldRules }}"
                                         :value="old($attribute->id)"
                                         label="{{ $attribute->label }}"
                                     >
@@ -818,7 +812,7 @@
                                                 type="checkbox"
                                                 class="flex"
                                                 name="customAttributes[{{ $attribute->id }}]"
-                                                rules="{{ $attribute->is_required }}"
+                                                rules="{{ $fieldRules }}"
                                                 v-slot="{ field }"
                                                 value="{{ $option->value }}"
                                             >
@@ -856,7 +850,7 @@
                                                 type="radio"
                                                 class="flex"
                                                 name="customAttributes[{{ $attribute->id }}]"
-                                                rules="{{ $attribute->is_required }}"
+                                                rules="{{ $fieldRules }}"
                                                 v-slot="{ field }"
                                                 value="{{ $option->name }}"
                                             >
@@ -864,7 +858,7 @@
                                                     type="radio"
                                                     class="sr-only peer"
                                                     id="option_{{ $loop->index }}"
-                                                    rules="{{ $attribute->is_required }}"
+                                                    rules="{{ $fieldRules }}"
                                                     name="customAttributes[{{ $attribute->id }}]"
                                                     value="{{ $option->name }}"
                                                     v-bind="field"

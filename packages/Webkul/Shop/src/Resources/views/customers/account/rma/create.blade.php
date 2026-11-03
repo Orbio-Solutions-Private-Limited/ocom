@@ -314,7 +314,7 @@
 
                             <!-- Modal Content -->
                             <x-slot:content class="bg-gray-50 p-5 max-sm:p-3">
-                                <div class="journal-scroll flex flex-col gap-3 overflow-auto ltr:pr-1.5 rtl:pl-1.5" style="min-height: 420px; max-height: 60vh;">
+                                <div class="journal-scroll flex flex-col gap-3 overflow-auto ltr:pr-1.5 rtl:pl-1.5" style="max-height: calc(100vh - 14rem);">
                                     <v-order-items-list :key="refreshComponent" :order-id="isSelect"></v-order-items-list>
                                 </div>
                             </x-slot>
